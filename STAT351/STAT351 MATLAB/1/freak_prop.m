@@ -2,7 +2,7 @@ function freak_prop(inputArg1)
 %FREAK_PROP Create Frequemcy and Proportion Populations on inputn number of
 %samples.
 % Generate and plot some random sample; Normal distribution; Create a histogram with Frequency;% Create a histogram with Proportion
-
+%  MKULTRA https://github.com/31415pi/Spring21_MCECS/
 
 
 N=inputArg1;
