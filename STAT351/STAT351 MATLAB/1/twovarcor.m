@@ -1,5 +1,6 @@
 function twovarcor(inputArg1,inputArg2)
 %Generate correlated two variableswith normal distributions; 1- Plot data;
+%  MKULTRA https://github.com/31415pi/Spring21_MCECS/
 mu1    = 0;
 sigma1 = 0.5;
 mu2    = 0;
