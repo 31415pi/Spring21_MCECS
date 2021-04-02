@@ -1,7 +1,7 @@
-\PassOptionsToPackage{dvipsnames}{xcolor}
+%\PassOptionsToPackage{dvipsnames}{xcolor}
 \documentclass[9pt,oneside,a4paper,titlepage]{article}
 %\include{includes} % required
-\include{STAT351-TITLE} %% always add a title!!
+%\include{STAT351-TITLE} %% always add a title!!
 \begin{document}
 Part 1: Evaluate the following. (Show your work to get full points).
 (a) $7 !$
