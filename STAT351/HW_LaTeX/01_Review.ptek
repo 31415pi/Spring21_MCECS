@@ -22,3 +22,5 @@ and compute $\int_{-\infty}^{\infty}\left[x^{2} f(x)\right] d x$
 (1) $\int_{0}^{y} y e^{-y} e^{-x} d x$
 $(\mathrm{m}) \int_{0}^{1} \int_{0}^{x}\left(1+x^{2} y\right) d y d x$
 \end{document}
+%https://www.cs.rit.edu/~dprl/Software.html
+%MathPix Snipping Tool
