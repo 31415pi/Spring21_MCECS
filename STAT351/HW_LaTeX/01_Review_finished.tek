@@ -1,0 +1,316 @@
+\noindent\textbf{\section{Section 1.5: Quantifiers}}\\
+\noindent\rule{\textwidth}{1pt}
+\noindent\textbf{Part 1: Evaluate the following. (Show your work to get full points).}\\
+
+(a) $7 !$\\
+
+\tabto{2cm}
+$7 * 6 * 5 * 4 * 3 * 2 *1 = \fbox{5040}$\\
+\\
+
+(b) $\sum_{x=1}^{20} [x]$\\
+
+\tabto{2cm}$=1+2+3+...+18+19+20 = \fbox{$210$}$\\
+\\
+
+(c) $\sum_{i=1}^{20} w$\\
+
+\tabto{2cm}Sum formula, same as (b).\\
+
+\tabto{2cm}$\sum_{k=1}^{n} k= \frac{1}{2}n(n+1)$\\
+
+\tabto{3.25cm}$=\frac{1}{2}(20)(21)$\\
+
+\tabto{3.5cm}= \fbox{210}\\
+\\
+
+(d) When $c$ is a constant, $\sum_{x=1}^{3}\left[c x^{3}+1\right]$\\
+
+\tabto{5cm}$=\left[c\cdot 1^{3}+1\right]+\left[c\cdot 2^{3}+1\right]+\left[c\cdot 3^{3}+1\right]$\\
+
+\tabto{5cm}=$18c+3$\\
+
+\tabto{5cm}= \fbox{$3(6c+1)$}\\
+\\
+
+(e) Expand $(x-4)^{2}$\\
+
+\tabto{4cm}$= x \cdot x + x \cdot (-4) + (-4) \cdot x + (-4) \cdot (-4)$\\
+
+\tabto{4cm}= \fbox{$x^{2} + (-8)x + 16$}\\
+\\
+
+%https://tutorial.math.lamar.edu/classes/calcii/RatioTest.aspx
+%https://en.wikipedia.org/wiki/Taylor_series
+(f) For $\lambda>0,$ find $\sum_{x=0}^{\infty} \frac{\lambda^{x}}{x !}$\\
+
+\tabto{3.5cm}By Maclaurin series we have:\\
+
+\tabto{3.5cm}$\sum_{x=0}^{\infty} \frac{\lambda^{x}}{x !} = $ \fbox{$e^{\lambda}$}\\
+\newpage
+(g) If $p(x)=\left\{\begin{array}{l}\frac{1}{8} ; x=0,3 
+
+ \frac{3}{8} ; x=1,2 
+ 
+ 0 ; \text { otherwise }\end{array}\right.$,\\
+ 
+\\ \tabto{2cm} then compute $\sum_{\text {all } x}[x p(x)]$\\
+
+\tabto{3.5cm}$ = (0 \cdot \frac{1}{8}) + (1 \cdot \frac{3}{8}) +$
+
+\tabto{3.9cm}$(2 \cdot \frac{3}{8}) + (3 \cdot \frac{1}{8})$\\
+
+\tabto{3.5cm}$ = (\frac{12}{8})$\\
+
+\tabto{3.5cm}$ = $= \fbox{$1\frac{1}{2}$}\\
+
+\tabto{2cm} and compute $\sum_{\text {all } x}\left[(x-1.5)^{2} p(x)\right]$\\
+
+\tabto{3.5cm}$ = (-1.5^{2} \cdot \frac{1}{8}) + (-0.5^{2} \cdot \frac{3}{8}) +$
+
+\tabto{3.9cm}$(0.5^{2} \cdot \frac{3}{8}) + (1.5^{2} \cdot \frac{1}{8})$\\
+
+\tabto{3.5cm}$ = $\fbox{$\frac{3}{4}$}\\
+\\
+
+(h) $\int_{1}^{3} x^{2} d x$\\
+
+\tabto{2cm}$= \left[\frac{x^3}{3} + c\right] \Big|_1^3$\\
+
+\tabto{2cm}$= \fbox{8.6667}$\\
+\\
+
+(i) $\int_{0}^{1}\left(x^{3}+1\right) d x$\\
+
+\tabto{2cm}$= \left[\frac{x^4}{4} + x + c\right] \Big|_0^1$\\
+
+\tabto{2cm}$= \frac{5}{4} = \fbox{1.25}$\\
+
+(j) When $k$ is a constant,
+$\int_{0}^{\infty}\left[k e^{-\frac{x}{3}}\right] d x$\\
+
+\tabto{2cm}$k \cdot \int_{0}^{\infty}\left[ e^{-\frac{x}{3}}\right] d x$\\
+
+\tabto{2cm}$k \cdot \int_{0}^{\infty}\left[ e^{u}\right] d x$\\
+
+\tabto{3.5cm}$ u = -\frac{x}{3}$\\
+
+\tabto{3.5cm}$du = -\frac{1}{3}dx$\\
+
+\tabto{3.5cm}$dx = -3du$\\
+
+\tabto{2cm}$-3k \cdot \int_{0}^{\infty}\left[ e^{u}\right] d u$\\
+
+\tabto{2cm}$-3ke^{u} + C$\\
+
+\tabto{2cm}= \fbox{$-3ke^{-\frac{1}{3}} + C$}\\
+
+(k) If $f(x)=\left\{\begin{array}{l}3 x^{-4} ; x>1 \\
+ 0 ; \text { otherwise }\end{array},\right.$ \\
+\\ 
+
+\tabto{2.0cm} then compute $\int_{-\infty}^{\infty}[x f(x)] d x$\\
+
+\tabto{3.5cm}Since $(x\leq1) \Rightarrow 0$, 
+
+\tabto{3.5cm}I would change the bounds,
+
+\tabto{3.5cm}from 1 to $+\infty$ like so:\\
+
+\tabto{2cm}$\int_{1}^{\infty}[x f(x)] d x$\\
+
+\tabto{3.5cm}$\int_{1}^{\infty}[x\cdot 3x^{-4}] d x$\\
+
+\tabto{3.5cm}$3\cdot\int_{1}^{\infty}[x^{-3}] d x$\\
+
+\tabto{3.5cm}$3\cdot\int_{1}^{\infty}[\frac{1}{x^{3}}] d x$\\
+
+\tabto{3.5cm}$3\cdot\int_{1}^{\infty}[\frac{1}{x^{3}}] d x$\\
+
+\tabto{3.5cm}$[-\frac{3}{2x^{2}}] \Big|_0^\infty$\\
+
+\tabto{3.5cm}= \fbox{$-\frac{3}{2x^{2}} + C$}\\
+
+\tabto{2.0cm} and compute:\\
+
+\tabto{2cm}$\int_{-\infty}^{\infty}[x^{2} f(x)] d x$\\
+
+\tabto{3.5cm}Similar to first half, 
+
+\tabto{3.5cm}restrict bounds of integration:\\
+
+\tabto{2cm}$\int_{1}^{\infty}[x^{2} f(x)] d x$\\
+
+\tabto{3.5cm}$\int_{1}^{\infty}[x^{2}\cdot 3x^{-4}] d x$\\
+
+\tabto{3.5cm}$3\cdot\int_{1}^{\infty}[x^{-2}] d x$\\
+
+\tabto{3.5cm}$3\cdot\int_{1}^{\infty}[\frac{1}{x^{2}}] d x$\\
+
+\tabto{3.5cm}$[-\frac{3}{x}] \Big|_0^\infty$\\
+
+\tabto{3.5cm}= \fbox{$-\frac{3}{x} + C$}\\
+
+%https://www.integral-calculator.com/
+\newpage
+(l) $\int_{0}^{y} y e^{-y} e^{-x} d x$\\
+
+\tabto{2cm} $\int_{0}^{y} y e^{-y-x} d x$\\
+
+\tabto{2cm} $\int_{0}^{y} y e^{u} d x$\\
+
+\tabto{3.5cm}$u = -x-y$\\
+
+\tabto{3.5cm}$du = -1 dx$\\
+
+\tabto{3.5cm}$dx = -du$\\
+
+\tabto{2cm} $-y\cdot \int_{0}^{y} e^{u} d x$\\
+
+\tabto{2cm}$-y \cdot e^{u} $\\
+
+\tabto{2cm}= \fbox{$-y \cdot e^{-y-x} + C$}\\
+\\
+
+(m) $ \int_{0}^{1} \int_{0}^{x}\left(1+x^{2} y\right) d y d x$\\
+
+\tabto{2cm}$ \int_{0}^{x}\left(1+x^{2} y\right) d y$\\
+
+\tabto{2cm}$y+x^{2} \cdot \frac{y^{2}}{2}\Big|_0^x$\\
+
+\tabto{2cm}$x+\frac{x^{4}}{2} + C$\\
+
+\tabto{1.5cm}$\int_{0}^{1} [x+\frac{x^{4}}{2}] dx$\\
+
+\tabto{2cm}$\frac{x^{2}}{2} + \frac{x^{5}}{(2)(4)}\Big|_{0}^{1}$\\
+
+\tabto{2cm}= \fbox{$\frac{5}{8}$}
+\tabto{2cm}
+
+(n) If $p(x, y)=\left\{\begin{array}{l}\frac{1}{3} ;(x, y)=(-1,1),(0,0),(1,1),} \\
+ 0 ; \text { otherwise }\end{array}\right.$\\
+ 
+\tabto{2cm}then compute $\sum_{\text {all } x} \sum_{\text {all } y}[x p(x, y)]$\\
+
+\tabto{3.5cm}-1\cdot\frac{1}{3}+0\cdot\frac{1}{3}+1\cdot\frac{1}{3}+0\\
+
+\tabto{3.5cm} = \fbox{0}\\
+
+\tabto{2cm}and compute $\sum_{\text {all } x} \sum_{\text {all } y}[x y p(x, y)]$\\
+
+\tabto{3.5cm}(-1)(1)\cdot\frac{1}{3}+(0)(0)\cdot\frac{1}{3}+(1)(1)\cdot\frac{1}{3}+0\\
+
+\tabto{3.5cm} = \fbox{0}\\
+
+\newpage
+\noindent\textbf{Part 2: Sketch each of the following functions on separate $x$ -y planes
+}\\
+\tabto{2cm}
+\tabto{2cm}
+\tabto{2cm}
+
+(a) $f(x)=\left\{\begin{aligned} 2 x & ;-0.5<x<0 \\
+ 0 ; & \text { otherwise } \end{aligned}\right.$\\
+ \\
+ 
+\pgfplotsset{domain = -0.5 : 0}
+ \begin{tikzpicture}
+  \begin{axis}[ 
+    xlabel=$x$,
+    ylabel={$f(x) = 2x$}
+  ] 
+    \addplot[
+    samples=100
+    ] {2*x}; 
+       \addplot [only marks,mark=*,mark options={scale=.8, fill=white},text mark as node=true] coordinates {
+    (-0.5,-1 )
+    (0,0 )
+    };
+  \end{axis}
+\end{tikzpicture}
+
+(b) $f(x)=\left\{\begin{aligned} 5 e^{-5 x} ; & x>0 \\
+ 0 ; & \text { otherwise } \end{aligned}\right.$\\
+  \\
+ 
+\hspace{4mm}   \begin{tikzpicture}
+  \begin{axis}[ 
+    xlabel=$x$,
+    ylabel={$f(x) = 5 * e^{-5x} $}
+  ] 
+%  \addplot+[sharp plot, color = black] coordinates
+ % {(0,5)};
+% \addplot [domain=-.1:0, samples=10] {0};
+    \addplot [
+    domain=0:0.6,
+    samples= 100,  unbounded coords= jump ]
+    {5 * exp(-5*x) }; 
+       \addplot [only marks,mark=*,mark options={scale=.8, fill=white},text mark as node=true] coordinates {
+    (0,5 )
+    };
+  \end{axis}
+ \end{tikzpicture}
+\newpage
+(c) $f(x)=\left\{\begin{array}{cl}\frac{1}{2 \pi} & ;-\pi<x<\pi \\
+ 0 ; & \text { otherwise }\end{array}\right.$\\
+ \\
+ 
+  \begin{tikzpicture}
+  \begin{axis}[ 
+    xlabel=$x$,
+    ylabel={$f(x) = \frac{1}{2\cdot pi}$}
+  ] 
+    \addplot [
+    domain = -3.14159 : 3.14159,
+    samples = 100
+    ]
+    {1 / (2 *3.14159)}; 
+        \addplot [only marks,mark=*,mark options={scale=.8, fill=white},text mark as node=true] coordinates {
+    (-3.14,0.15915 )
+    (3.14,0.15915 )
+    };
+  \end{axis}
+\end{tikzpicture}
+
+(d) $f(x)=\left\{\begin{array}{cl}
+0 & ; x<0 \\
+\frac{x^{2}}{4} & ; 0 \leq x<1 \\
+\frac{x+1}{4} ; & 1 \leq x<2 \\
+1 ; & x \geq 2\end{array}\right.$\\
+\\
+
+ \begin{tikzpicture}
+  \begin{axis}[ 
+    xlabel=$x$,
+    ylabel={$f(x)$}
+  ] 
+    \addplot [ unbounded coords = jump,
+    domain = -1 : 0,
+    samples = 10
+    ]
+    {0};
+    \addplot [ unbounded coords= jump,
+    domain = 0 : 1,
+    samples = 10
+    ]
+    {(x^2)/4}; 
+   \addplot [
+   domain = 1 : 2,
+    samples = 10
+    ]
+    {(x+1)/4};
+    \addplot [ unbounded coords = jump,
+    domain = 2 : 3,
+    samples = 150
+    ]
+    {1};
+    \addplot [only marks,mark=*,mark options={scale=.8, fill=white},text mark as node=true] coordinates {
+    (1,0.25)
+    (2,3/4)
+    };
+    \addplot [only marks,mark=*,mark options={scale=.8, fill=black},text mark as node=true] coordinates {
+    (1,0.5)
+    (2,1)
+    };
+  \end{axis}
+\end{tikzpicture}
