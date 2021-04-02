@@ -1,0 +1,24 @@
+\PassOptionsToPackage{dvipsnames}{xcolor}
+\documentclass[9pt,oneside,a4paper,titlepage]{article}
+%\include{includes} % required
+\include{STAT351-TITLE} %% always add a title!!
+\begin{document}
+Part 1: Evaluate the following. (Show your work to get full points).
+(a) $7 !$
+(b) $\sum_{x=1}^{20} x$
+(c) $\sum_{i=1}^{20} w$
+(d) When $c$ is a constant, $\sum_{x=1}^{3}\left[c x^{3}+1\right]$
+(e) Expand $(x-4)^{2}$
+(f) For $\lambda>0,$ find $\sum_{x=0}^{\infty} \frac{\lambda^{x}}{x !}=$
+(g) If $p(x)=\left\{\begin{array}{l}\frac{1}{8} ; x=0,3 \\ \frac{3}{8} ; x=1,2 \\ 0 ; \text { otherwise }\end{array}\right.$, then
+compute $\sum_{\text {all } x}[x p(x)]$
+and compute $\sum_{\text {all } x}\left[(x-1.5)^{2} p(x)\right]$
+(h) $\int_{1}^{3} x^{2} d x$
+(i) $\int_{0}^{1}\left(x^{3}+1\right) d x$
+(j) When $k$ is a constant, $\int_{0}^{\infty}\left[k e^{-\frac{x}{3}}\right] d x$
+(k) If $f(x)=\left\{\begin{array}{l}3 x^{-4} ; x>1 \\ 0 ; \text { otherwise }\end{array},\right.$ then
+compute $\int_{-\infty}^{\infty}[x f(x)] d x$
+and compute $\int_{-\infty}^{\infty}\left[x^{2} f(x)\right] d x$
+(1) $\int_{0}^{y} y e^{-y} e^{-x} d x$
+$(\mathrm{m}) \int_{0}^{1} \int_{0}^{x}\left(1+x^{2} y\right) d y d x$
+\end{document}
