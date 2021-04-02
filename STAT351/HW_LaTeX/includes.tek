@@ -1,0 +1,48 @@
+
+\usepackage[utf8]{inputenc}
+\usepackage{ragged2e}
+\usepackage{tabto} % \tabto 
+\usepackage{graphicx} %for images
+\usepackage{ mathtools , amssymb , amsthm } % imports amsmath
+\usepackage{bold-extra} %\bfseries{\scshape{bold small caps text here}}
+\usepackage{tikz} %venn diagram https://texample.net/tikz/examples/venn-diagram/
+\usetikzlibrary{mindmap,trees} %for the outfits problem
+\usetikzlibrary{shapes,backgrounds,intersections,arrows, positioning, calc}
+\usepackage{xfrac} %for fractions %\sfrac{1}{2}
+%\usepackage[dvipsnames]{xcolor} %expanded colors, see line 1 for fix of error https://www.overleaf.com/project/5ff95b6df3c28fbcaffc5ccf
+%maybe a better venn https://tex.stackexchange.com/questions/385128/label-intersection-of-3-sets
+%lines n stuff https://texample.net/tikz/examples/polars-tangents-conic/
+\usepackage{booktabs} %tables
+
+%tikzhttps://www.bu.edu/math/files/2013/08/tikzpgfmanual.pdf
+\usepackage{pgfplots} %https://www.overleaf.com/learn/latex/pgfplots_package %  https://www.overleaf.com/learn/latex/pgfplots_package#Reference_guide%
+\usepackage{tcolorbox} %\tcbox    how to set all box vars::>> \tcbset{colback=White,arc=0mm,width=(\linewidth-4pt)/4,equal height group=AT, before=, after=\hfill, fonttitle=\bfseries} on the tkiz picture add \begin{tikzpicture}[yscale=0.5,xscale=0.5]
+\usepackage{pgffor} 
+\pgfplotsset{compat=1.5.1} % for circles in the graphs
+%\usepackage{ulem} % \soul{strikes out text}%\xout{x gonna give it to ya} % https://jansoehlke.com/2010/06/strikethrough-in-latex/
+\usepackage{cancel} %\cancel{diagonal strike}
+%foreach in tcbox needs to be as in plot1.tex line 26
+\usepackage{mathrsfs} % fancy ass ps like power set P s  from p-p-p-power set p \$\textbackslash mathscr\{P\}\$, byputting \textbackslash  in the preamble.
+\usepackage{amsthm} %\begin{proof}
+
+
+
+
+
+%%%testing stuff below - move above when sussed out
+\usepackage{sectsty,fancyhdr} % for formatting seee headerfooter.tex https://tex.stackexchange.com/questions/337841/how-to-insert-the-section-name-in-the-footer-without-keeping-the-section-name-f/337846
+
+\pagestyle{fancy}
+\fancyhf{}
+%\lhead{Project tile}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{.50pt} 
+\rfoot{Page \thepage}
+\lfoot{\leftmark}
+
+\makeatletter
+\renewcommand{\sectionmark}[1]{%
+  \markboth{\ifnum \c@secnumdepth>\z@
+      \thesection\hskip 1em\relax
+    \fi #1}{}}
+\makeatother
