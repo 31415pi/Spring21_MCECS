@@ -1,0 +1,140 @@
+\noindent\textbf{\section{HW\# 1}}\\
+\noindent\rule{\textwidth}{1pt}\\
+
+Problem 1:
+
+A fair coin is tossed until one head is observed. That is, stop tossing coin after observing 1st head.
+
+\tabto{1cm}(a) Suggest a sample space with all possible results of this case.\\
+
+\tabto{2.75cm}\fbox{$\Omega = \{H,T\}$}\\
+
+\tabto{1cm}(b) Using your sample space from part (a), write the outcome for event which represents 1st head is observed in less than 4 tosses.\\
+
+\tabto{2.75cm}\fbox{\{H observed in less than 4 tosses\} = \{T,T,H\}}\\
+
+Problem 2:\\
+\tabto{.5cm}(i) Each component in the system shown below may fail (F) or not fail (N) at a given time. Performance of the system depends on performance of each component. A series system is one in which all components are so interrelated that the entire system will fail if any one of its components fails.
+\begin{center}
+ \includegraphics[]{IMG/1_1.jpg}\\
+ \end{center}
+\tabto{1cm}(a) Suggest a sample space to model all possible combinations of performances of components. (that is, list all possible outcomes). Use N and F in your sample space. For example, FNF is for C1 fails, C2 does not fail while C3 fails.\\
+
+\tabto{2.75cm}\fbox{$\Omega = \{\text{FFF, FFN, FNN, NNN, NNF, NFF, NFN, FNF}\}$}\\
+
+\tabto{1cm}(b) Using your sample space from part (a), write the outcomes for event which represents at least one component fail.\\
+
+\tabto{2.75cm} $\text{Q} = \{ \omega \mid \exists! c \in \omega, c = F\}$
+\tabto{6cm}\begin{tiny}https://en.wikipedia.org/wiki/Uniqueness_quantification\end{tiny}\\
+
+\tabto{2.75cm}\fbox{$\text{Q} = \{FNN, NNF, NFN\}$}\\
+
+\tabto{.5cm}(ii) A router has a buffer that can store up to 70 packets, and we want to model the actual number of packets waiting for transmission.
+
+\tabto{1cm}(a) Suggest a sample space to model all possible results of this case.\\
+
+\tabto{2.75cm}\fbox{$\Omega = \{ \omega \mid  \omega \in \mathbb{Z},70 \geq \omega \geq 0 \}$}
+\newpage
+\tabto{1cm}(b) Using your sample space from part (a), write the outcome for event which represents more than 65 packets waiting for transmission.\\
+
+\tabto{2.75cm}\fbox{$\text{R} = \{ w \mid w \in \mathbb{Z}, 70 \geq \omega > 65\}$}\\
+
+Problem 3:\\
+Parts from a production process are examined for quality. Each part is labeled as good, have minor defects, or have major defects.
+Suppose two parts are selected randomly one after the other and examine the quality.
+Suggest a sample space to model all possible results of this case.\\
+
+\tabto{2.75cm}$P_{2} = \{(p,p) \mid p \in \{\textsc{GOOD, MINOR, MAJOR}\}\}$\\
+\tabto{2.75cm}Lets say (-), 0, and (+) represent parts with \textsc{minor defects, good, major defects} respectively, we can say the sample space of any two parts picked consists of the set $P_{2}$:\\
+
+\tabto{1.75cm}\fbox{$P_{2} = \{(-,-),(-,0),(-,+),(0,-),$\\
+$(0,0),(0,+),(+,-),(+,0),(+,+)\}$}\\
+
+Problem 4:\\
+
+Consider rolling a six-sided fair die. Let A be the set of outcomes where the roll is an odd number. Let B be the set of outcomes where the roll is greater than 3. You may use a Venn diagram for this problem. \\
+%https://tex.stackexchange.com/questions/9681/how-to-draw-venn-diagrams-especially-complements-in-latex
+\tabto{2.75cm}$\Omega$ = $\{1,2,3,4,5,6\}$\\
+
+\tabto{0.5cm}(a) List outcomes for each event.\\
+\tabto{2.75cm}\fbox{ A = $\{1,3,5\}$, B $= \{4,5,6\}$}\\
+
+\tabto{0.5cm}(b) Explain if events A, B are mutually exclusive (or disjoint).\\
+\tabto{2.75cm}$A\cap B = \emptyset$ ?
+\tabto{2.75cm}$A\cap B = \{5\}$
+\tabto{4cm}$\therefore $\fbox{ A and B are not disjoint.}
+%https://texample.net/tikz/examples/set-operations-illustrated-with-venn-diagrams/
+\begin{figure}[!b]
+\centering
+\begin{tikzpicture}[ fill=gray]
+% left hand
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}
+\colorlet{circle area}
+
+    
+\setlength{\parskip}{5mm}
+% Set A and B
+    \begin{scope}
+        \clip \firstcircle;
+        \fill[filled] \secondcircle;
+    \end{scope}
+    \draw[outline] \firstcircle node {$A$};
+    \draw[outline] \secondcircle node {$B$};
+    \node[anchor=south] at (current bounding box.north) {$A \cap B = \{5\}$};
+% outline
+\draw       (-2,-2) rectangle (4,2.2) node [text=black,above] {$\Omega$};
+\end{tikzpicture}
+\end{figure}\\
+
+\tabto{0.5cm}(c) Explain if events A, B are exhaustive.\\
+
+\tabto{.75cm}A and B are not exhaustive because if every event in each set occurred, they would exclude elements which exist in the collection of potential events. If we are considering A and B the collection, then they are exhaustive. The collection is the set of ALL DICE ROLLS which \textit{may} occur. Since \{2\} is not represented in A or B, the events A and B are not exhaustive.\\
+\begin{figure}[!t]
+\centering
+\begin{tikzpicture}[ fill=gray]
+% left hand
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}
+\colorlet{circle area}
+
+    
+\setlength{\parskip}{5mm}
+%% Set A and B
+    \begin{scope}
+%        \clip \firstcircle;
+        \fill[filled] \secondcircle;
+        \fill[filled] \firstcircle;
+    \end{scope}
+    \draw[outline] \firstcircle node {$A$};
+    \draw[outline] \secondcircle node {$B$};
+    \node[anchor=south] at (current bounding box.north) {\{2\}};
+% outline
+\draw       (-2,-2) rectangle (4,2.2) node [text=black,above] {$\Omega$};
+\end{tikzpicture}
+\end{figure}\\
+\tabto{0.5cm}(d) List the outcomes for the following events:
+\tabto{1.5cm}	(A$\cup$B)\\
+\tabto{2.75cm}\fbox { (A$\cup$B) = \{1,3,4,5,6\} }\\
+
+\tabto{1.5cm}	(A$\cup$B)c\\
+\tabto{2.75cm}\fbox { (A$\cup$B) = \{2\} }\\
+
+\tabto{0.5cm}(e) List the outcomes for the following events:\\
+\tabto{1.5cm}	Ac\\
+\tabto{2.75cm}\fbox{Ac = \{2,4,6\}}\\
+
+\tabto{1.5cm}	Bc \\
+\tabto{2.75cm}\fbox{Bc = \{1,2,3\}}\\
+
+\tabto{1.5cm}	Ac$\cap$Bc\\
+\tabto{2.75cm}\fbox{Ac$\cap$Bc = \{2\}}\\
+
+
+\tabto{0.5cm}(f) Compare and comment about the outcomes of events (A$\cup$B)c and Ac$\cap$Bc you found in parts (d) and (e).\\
+
+\tabto{.75cm}Ac$\cap$Bc = (A$\cup$B)c. We see an example of Demorgans Theorem as well as the relations between complements, unions, intersections and equivalence. Between (d) and (e), we are showing how using complements can create equivalence statements between related event and sample spaces.
