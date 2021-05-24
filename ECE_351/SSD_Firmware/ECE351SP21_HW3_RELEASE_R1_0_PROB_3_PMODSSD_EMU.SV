@@ -1,0 +1,60 @@
+
+/*  Assignment:				Homework 3
+ *  Filename:				ECE351_HW3/FIN/part3/ECE351SP21_HW3_RELEASE_R1_0_PROB_3_PMODSSD_EMU.SV
+ *  					Portland State University
+ *  ECE 362: 				Verilog and FPGA Design
+ *  Term: 				Spring 2021
+ *  Proffessor: 			Prof. Roy Kravitz
+ *  T/A:				Tyler Hull
+ *  Grader:				Tiffani Shilts Hartman
+ *  CRN: 				61016
+ *  Student: 				Mx. Madison Uxia Klementyn
+ *  Creation Date: 			22.05.2021
+ *  Due Date:				24.05.2021 - 1700 hours
+ *  Estimated Completion:  		1 hour prep,
+ *  Notable Fact: 			
+ *  References 				Sutherland. 
+ *  &links:			
+ */
+
+	import "DPI-C" function string getenv(input string env_name);
+
+	module top;
+	  initial begin
+		$write("env = %s\n", {getenv("HOME"), "/FileName"});
+	  end
+	endmodule
+
+module pmodSSD_Interface
+	import CHAR_ROULETTE::*;
+	
+	(input logic clk, reset,		//define our ports.
+	input logic[4:0] digit1, digit0,
+	output logic SSD_AG, SSD_AF, SSD_AE, SSD_AD, SSD_AC,SSD_AB, SSD_AA, 
+	logic SSD_C	);
+ 
+	dig_atttor // instantiate the digital attenuator
+		#(	.clk(clk),
+			.reset(reset),
+			.tick_60Hz(SSD_C)	);
+ 
+	assign SSD_C <= tick_60Hz;
+
+	//Lets fire up that SSD!
+	always_latch 
+		begin
+			if (SSD_C) 
+				begin
+					assign {SSD_AA, SSD_AB, SSD_AC, SSD_AD, SSD_AE, 
+								SSD_AF, SSD_AG} = BtS(digit1);
+								//we get signal, main screeen turn on.
+								//TB gives us a 5 dig, we convert it to binary
+				end
+			else if (~SSD_C)
+				begin
+					assign {SSD_AA, SSD_AB, SSD_AC, SSD_AD, SSD_AE, 
+					SSD_AF, SSD_AG} = BtS(digit2);
+				end
+		end
+
+endmodule pmodSSD_Interface
