@@ -51,6 +51,6 @@ end: clk_div
 endmodule: clk_divider
 
 
-//(\d)
+(\d)
 
-//([\d]+) (\d{2}) ([\d]{5})(?:\s)(\d)
+([\d]+) (\d{2}) ([\d]{5})(?:\s)(\d)

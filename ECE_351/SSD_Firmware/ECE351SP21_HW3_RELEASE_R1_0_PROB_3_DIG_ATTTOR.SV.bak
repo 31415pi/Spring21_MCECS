@@ -28,8 +28,8 @@ module dig_atttor
 	
 	always_ff @(posedge clk) 
 		begin: digit_enable 			// square up the clock to drive the digit enable
-			if 	(reset) 		tick_60Hz <= 1'b0;			// This will give you a 50% duty cycle clock at 1/2 the frequency
+			if 		(reset) 		tick_60Hz <= 1'b0;			// This will give you a 50% duty cycle clock at 1/2 the frequency
 			else if (tick_120Hz) 	tick_60Hz <= ~tick_60Hz; 	// 2x the frequency for 50% on / 50% off	
-			else	tick_60Hz <= tick_60Hz;
+			else					tick_60Hz <= tick_60Hz;
 		end: digit_enable
 endmodule : dig_atttor

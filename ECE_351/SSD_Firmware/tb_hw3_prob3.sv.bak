@@ -26,7 +26,7 @@ timeunit 1ns/1ns;
 import "DPI-C" function string getenv(input string env_name);
 
 // define stimulus interval
-localparam IVL = 10000;
+localparam IVL = 1000;
 
 // internal signals
 logic			sysclk, sysreset;			// system clock and reset

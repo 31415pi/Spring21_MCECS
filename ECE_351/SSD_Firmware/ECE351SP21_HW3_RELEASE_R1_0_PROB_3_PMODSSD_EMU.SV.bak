@@ -15,6 +15,15 @@
  *  References 				Sutherland. 
  *  &links:			
  */
+
+	import "DPI-C" function string getenv(input string env_name);
+
+	module top;
+	  initial begin
+		$write("env = %s\n", {getenv("HOME"), "/FileName"});
+	  end
+	endmodule
+
 module pmodSSD_Interface
 	import CHAR_ROULETTE::*;
 
