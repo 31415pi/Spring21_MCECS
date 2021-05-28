@@ -1,0 +1,332 @@
+>> Q = [1/6, 1/6, 0; 0, 0, 1/3; 1/6,1/6,0]
+Q =
+    0.1667    0.1667         0
+         0         0    0.3333
+    0.1667    0.1667         0
+>> x = [-1,0,1]
+x =
+    -1     0     1
+>> y = [-1, 0 , 1]
+y =
+    -1     0     1
+>> format rat
+>> Q
+Q =
+       1/6            1/6            0       
+       0              0              1/3     
+       1/6            1/6            0       
+>> format short
+>> Q
+Q =
+    0.1667    0.1667         0
+         0         0    0.3333
+    0.1667    0.1667         0
+>> format rat
+>> sum
+Error using sum
+Not enough input arguments.
+ 
+>> help sum
+ sum Sum of elements.
+    S = sum(X) is the sum of the elements of the vector X. If X is a matrix,
+    S is a row vector with the sum over each column. For N-D arrays, 
+    sum(X) operates along the first non-singleton dimension.
+ 
+    S = sum(X,'all') sums all elements of X.
+ 
+    S = sum(X,DIM) sums along the dimension DIM.
+ 
+    S = sum(X,VECDIM) operates on the dimensions specified in the vector 
+    VECDIM. For example, sum(X,[1 2]) operates on the elements contained in
+    the first and second dimensions of X.
+ 
+    S = sum(...,TYPE) specifies the type in which the 
+    sum is performed, and the type of S. Available options are:
+ 
+    'double'    -  S has class double for any input X
+    'native'    -  S has the same class as X
+    'default'   -  If X is floating point, that is double or single,
+                   S has the same class as X. If X is not floating point, 
+                   S has class double.
+ 
+    S = sum(...,NANFLAG) specifies how NaN (Not-A-Number) values are 
+    treated. The default is 'includenan':
+ 
+    'includenan' - the sum of a vector containing NaN values is also NaN.
+    'omitnan'    - the sum of a vector containing NaN values
+                   is the sum of all its non-NaN elements. If all 
+                   elements are NaN, the result is 0.
+ 
+    Examples:
+        X = [0 1 2; 3 4 5]
+        sum(X, 1)
+        sum(X, 2)
+ 
+        X = int8(1:20)
+        sum(X)             % returns double(210), accumulates in double
+        sum(X,'native')    % returns int8(127), because it accumulates in
+                           % int8 but overflows and saturates.
+ 
+    See also prod, cumsum, diff, accumarray, isfloat.
+    Documentation for sum
+    Other functions named sum
+>> sumq, x,y)
+ sumq, x,y)
+          ↑
+Error: Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check for
+mismatched delimiters.
+ 
+>> sum(q, x,y) 
+Unrecognized function or variable 'q'.
+ 
+Did you mean:
+>> sum(Q, x,y) 
+Error using sum
+Dimension argument must be a positive integer scalar, a vector of unique positive integers, or 'all'.
+ 
+>> sum(Q, all)
+Error using all
+Not enough input arguments.
+ 
+>> sum(Q, x,all)
+Error using all
+Not enough input arguments.
+ 
+>> sum(Q, all,all)
+Error using all
+Not enough input arguments.
+ 
+>> sum(Q)
+ans =
+       1/3            1/3            1/3     
+>> Q
+Q =
+       1/6            1/6            0       
+       0              0              1/3     
+       1/6            1/6            0       
+>> qXY = Q/1
+qXY =
+       1/6            1/6            0       
+       0              0              1/3     
+       1/6            1/6            0       
+>> qY = sum(qXY)
+qY =
+       1/3            1/3            1/3     
+>> sum(qY)
+ans =
+       1       
+>> lx = length(x)
+lx =
+       3       
+>> ly = length(y)
+ly =
+       3       
+>> x1 = kron(ones(1y,1),x)
+ x1 = kron(ones(1y,1),x)
+                 ↑
+Error: Invalid expression. Check for missing multiplication operator, missing or unbalanced delimiters, or other
+syntax error. To construct matrices, use brackets instead of parentheses.
+ 
+Did you mean:
+>> x1 = kron(ones(ly,1),x)
+x1 =
+      -1              0              1       
+      -1              0              1       
+      -1              0              1       
+>> y1 = kron(y, ones(lx,1))
+y1 =
+      -1              0              1       
+      -1              0              1       
+      -1              0              1       
+>> sum(qXY(find( x1. * y1 < 6)))
+ sum(qXY(find( x1. * y1 < 6)))
+                   ↑
+Error: Invalid use of operator.
+ 
+>> sum(qXY(find( x1.* y1 < 6)))
+ans =
+       1       
+>> sum(qXY(find( x1 + y1 <=3)))
+ans =
+       1       
+>> s1 = 0
+s1 =
+       0       
+>> for i = 1:1x; for j = 1:1y
+;
+s1 = s1 + x(i) * y(j) * qXY(i,j); end end
+ s1 = s1 + x(i) * y(j) * qXY(i,j); end end
+                                       ↑
+Error: Illegal use of reserved keyword "end".
+ 
+>> s1 = s1 + x(i) * y(j) * qXY(i,j); end ;end
+ s1 = s1 + x(i) * y(j) * qXY(i,j); end ;end
+                                   ↑
+Error: Illegal use of reserved keyword "end".
+ 
+>> s1 = s1 + x(i) * y(j) * qXY(i,j)
+Array indices must be positive integers or logical values.
+ 
+>> for i = 1:1x
+for j = 1:1y
+s1 = s1 + x(i) * y(j) * qXY(i,j)
+end
+end
+x =
+      -1              0              1       
+
+y =
+      -1              0              1       
+
+s1 =
+       1/6     
+>> s1
+s1 =
+       1/6     
+>> [n1,d1] = rat(s1)
+n1 =
+       1       
+
+d1 =
+       6       
+>> fprintf('E[XY] = %i/%i = %g\n'. n1,d1,s1)
+ fprintf('E[XY] = %i/%i = %g\n'. n1,d1,s1)
+                               ↑
+Error: Invalid use of operator.
+ 
+>> fprintf('E[XY] = %i/%i = %g\n', n1,d1,s1)
+E[XY] = 1/6 = 0.166667
+>> s2 = 0
+s2 =
+       0       
+>> s3 = s3 + x(i).^2 * qXY(i,j)
+Unrecognized function or variable 's3'.
+ 
+>> s3 = 0
+s3 =
+       0       
+>> s3 = s3 + x(i).^2 * qXY(i,j)
+s3 =
+       1/6     
+>> 
+>> end
+ end
+ ↑
+Error: Illegal use of reserved keyword "end".
+ 
+>> end
+ end
+ ↑
+Error: Illegal use of reserved keyword "end".
+ 
+>> for i = 1:1x
+for j = 1:1y
+s3 = s3 + x(i).^2 * qXY(i,j)
+end
+end
+x =
+      -1              0              1       
+
+y =
+      -1              0              1       
+
+s3 =
+       1/3     
+>> s3
+s3 =
+       1/3     
+>> [n3,d3] = rat(s3)
+n3 =
+       1       
+
+d3 =
+       3       
+>> fprintf('E[XY] = %i/%i = %g\n', n3,d3,s3)
+E[XY] = 1/3 = 0.333333
+>> sum(qXY(find(abs(x1-y1))))
+ans =
+       0       
+>> x1
+x1 =
+      -1              0              1       
+      -1              0              1       
+      -1              0              1       
+>> y1
+y1 =
+      -1              0              1       
+      -1              0              1       
+      -1              0              1       
+>> Q
+Q =
+       1/6            1/6            0       
+       0              0              1/3     
+       1/6            1/6            0       
+>> q
+Unrecognized function or variable 'q'.
+ 
+Did you mean:
+>> qXY
+qXY =
+       1/6            1/6            0       
+       0              0              1/3     
+       1/6            1/6            0       
+>> for i = 1:1x
+for j = 1:1y
+qq = qq + abs(x(i) + y(j))
+end
+end
+x =
+      -1              0              1       
+
+y =
+      -1              0              1       
+Unrecognized function or variable 'qq'.
+ 
+>> qq= 0
+qq =
+       0       
+>> for i = 1:1x
+for j = 1:1y
+qq = qq + abs(x(i) + y(j))
+end
+end
+x =
+      -1              0              1       
+
+y =
+      -1              0              1       
+
+qq =
+       2       
+>> for i = 1:1x
+for j = 1:1y
+qq = qq + abs(x(i) + y(j))
+qqq=0;qqq = qqq + abs(x(i) - y(j))
+end
+end
+x =
+      -1              0              1       
+
+y =
+      -1              0              1       
+
+qq =
+       4       
+
+qqq =
+       0       
+>> qXY
+qXY =
+       1/6            1/6            0       
+       0              0              1/3     
+       1/6            1/6            0       
+>> sum(qXY(find(abs(x-y)=0)))
+ sum(qXY(find(abs(x-y)=0)))
+                      ↑
+Error: Incorrect use of '=' operator. To assign a value to a variable, use '='. To compare values for equality,
+use '=='.
+ 
+>> sum(qXY(find(abs(x-y)==0)))
+ans =
+       1/3     
+>> 
