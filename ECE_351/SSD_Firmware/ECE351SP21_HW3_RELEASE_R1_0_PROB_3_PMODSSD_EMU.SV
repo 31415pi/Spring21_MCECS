@@ -11,25 +11,25 @@
  *  Creation Date: 			22.05.2021
  *  Due Date:				24.05.2021 - 1700 hours
  *  Estimated Completion:  		1 hour prep,
- *  Notable Fact: 			
- *  References 				Sutherland. 
- *  &links:			
+ *  Notable Fact:
+ *  References 				Sutherland.
+ *  &links:
  */
 module pmodSSD_Interface
 	import CHAR_ROULETTE::*;
 
-	#(	SIMULATE = 1	)	
+	#(	SIMULATE = 1	)
 
 	(input logic clk, reset,		//define our ports.
 	input logic[4:0] digit1, digit0,
-	output logic SSD_AG, SSD_AF, SSD_AE, SSD_AD, SSD_AC,SSD_AB, SSD_AA, 
+	output logic SSD_AG, SSD_AF, SSD_AE, SSD_AD, SSD_AC,SSD_AB, SSD_AA,
 	logic SSD_C	);
- 
+
 	dig_atttor CLK_ATTENU// instantiate the digital attenuator
 		(	.clk(clk),
 			.reset(reset),
 			.tick_60Hz(SSD_C)	);
- 
+
 	//assign SSD_C = tick_60Hz;// THIS IS DONE DURING INSTANTIATION
 	initial
 		begin
@@ -37,18 +37,18 @@ module pmodSSD_Interface
 		end
 
 	//Lets fire up that SSD!
-	always_latch 
+	always_latch
 		begin
-			if (SSD_C) 
+			if (SSD_C)
 				begin
-					assign {SSD_AA, SSD_AB, SSD_AC, SSD_AD, SSD_AE, 
+					assign {SSD_AA, SSD_AB, SSD_AC, SSD_AD, SSD_AE,
 								SSD_AF, SSD_AG} = BtS(digit0);
 								//we get signal, main screeen turn on.
 								//TB gives us a 5 dig, we convert it to binary
 				end
 			else if (~SSD_C)
 				begin
-					assign {SSD_AA, SSD_AB, SSD_AC, SSD_AD, SSD_AE, 
+					assign {SSD_AA, SSD_AB, SSD_AC, SSD_AD, SSD_AE,
 					SSD_AF, SSD_AG} = BtS(digit1);
 				end
 		end
