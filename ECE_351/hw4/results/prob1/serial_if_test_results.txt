@@ -1,0 +1,39 @@
+# Compile of baud_gen.sv was successful.
+# Compile of tb_uart_loopback.sv was successful.
+# Compile of uart_rx.sv was successful.
+# Compile of uart_tx.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb_uart_loopback
+# vsim -voptargs="+acc" work.tb_uart_loopback 
+# Start time: 14:48:54 on May 26,2021
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "uart_rx(fast)".
+# Loading sv_std.std
+# Loading work.tb_uart_loopback(fast)
+# Loading work.baud_gen(fast)
+# Loading work.uart_tx(fast)
+# Loading work.uart_rx(fast)
+run -all
+# 
+# UART Loopback Test - Roy Kravitz (roy.kravitz@pdx.edu)
+# Sources: N:/PSUCourseProjects/ece351sp21/hw4/prob1/sim
+# 
+# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+#    Time: 0 ns  Iteration: 2  Process: /tb_uart_loopback/RCVR/uart_rcvr_comb_block/#implicit#unique__90 File: N:/PSUCourseProjects/ece351sp21/hw4/prob1/hdl/uart_rx.sv Line: 90
+# ** Warning: (vsim-8315) No condition is true in the unique/priority if/case statement.
+#    Time: 0 ns  Iteration: 2  Process: /tb_uart_loopback/TXMTR/uart_xmit_comb_block/#implicit#unique__85 File: N:/PSUCourseProjects/ece351sp21/hw4/prob1/hdl/uart_tx.sv Line: 85
+# System Reset
+# baud rate divisor set to   20
+# MATCH: received data: 01110010, expected data: 01110010
+# MATCH: received data: 10110010, expected data: 10110010
+# MATCH: received data: 00010000, expected data: 00010000
+# MATCH: received data: 01010101, expected data: 01010101
+# MATCH: received data: 00000000, expected data: 00000000
+# MATCH: received data: 10101010, expected data: 10101010
+# MATCH: received data: 11111111, expected data: 11111111
+# All tests passed
+# End UART Loopback test - Roy Kravitz (roy.kravitz@pdx.edu)
+# 
+# ** Note: $stop    : N:/PSUCourseProjects/ece351sp21/hw4/prob1/hdl/tb_uart_loopback.sv(204)
+#    Time: 470910 ns  Iteration: 1  Instance: /tb_uart_loopback
+# Break in NamedBeginStat stimulus at N:/PSUCourseProjects/ece351sp21/hw4/prob1/hdl/tb_uart_loopback.sv line 204
