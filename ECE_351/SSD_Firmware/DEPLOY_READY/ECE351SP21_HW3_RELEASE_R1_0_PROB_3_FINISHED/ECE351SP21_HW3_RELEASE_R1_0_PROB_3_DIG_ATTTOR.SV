@@ -1,0 +1,38 @@
+/*  Assignment:				Homework 3
+ *  Filename:				ECE351_HW3/FIN/part3/ECE351SP21_HW3_RELEASE_R1_0_PROB_3_DIG_ATTTOR.SV
+ * 	Description:		Digital attenuator for clock.
+ *  					Portland State University
+ *  ECE 362: 				Verilog and FPGA Design
+ *  Term: 				Spring 2021
+ *  Proffessor: 			Prof. Roy Kravitz
+ *  T/A:				Tyler Hull
+ *  Grader:				Tiffani Shilts Hartman
+ *  CRN: 				61016
+ *  Student: 				Mx. Madison Uxia Klementyn
+ *  Creation Date: 			22.05.2021
+ *  Due Date:				24.05.2021 - 1700 hours
+ *  Estimated Completion:  		1 hour prep,
+ *  Notable Fact: 			
+ *  References 				Sutherland. 
+ *  &links:			
+ */
+module dig_atttor
+	(	input logic clk, reset, 
+		output logic tick_60Hz	);
+	timeunit 1ns/1ns;
+
+	logic tick_120Hz;
+
+	clk_divider CLOCKDIVIDER
+	(	/*.TICK_OUT_FREQ_HZ(120),*/
+		.tick_out(tick_120Hz),
+		.reset(reset),
+		.clk(clk)		);// CLOCKDIVIDER
+	
+	always_ff @(posedge clk) 
+		begin: digit_enable 			// square up the clock to drive the digit enable
+			if 	(reset) 	tick_60Hz <= 1'b0;			// This will give you a 50% duty cycle clock at 1/2 the frequency
+			else if (tick_120Hz) 	tick_60Hz <= ~tick_60Hz; 	// 2x the frequency for 50% on / 50% off	
+			else			tick_60Hz <= tick_60Hz;
+		end: digit_enable
+endmodule : dig_atttor
