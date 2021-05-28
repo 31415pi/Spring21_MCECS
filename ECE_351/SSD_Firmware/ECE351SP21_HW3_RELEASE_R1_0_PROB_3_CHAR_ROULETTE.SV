@@ -14,7 +14,8 @@
  *  Estimated Completion:  		1 hour prep,
  *  Notable Fact: 			
  *  References 				Sutherland. 
- *  &links:			regex101.com/r/bcv4DD/1   had to run in a few passes after this.
+ *  &links:			regex101.com/r/bcv4DD/1   had to run in a few passes after this. https://regex101.com/r/zVsiPb/1
+ *		https://www.chipverify.com/systemverilog/systemverilog-package#:~:text=Packages%20provide%20a%20mechanism%20for,as%20the%20top%2Dlevel%20module.
  */
 package CHAR_ROULETTE;
 	timeunit 1ns/1ns; 	//this package has its own clock so there is no lag on deriving the lookup value
