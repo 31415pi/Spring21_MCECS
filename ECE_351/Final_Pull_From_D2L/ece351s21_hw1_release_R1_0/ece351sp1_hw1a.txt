@@ -1,0 +1,195 @@
+/*****
+ * ECE 351 Homework #1 - Question 1 (60 pts)
+ *
+ * True/False, multiple choice, and short answer
+ */
+
+===============================================================================
+Part 1.	(2 pts/ea) True/False
+
+Answer True or False for the following questions:
+
+1. SystemVerilog supports Object Oriented programming
+
+TRUE or FALSE ____
+
+2. "buf" and "notif0" are gate level primitives in SystemVerilog
+
+TRUE or FALSE ____
+
+3. A primitive gate instance  name  must be provided when creating an instance of a SystemVerilog primitive gate ((and, or, ...)
+
+TRUE or FALSE ____
+
+4. When creating an instance of a SystemVerilog primitive gate type the output is listed after all of the inputs in the gate description
+   
+TRUE or FALSE ____
+
+5. A value of 'z' on an input or an output in SystemVerilog means that the simulator cannot determine whether the value is a 0 or a 1
+   
+TRUE or FALSE ____
+
+6. Per Roy's definition a SoC contains at least one embedded CPU running an application interfaced to one or more vendor-supplied, 3rd party or custom IP blocks.
+
+TRUE or FALSE ____
+
+7. $monitor() will display the current values of all the variables in its argument list whenever the value of any of the variables changes values.
+
+TRUE or FALSE ____
+
+8. An assignment of 'x or 'z cannot be made to a variable in SystemVerilog
+
+TRUE or FALSE ____
+
+9. You may use the .* shorthand notation only when all of the variable names match all of the port names in an instantiation of a module
+
+TRUE or FALSE ____
+
+10. The following Verilog code is valid:
+     wire [7:0] a, b;
+     wire [0:15] sum = a + b
+
+TRUE or FALSE ____
+
+11. The default type for an enum is int.
+ 
+TRUE or FALSE ____
+
+12. The following Verilog code snippet will result in an 8-bit tri-state buffer:
+     wire [7:0] data_out, data_in;
+     wire en;
+     assign data_out = en ? data_in : 1’bz;
+
+TRUE or FALSE ____
+
+13. Assigning a 4-state variable to a 2-state variable in a simulation results causes an error message to be displayed on the console
+
+TRUE or FALSE ____
+
+14. x = ^8’b11100011 will be equal to 1 if it is simulated in SystemVerilog
+
+TRUE or FALSE ____
+
+15. localparams in a module can be overridden when the module is instantiated
+
+TRUE or FALSE ____
+
+===============================================================================
+Part b.	(3 pts/ea) Short answer
+
+1. What are a few  similarities and differences between a SystemVerilog int and a SystemVerilog integer data type?
+
+YOUR ANSWER:
+
+2. Why do we need to be cautious when we assign a 4-state variable to a 2-state variable?
+
+YOUR ANSWER:
+
+3. Answer these questions about Synthesis?  Keep your answers consice (2 or 3 sentences for each question):
+
+    i. What is Synthesis?
+
+YOUR ANSWER:
+
+    ii. What information would you be likely to include in a constraints file?
+
+YOUR ANSWER:
+
+    iii. Even though you can write RTL code to be largely technology dependent, Synthesis ties your code more closely to a specific target technology.  Why is this?
+    
+YOUR ANSWER:
+
+4. Define the follow terms.  Keep your definitions for each term to a few sentences:
+
+    i. Module
+    
+YOUR ANSWER:
+
+    ii. Instance of a module
+    
+YOUR ANSWER:
+
+    iii. Port
+    
+YOUR ANSWER:
+
+5. Explain the difference between the data types logic, reg, and wire 
+    
+YOUR ANSWER:
+
+
+===============================================================================
+Part c.	Multiple choice
+
+1. (Circle the best answer, no partial credit) No partial credit) The following SystemVerilog code snippet 
+    wire [3:0] a = 4'hFF;
+    $display("%d", a);
+    assign a = '1;
+    $display("%d", a);
+
+displays the following:
+
+    a.  15
+        1       
+    b.  15
+        15       
+    c.  255
+        1      
+    d.  255
+        255        
+    e. None of the above
+    
+YOUR ANSWER:
+    
+2. (Circle the best answer: no partial credit) In the statement assign r = |6’b0x1x01, 
+    what is the value of r after execution?
+    
+    a.  r = 6’b0x1x01
+    b.  r = 1’b1
+    c.  r = 6’b0
+    d.  r = 1’bx
+    e.  r = 6’bxxxxxx
+    
+YOUR ANSWER:
+
+3. (Circle the best answer) The following SystemVerilog code snippet
+    logic [7:0] b1 = 8'b1101zzzz;
+    byte b2;
+    b2 = b1;
+    $write(“b1=%b, ”,b1);
+    $display(“b2=%h”,b2);
+will display:
+    
+    a. b1  11-1xxxx, b2 = d0
+    b. b1 = 8'b1101zzzz, b2 = dz
+    c. b1 = 1101zzzz, b2 = xx
+    d. b1 = 1101zzzz, b2=d0
+    e. None of the above
+     
+YOUR ANSWER:
+
+4. (Circle all of the items that are true, score is right - wrong) What is the difference between
+       bit[7:0] sig_1;
+       byte sig_2;
+
+    a. both sig_1 and sig_2 are 8-bit 2-state variables
+    b. both sig_1 and sig_2 are treated as signed numbers
+    c. sig_1 is treated as a signed number but sig_2 is treated as unsigned
+    d. sig_1 and sig_2 have a different number of bits
+    e. bit[7:0] is synthesizable but byte is not synthesizable
+     
+YOUR ANSWER:
+
+5. (Circle all of the items that are true, score is right - wrong) The following can be said about port 
+    declarations in a module:
+    
+    a. Both input and output ports can be of type wire or logic
+    b. The following port list is valid:
+        module alu (a, b, result);
+
+    c. The default size of reg, logic, bit, and wire is 1 bit wide
+    d. The port type and data type can be a variable or any of the net types and data types
+    e. The default type when no data type is specified is logic
+   
+    
+    
