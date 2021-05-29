@@ -1,17 +1,37 @@
+////////////////////////////////////////////////////////////
+v
+Author:	Roy Kravitz (roy.kravitz@pdx.edu) 
+Date:	20-May-2020
+
 //////////////////////////////////////////////////////////////
-// uart_rx.sv - UART Receiver
-//
-// Author:	Roy Kravitz (roy.kravitz@pdx.edu) 
-// Date:	20-May-2020
-//
-// UART serial port receiver.  "hardwired" to 8-N-1  (8 data bits, No parity, 1 stop bit)
-// Implemented as a FSM with one state per data bit.  There are many ways to make this code
-// more efficient but I opted for simpiicity.
-//
-// NOTE:  This version includes a debug signal which is asserted for one cycle
-// every time a new data bit is sampled.  Makes it easier to see the data bit
-// that is captured on a waveform (one of those forest from the trees things)
-////////////////////////////////////////////////////////////////
+
+
+/*  Assignment:				Homework 3
+ *  Filename:				ECE351_HW4/uart_rx.sv - UART Receiver
+ *  					Portland State University
+ *  ECE 362: 				Verilog and FPGA Design
+ *  Term: 				Spring 2021
+ *  Proffessor: 			Prof. Roy Kravitz
+ *  T/A:				Tyler Hull
+ *  Grader:				Tiffani Shilts Hartman
+ *  CRN: 				61016
+ *  Student: 				Mx. Madison Uxia Klementyn
+ *  Creation Date: 			28.05.2021
+ *  Due Date:				03.06.2021 - 1700 hours
+ *  Estimated Completion:  		~2 hrs
+ *  Notable Fact: 			BTC stabilizing at 36k, Right shoulder might peak ~42k, I still think were looking at drop to 20-24k 
+ *  References 				Sutherland.  Always_comb always_ff always block clarification
+ *  &links:			
+ *
+ * UART serial port receiver.  "hardwired" to 8-N-1  (8 data bits, No parity, 1 stop bit)
+ * Implemented as a FSM with one state per data bit.  There are many ways to make this code
+ * more efficient but I opted for simpiicity.
+
+ * NOTE:  This version includes a debug signal which is asserted for one cycle
+ * every time a new data bit is sampled.  Makes it easier to see the data bit
+ * that is captured on a waveform (one of those forest from the trees things)
+ */
+ 
 module uart_rx
 (
     input  logic clk, reset,	// system clock and reset (reset is asserted high)
@@ -25,7 +45,7 @@ module uart_rx
 );
 
 // uart receiver FSM declarations
-typedef enum logic [3:0] {IDLE, START, DB_[1:8],
+typedef enum logic [3:0] {IDLE, START, DB_[1:8], //1 thru eight. rilly?
  STOP, DONE} FSM_STATE_t;
 FSM_STATE_t state_reg, state_next;
 
