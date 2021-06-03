@@ -1,12 +1,9 @@
 ////////////////////////////////////////////////////////////
 v
-Author:	Roy Kravitz (roy.kravitz@pdx.edu) 
-Date:	20-May-2020
-
-//////////////////////////////////////////////////////////////
+DO NOT EDIT THIS. CHECK THE SOLAR PEE FOLDER
 
 
-/*  Assignment:				Homework 3
+/*  Assignment:				Homework 4
  *  Filename:				ECE351_HW4/uart_rx.sv - UART Receiver
  *  					Portland State University
  *  ECE 362: 				Verilog and FPGA Design
@@ -18,7 +15,7 @@ Date:	20-May-2020
  *  Student: 				Mx. Madison Uxia Klementyn
  *  Creation Date: 			28.05.2021
  *  Due Date:				03.06.2021 - 1700 hours
- *  Estimated Completion:  		~2 hrs
+ *  Estimated Completion:  		~2 hrs + 1hr 40
  *  Notable Fact: 			BTC stabilizing at 36k, Right shoulder might peak ~42k, I still think were looking at drop to 20-24k 
  *  References 				Sutherland.  Always_comb always_ff always block clarification
  *  &links:			
