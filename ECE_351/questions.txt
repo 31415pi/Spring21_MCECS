@@ -1,0 +1,53 @@
+Three block or process FSM
+• A state sequencer — a sequential logic block (flip flops) that transitions from a current state to a next state on a clock edge.
+• A next state decoder — a combinational logic block that decodes various signals to
+determine what the next state of the FSM should be.
+• An output decoder — a combinational logic block that decodes the current state
+(Moore architecture), and possible other signals (Mealy architecture), and sets the
+values of the outputs of the state machine.
+
+
+
+
+
+
+// default binary encoding (RESET=0, WAITE=1, LOAD=2, ...)
+typedef enum logic [1:0] {RESET,WAITE,LOAD,READY} states_t;
+// explicit binary encoding
+typedef enum logic [1:0] {RESET = 0,
+WAITE = 1,
+LOAD = 2,
+READY = 3
+} states_binary_t;
+// one-hot encoding
+typedef enum logic [3:0] {RESET = 4'b0001,
+WAITE = 4'b0010,
+LOAD = 4'bOlOO,
+READY = 4'bl000
+} states_onehot_t;
+// one-hot-0 encoding
+typedef enum logic [2:0] {RESET = 3'b000,
+WAITE = 3'b001,
+LOAD = 3'bOlO,
+READY = 3'bl00
+} states onehotO t;
+// Gray code encoding
+typedef enum logic [1:0] {RESET = 2'bOO,
+WAITE = 2'b01,
+LOAD = 2'bl0,
+READY = 2'bll
+} states gray code t;
+// Johnson count encoding
+typedef enum logic [1:0] {RESET = 2'bOO,
+WAITE = 2'blO,
+LOAD = 2'bll,
+READY = 2'bOl
+} states_johnson_count_t;
+
+
+
+
+
+There are four types of always procedures that are used at the RTL level: always, always_comb, always_ff and always_latch. Chapter 6, section 6.1 (page 211) explores the use of always procedural blocks in greater detail.
+http://web.engr.oregonstate.edu/~traylor/ece474/beamer_lectures/always_comb_ff_latch.pdf
+https://www.eng.auburn.edu/~nelsovp/courses/elec4200/Slides/VHDL%203%20Sequential.pdf
