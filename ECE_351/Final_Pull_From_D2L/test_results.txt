@@ -1,0 +1,2486 @@
+# Reading C:/QuestaSim/tcl/vsim/pref.tcl
+# //  Questa Sim-64
+# //  Version 2019.2 win64 Apr 17 2019
+# //
+# //  Copyright 1991-2019 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading project rca_exercise
+# Compile of adder_4bits.sv was successful.
+# Compile of dut.sv was successful.
+# Compile of fa.sv was successful.
+# Compile of tb_rca_8bits.released.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.tb_rca_8bits
+# vsim -voptargs="+acc" work.tb_rca_8bits 
+# Start time: 16:55:51 on Apr 09,2020
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_rca_8bits(fast)
+# Loading work.dut(fast)
+# Loading work.adder_4bits(fast)
+# Loading work.fa(fast)
+run -all
+# Test some cases with carry in = 0
+#                    0		A:  0	B:  x	Cin:x		Sum:  x	Cout:x
+#                    1		A:  0	B: 16	Cin:0		Sum:  x	Cout:x
+#                    9		A:  0	B: 16	Cin:0		Sum:  X	Cout:x
+#                   11		A:  0	B: 16	Cin:0		Sum:  X	Cout:0
+#                   15		A:  0	B: 16	Cin:0		Sum:  X	Cout:0
+#                   21		A:  0	B: 16	Cin:0		Sum: 16	Cout:0
+#                  101		A:  0	B:  x	Cin:x		Sum: 16	Cout:0
+#                  102		A:  0	B: 17	Cin:0		Sum: 16	Cout:0
+#                  110		A:  0	B: 17	Cin:0		Sum: 17	Cout:0
+#                  202		A:  0	B:  x	Cin:x		Sum: 17	Cout:0
+#                  203		A:  0	B: 18	Cin:0		Sum: 17	Cout:0
+#                  211		A:  0	B: 18	Cin:0		Sum: 18	Cout:0
+#                  303		A:  0	B:  x	Cin:x		Sum: 18	Cout:0
+#                  304		A:  0	B: 19	Cin:0		Sum: 18	Cout:0
+#                  312		A:  0	B: 19	Cin:0		Sum: 19	Cout:0
+#                  404		A:  0	B:  x	Cin:x		Sum: 19	Cout:0
+#                  405		A:  0	B: 20	Cin:0		Sum: 19	Cout:0
+#                  413		A:  0	B: 20	Cin:0		Sum: 20	Cout:0
+#                  505		A:  0	B:  x	Cin:x		Sum: 20	Cout:0
+#                  506		A:  0	B: 21	Cin:0		Sum: 20	Cout:0
+#                  514		A:  0	B: 21	Cin:0		Sum: 21	Cout:0
+#                  606		A:  0	B:  x	Cin:x		Sum: 21	Cout:0
+#                  607		A:  0	B: 22	Cin:0		Sum: 21	Cout:0
+#                  615		A:  0	B: 22	Cin:0		Sum: 22	Cout:0
+#                  707		A:  0	B:  x	Cin:x		Sum: 22	Cout:0
+#                  708		A:  0	B: 23	Cin:0		Sum: 22	Cout:0
+#                  716		A:  0	B: 23	Cin:0		Sum: 23	Cout:0
+#                  808		A:  0	B:  x	Cin:x		Sum: 23	Cout:0
+#                  809		A:  0	B: 24	Cin:0		Sum: 23	Cout:0
+#                  817		A:  0	B: 24	Cin:0		Sum: 24	Cout:0
+#                  909		A:  0	B:  x	Cin:x		Sum: 24	Cout:0
+#                  910		A:  0	B: 25	Cin:0		Sum: 24	Cout:0
+#                  918		A:  0	B: 25	Cin:0		Sum: 25	Cout:0
+#                 1010		A:  0	B:  x	Cin:x		Sum: 25	Cout:0
+#                 1011		A:  0	B: 26	Cin:0		Sum: 25	Cout:0
+#                 1019		A:  0	B: 26	Cin:0		Sum: 26	Cout:0
+#                 1111		A:  0	B:  x	Cin:x		Sum: 26	Cout:0
+#                 1112		A:  0	B: 27	Cin:0		Sum: 26	Cout:0
+#                 1120		A:  0	B: 27	Cin:0		Sum: 27	Cout:0
+#                 1212		A:  0	B:  x	Cin:x		Sum: 27	Cout:0
+#                 1213		A:  0	B: 28	Cin:0		Sum: 27	Cout:0
+#                 1221		A:  0	B: 28	Cin:0		Sum: 28	Cout:0
+#                 1313		A:  0	B:  x	Cin:x		Sum: 28	Cout:0
+#                 1314		A:  0	B: 29	Cin:0		Sum: 28	Cout:0
+#                 1322		A:  0	B: 29	Cin:0		Sum: 29	Cout:0
+#                 1414		A:  0	B:  x	Cin:x		Sum: 29	Cout:0
+#                 1415		A:  0	B: 30	Cin:0		Sum: 29	Cout:0
+#                 1423		A:  0	B: 30	Cin:0		Sum: 30	Cout:0
+#                 1515		A:  0	B:  x	Cin:x		Sum: 30	Cout:0
+#                 1516		A:  0	B: 31	Cin:0		Sum: 30	Cout:0
+#                 1524		A:  0	B: 31	Cin:0		Sum: 31	Cout:0
+#                 1616		A:  1	B:  x	Cin:x		Sum: 31	Cout:0
+#                 1617		A:  1	B: 16	Cin:0		Sum: 31	Cout:0
+#                 1625		A:  1	B: 16	Cin:0		Sum: 17	Cout:0
+#                 1717		A:  1	B:  x	Cin:x		Sum: 17	Cout:0
+#                 1718		A:  1	B: 17	Cin:0		Sum: 17	Cout:0
+#                 1726		A:  1	B: 17	Cin:0		Sum: 16	Cout:0
+#                 1728		A:  1	B: 17	Cin:0		Sum: 18	Cout:0
+#                 1818		A:  1	B:  x	Cin:x		Sum: 18	Cout:0
+#                 1819		A:  1	B: 18	Cin:0		Sum: 18	Cout:0
+#                 1827		A:  1	B: 18	Cin:0		Sum: 19	Cout:0
+#                 1919		A:  1	B:  x	Cin:x		Sum: 19	Cout:0
+#                 1920		A:  1	B: 19	Cin:0		Sum: 19	Cout:0
+#                 1928		A:  1	B: 19	Cin:0		Sum: 18	Cout:0
+#                 1930		A:  1	B: 19	Cin:0		Sum: 16	Cout:0
+#                 1936		A:  1	B: 19	Cin:0		Sum: 20	Cout:0
+#                 2020		A:  1	B:  x	Cin:x		Sum: 20	Cout:0
+#                 2021		A:  1	B: 20	Cin:0		Sum: 20	Cout:0
+#                 2029		A:  1	B: 20	Cin:0		Sum: 17	Cout:0
+#                 2035		A:  1	B: 20	Cin:0		Sum: 29	Cout:0
+#                 2041		A:  1	B: 20	Cin:0		Sum: 21	Cout:0
+#                 2121		A:  1	B:  x	Cin:x		Sum: 21	Cout:0
+#                 2122		A:  1	B: 21	Cin:0		Sum: 21	Cout:0
+#                 2130		A:  1	B: 21	Cin:0		Sum: 20	Cout:0
+#                 2132		A:  1	B: 21	Cin:0		Sum: 22	Cout:0
+#                 2222		A:  1	B:  x	Cin:x		Sum: 22	Cout:0
+#                 2223		A:  1	B: 22	Cin:0		Sum: 22	Cout:0
+#                 2231		A:  1	B: 22	Cin:0		Sum: 23	Cout:0
+#                 2323		A:  1	B:  x	Cin:x		Sum: 23	Cout:0
+#                 2324		A:  1	B: 23	Cin:0		Sum: 23	Cout:0
+#                 2332		A:  1	B: 23	Cin:0		Sum: 22	Cout:0
+#                 2334		A:  1	B: 23	Cin:0		Sum: 20	Cout:0
+#                 2340		A:  1	B: 23	Cin:0		Sum: 16	Cout:0
+#                 2346		A:  1	B: 23	Cin:0		Sum: 24	Cout:0
+#                 2424		A:  1	B:  x	Cin:x		Sum: 24	Cout:0
+#                 2425		A:  1	B: 24	Cin:0		Sum: 24	Cout:0
+#                 2433		A:  1	B: 24	Cin:0		Sum: 21	Cout:0
+#                 2439		A:  1	B: 24	Cin:0		Sum:  9	Cout:0
+#                 2445		A:  1	B: 24	Cin:0		Sum: 57	Cout:0
+#                 2451		A:  1	B: 24	Cin:0		Sum: 25	Cout:0
+#                 2525		A:  1	B:  x	Cin:x		Sum: 25	Cout:0
+#                 2526		A:  1	B: 25	Cin:0		Sum: 25	Cout:0
+#                 2534		A:  1	B: 25	Cin:0		Sum: 24	Cout:0
+#                 2536		A:  1	B: 25	Cin:0		Sum: 26	Cout:0
+#                 2626		A:  1	B:  x	Cin:x		Sum: 26	Cout:0
+#                 2627		A:  1	B: 26	Cin:0		Sum: 26	Cout:0
+#                 2635		A:  1	B: 26	Cin:0		Sum: 27	Cout:0
+#                 2727		A:  1	B:  x	Cin:x		Sum: 27	Cout:0
+#                 2728		A:  1	B: 27	Cin:0		Sum: 27	Cout:0
+#                 2736		A:  1	B: 27	Cin:0		Sum: 26	Cout:0
+#                 2738		A:  1	B: 27	Cin:0		Sum: 24	Cout:0
+#                 2744		A:  1	B: 27	Cin:0		Sum: 28	Cout:0
+#                 2828		A:  1	B:  x	Cin:x		Sum: 28	Cout:0
+#                 2829		A:  1	B: 28	Cin:0		Sum: 28	Cout:0
+#                 2837		A:  1	B: 28	Cin:0		Sum: 25	Cout:0
+#                 2843		A:  1	B: 28	Cin:0		Sum: 21	Cout:0
+#                 2849		A:  1	B: 28	Cin:0		Sum: 13	Cout:0
+#                 2855		A:  1	B: 28	Cin:0		Sum: 61	Cout:0
+#                 2861		A:  1	B: 28	Cin:0		Sum: 29	Cout:0
+#                 2929		A:  1	B:  x	Cin:x		Sum: 29	Cout:0
+#                 2930		A:  1	B: 29	Cin:0		Sum: 29	Cout:0
+#                 2938		A:  1	B: 29	Cin:0		Sum: 28	Cout:0
+#                 2940		A:  1	B: 29	Cin:0		Sum: 30	Cout:0
+#                 3030		A:  1	B:  x	Cin:x		Sum: 30	Cout:0
+#                 3031		A:  1	B: 30	Cin:0		Sum: 30	Cout:0
+#                 3039		A:  1	B: 30	Cin:0		Sum: 31	Cout:0
+#                 3131		A:  1	B:  x	Cin:x		Sum: 31	Cout:0
+#                 3132		A:  1	B: 31	Cin:0		Sum: 31	Cout:0
+#                 3140		A:  1	B: 31	Cin:0		Sum: 30	Cout:0
+#                 3142		A:  1	B: 31	Cin:0		Sum: 28	Cout:0
+#                 3148		A:  1	B: 31	Cin:0		Sum: 24	Cout:0
+#                 3154		A:  1	B: 31	Cin:0		Sum: 16	Cout:0
+#                 3160		A:  1	B: 31	Cin:0		Sum:  0	Cout:0
+#                 3166		A:  1	B: 31	Cin:0		Sum: 32	Cout:0
+#                 3232		A:  2	B:  x	Cin:x		Sum: 32	Cout:0
+#                 3233		A:  2	B: 16	Cin:0		Sum: 32	Cout:0
+#                 3241		A:  2	B: 16	Cin:0		Sum: 44	Cout:0
+#                 3242		A:  2	B: 16	Cin:0		Sum: 46	Cout:0
+#                 3247		A:  2	B: 16	Cin:0		Sum: 54	Cout:0
+#                 3248		A:  2	B: 16	Cin:0		Sum: 50	Cout:0
+#                 3253		A:  2	B: 16	Cin:0		Sum: 18	Cout:0
+#                 3333		A:  2	B:  x	Cin:x		Sum: 18	Cout:0
+#                 3334		A:  2	B: 17	Cin:0		Sum: 18	Cout:0
+#                 3342		A:  2	B: 17	Cin:0		Sum: 19	Cout:0
+#                 3434		A:  2	B:  x	Cin:x		Sum: 19	Cout:0
+#                 3435		A:  2	B: 18	Cin:0		Sum: 19	Cout:0
+#                 3443		A:  2	B: 18	Cin:0		Sum: 16	Cout:0
+#                 3445		A:  2	B: 18	Cin:0		Sum: 20	Cout:0
+#                 3535		A:  2	B:  x	Cin:x		Sum: 20	Cout:0
+#                 3536		A:  2	B: 19	Cin:0		Sum: 20	Cout:0
+#                 3544		A:  2	B: 19	Cin:0		Sum: 21	Cout:0
+#                 3636		A:  2	B:  x	Cin:x		Sum: 21	Cout:0
+#                 3637		A:  2	B: 20	Cin:0		Sum: 21	Cout:0
+#                 3645		A:  2	B: 20	Cin:0		Sum: 22	Cout:0
+#                 3737		A:  2	B:  x	Cin:x		Sum: 22	Cout:0
+#                 3738		A:  2	B: 21	Cin:0		Sum: 22	Cout:0
+#                 3746		A:  2	B: 21	Cin:0		Sum: 23	Cout:0
+#                 3838		A:  2	B:  x	Cin:x		Sum: 23	Cout:0
+#                 3839		A:  2	B: 22	Cin:0		Sum: 23	Cout:0
+#                 3847		A:  2	B: 22	Cin:0		Sum: 20	Cout:0
+#                 3849		A:  2	B: 22	Cin:0		Sum: 16	Cout:0
+#                 3855		A:  2	B: 22	Cin:0		Sum: 24	Cout:0
+#                 3939		A:  2	B:  x	Cin:x		Sum: 24	Cout:0
+#                 3940		A:  2	B: 23	Cin:0		Sum: 24	Cout:0
+#                 3948		A:  2	B: 23	Cin:0		Sum: 25	Cout:0
+#                 4040		A:  2	B:  x	Cin:x		Sum: 25	Cout:0
+#                 4041		A:  2	B: 24	Cin:0		Sum: 25	Cout:0
+#                 4049		A:  2	B: 24	Cin:0		Sum: 18	Cout:0
+#                 4055		A:  2	B: 24	Cin:0		Sum: 10	Cout:0
+#                 4061		A:  2	B: 24	Cin:0		Sum: 58	Cout:0
+#                 4067		A:  2	B: 24	Cin:0		Sum: 26	Cout:0
+#                 4141		A:  2	B:  x	Cin:x		Sum: 26	Cout:0
+#                 4142		A:  2	B: 25	Cin:0		Sum: 26	Cout:0
+#                 4150		A:  2	B: 25	Cin:0		Sum: 27	Cout:0
+#                 4242		A:  2	B:  x	Cin:x		Sum: 27	Cout:0
+#                 4243		A:  2	B: 26	Cin:0		Sum: 27	Cout:0
+#                 4251		A:  2	B: 26	Cin:0		Sum: 24	Cout:0
+#                 4253		A:  2	B: 26	Cin:0		Sum: 28	Cout:0
+#                 4343		A:  2	B:  x	Cin:x		Sum: 28	Cout:0
+#                 4344		A:  2	B: 27	Cin:0		Sum: 28	Cout:0
+#                 4352		A:  2	B: 27	Cin:0		Sum: 29	Cout:0
+#                 4444		A:  2	B:  x	Cin:x		Sum: 29	Cout:0
+#                 4445		A:  2	B: 28	Cin:0		Sum: 29	Cout:0
+#                 4453		A:  2	B: 28	Cin:0		Sum: 30	Cout:0
+#                 4545		A:  2	B:  x	Cin:x		Sum: 30	Cout:0
+#                 4546		A:  2	B: 29	Cin:0		Sum: 30	Cout:0
+#                 4554		A:  2	B: 29	Cin:0		Sum: 31	Cout:0
+#                 4646		A:  2	B:  x	Cin:x		Sum: 31	Cout:0
+#                 4647		A:  2	B: 30	Cin:0		Sum: 31	Cout:0
+#                 4655		A:  2	B: 30	Cin:0		Sum: 28	Cout:0
+#                 4657		A:  2	B: 30	Cin:0		Sum: 24	Cout:0
+#                 4663		A:  2	B: 30	Cin:0		Sum: 16	Cout:0
+#                 4669		A:  2	B: 30	Cin:0		Sum:  0	Cout:0
+#                 4675		A:  2	B: 30	Cin:0		Sum: 32	Cout:0
+#                 4747		A:  2	B:  x	Cin:x		Sum: 32	Cout:0
+#                 4748		A:  2	B: 31	Cin:0		Sum: 32	Cout:0
+#                 4756		A:  2	B: 31	Cin:0		Sum: 33	Cout:0
+#                 4848		A:  3	B:  x	Cin:x		Sum: 33	Cout:0
+#                 4849		A:  3	B: 16	Cin:0		Sum: 33	Cout:0
+#                 4857		A:  3	B: 16	Cin:0		Sum: 43	Cout:0
+#                 4863		A:  3	B: 16	Cin:0		Sum: 51	Cout:0
+#                 4869		A:  3	B: 16	Cin:0		Sum: 19	Cout:0
+#                 4949		A:  3	B:  x	Cin:x		Sum: 19	Cout:0
+#                 4950		A:  3	B: 17	Cin:0		Sum: 19	Cout:0
+#                 4958		A:  3	B: 17	Cin:0		Sum: 18	Cout:0
+#                 4960		A:  3	B: 17	Cin:0		Sum: 16	Cout:0
+#                 4966		A:  3	B: 17	Cin:0		Sum: 20	Cout:0
+#                 5050		A:  3	B:  x	Cin:x		Sum: 20	Cout:0
+#                 5051		A:  3	B: 18	Cin:0		Sum: 20	Cout:0
+#                 5059		A:  3	B: 18	Cin:0		Sum: 21	Cout:0
+#                 5151		A:  3	B:  x	Cin:x		Sum: 21	Cout:0
+#                 5152		A:  3	B: 19	Cin:0		Sum: 21	Cout:0
+#                 5160		A:  3	B: 19	Cin:0		Sum: 20	Cout:0
+#                 5162		A:  3	B: 19	Cin:0		Sum: 22	Cout:0
+#                 5252		A:  3	B:  x	Cin:x		Sum: 22	Cout:0
+#                 5253		A:  3	B: 20	Cin:0		Sum: 22	Cout:0
+#                 5261		A:  3	B: 20	Cin:0		Sum: 23	Cout:0
+#                 5353		A:  3	B:  x	Cin:x		Sum: 23	Cout:0
+#                 5354		A:  3	B: 21	Cin:0		Sum: 23	Cout:0
+#                 5362		A:  3	B: 21	Cin:0		Sum: 22	Cout:0
+#                 5364		A:  3	B: 21	Cin:0		Sum: 20	Cout:0
+#                 5370		A:  3	B: 21	Cin:0		Sum: 16	Cout:0
+#                 5376		A:  3	B: 21	Cin:0		Sum: 24	Cout:0
+#                 5454		A:  3	B:  x	Cin:x		Sum: 24	Cout:0
+#                 5455		A:  3	B: 22	Cin:0		Sum: 24	Cout:0
+#                 5463		A:  3	B: 22	Cin:0		Sum: 25	Cout:0
+#                 5555		A:  3	B:  x	Cin:x		Sum: 25	Cout:0
+#                 5556		A:  3	B: 23	Cin:0		Sum: 25	Cout:0
+#                 5564		A:  3	B: 23	Cin:0		Sum: 24	Cout:0
+#                 5566		A:  3	B: 23	Cin:0		Sum: 26	Cout:0
+#                 5656		A:  3	B:  x	Cin:x		Sum: 26	Cout:0
+#                 5657		A:  3	B: 24	Cin:0		Sum: 26	Cout:0
+#                 5665		A:  3	B: 24	Cin:0		Sum: 19	Cout:0
+#                 5671		A:  3	B: 24	Cin:0		Sum: 11	Cout:0
+#                 5677		A:  3	B: 24	Cin:0		Sum: 59	Cout:0
+#                 5683		A:  3	B: 24	Cin:0		Sum: 27	Cout:0
+#                 5757		A:  3	B:  x	Cin:x		Sum: 27	Cout:0
+#                 5758		A:  3	B: 25	Cin:0		Sum: 27	Cout:0
+#                 5766		A:  3	B: 25	Cin:0		Sum: 26	Cout:0
+#                 5768		A:  3	B: 25	Cin:0		Sum: 24	Cout:0
+#                 5774		A:  3	B: 25	Cin:0		Sum: 28	Cout:0
+#                 5858		A:  3	B:  x	Cin:x		Sum: 28	Cout:0
+#                 5859		A:  3	B: 26	Cin:0		Sum: 28	Cout:0
+#                 5867		A:  3	B: 26	Cin:0		Sum: 29	Cout:0
+#                 5959		A:  3	B:  x	Cin:x		Sum: 29	Cout:0
+#                 5960		A:  3	B: 27	Cin:0		Sum: 29	Cout:0
+#                 5968		A:  3	B: 27	Cin:0		Sum: 28	Cout:0
+#                 5970		A:  3	B: 27	Cin:0		Sum: 30	Cout:0
+#                 6060		A:  3	B:  x	Cin:x		Sum: 30	Cout:0
+#                 6061		A:  3	B: 28	Cin:0		Sum: 30	Cout:0
+#                 6069		A:  3	B: 28	Cin:0		Sum: 31	Cout:0
+#                 6161		A:  3	B:  x	Cin:x		Sum: 31	Cout:0
+#                 6162		A:  3	B: 29	Cin:0		Sum: 31	Cout:0
+#                 6170		A:  3	B: 29	Cin:0		Sum: 30	Cout:0
+#                 6172		A:  3	B: 29	Cin:0		Sum: 28	Cout:0
+#                 6178		A:  3	B: 29	Cin:0		Sum: 24	Cout:0
+#                 6184		A:  3	B: 29	Cin:0		Sum: 16	Cout:0
+#                 6190		A:  3	B: 29	Cin:0		Sum:  0	Cout:0
+#                 6196		A:  3	B: 29	Cin:0		Sum: 32	Cout:0
+#                 6262		A:  3	B:  x	Cin:x		Sum: 32	Cout:0
+#                 6263		A:  3	B: 30	Cin:0		Sum: 32	Cout:0
+#                 6271		A:  3	B: 30	Cin:0		Sum: 33	Cout:0
+#                 6363		A:  3	B:  x	Cin:x		Sum: 33	Cout:0
+#                 6364		A:  3	B: 31	Cin:0		Sum: 33	Cout:0
+#                 6372		A:  3	B: 31	Cin:0		Sum: 32	Cout:0
+#                 6374		A:  3	B: 31	Cin:0		Sum: 34	Cout:0
+#                 6464		A:  4	B:  x	Cin:x		Sum: 34	Cout:0
+#                 6465		A:  4	B: 16	Cin:0		Sum: 34	Cout:0
+#                 6473		A:  4	B: 16	Cin:0		Sum: 42	Cout:0
+#                 6474		A:  4	B: 16	Cin:0		Sum: 44	Cout:0
+#                 6479		A:  4	B: 16	Cin:0		Sum: 60	Cout:0
+#                 6480		A:  4	B: 16	Cin:0		Sum: 52	Cout:0
+#                 6485		A:  4	B: 16	Cin:0		Sum: 20	Cout:0
+#                 6565		A:  4	B:  x	Cin:x		Sum: 20	Cout:0
+#                 6566		A:  4	B: 17	Cin:0		Sum: 20	Cout:0
+#                 6574		A:  4	B: 17	Cin:0		Sum: 21	Cout:0
+#                 6666		A:  4	B:  x	Cin:x		Sum: 21	Cout:0
+#                 6667		A:  4	B: 18	Cin:0		Sum: 21	Cout:0
+#                 6675		A:  4	B: 18	Cin:0		Sum: 22	Cout:0
+#                 6767		A:  4	B:  x	Cin:x		Sum: 22	Cout:0
+#                 6768		A:  4	B: 19	Cin:0		Sum: 22	Cout:0
+#                 6776		A:  4	B: 19	Cin:0		Sum: 23	Cout:0
+#                 6868		A:  4	B:  x	Cin:x		Sum: 23	Cout:0
+#                 6869		A:  4	B: 20	Cin:0		Sum: 23	Cout:0
+#                 6877		A:  4	B: 20	Cin:0		Sum: 16	Cout:0
+#                 6879		A:  4	B: 20	Cin:0		Sum: 24	Cout:0
+#                 6969		A:  4	B:  x	Cin:x		Sum: 24	Cout:0
+#                 6970		A:  4	B: 21	Cin:0		Sum: 24	Cout:0
+#                 6978		A:  4	B: 21	Cin:0		Sum: 25	Cout:0
+#                 7070		A:  4	B:  x	Cin:x		Sum: 25	Cout:0
+#                 7071		A:  4	B: 22	Cin:0		Sum: 25	Cout:0
+#                 7079		A:  4	B: 22	Cin:0		Sum: 26	Cout:0
+#                 7171		A:  4	B:  x	Cin:x		Sum: 26	Cout:0
+#                 7172		A:  4	B: 23	Cin:0		Sum: 26	Cout:0
+#                 7180		A:  4	B: 23	Cin:0		Sum: 27	Cout:0
+#                 7272		A:  4	B:  x	Cin:x		Sum: 27	Cout:0
+#                 7273		A:  4	B: 24	Cin:0		Sum: 27	Cout:0
+#                 7281		A:  4	B: 24	Cin:0		Sum: 28	Cout:0
+#                 7373		A:  4	B:  x	Cin:x		Sum: 28	Cout:0
+#                 7374		A:  4	B: 25	Cin:0		Sum: 28	Cout:0
+#                 7382		A:  4	B: 25	Cin:0		Sum: 29	Cout:0
+#                 7474		A:  4	B:  x	Cin:x		Sum: 29	Cout:0
+#                 7475		A:  4	B: 26	Cin:0		Sum: 29	Cout:0
+#                 7483		A:  4	B: 26	Cin:0		Sum: 30	Cout:0
+#                 7575		A:  4	B:  x	Cin:x		Sum: 30	Cout:0
+#                 7576		A:  4	B: 27	Cin:0		Sum: 30	Cout:0
+#                 7584		A:  4	B: 27	Cin:0		Sum: 31	Cout:0
+#                 7676		A:  4	B:  x	Cin:x		Sum: 31	Cout:0
+#                 7677		A:  4	B: 28	Cin:0		Sum: 31	Cout:0
+#                 7685		A:  4	B: 28	Cin:0		Sum: 24	Cout:0
+#                 7687		A:  4	B: 28	Cin:0		Sum: 16	Cout:0
+#                 7693		A:  4	B: 28	Cin:0		Sum:  0	Cout:0
+#                 7699		A:  4	B: 28	Cin:0		Sum: 32	Cout:0
+#                 7777		A:  4	B:  x	Cin:x		Sum: 32	Cout:0
+#                 7778		A:  4	B: 29	Cin:0		Sum: 32	Cout:0
+#                 7786		A:  4	B: 29	Cin:0		Sum: 33	Cout:0
+#                 7878		A:  4	B:  x	Cin:x		Sum: 33	Cout:0
+#                 7879		A:  4	B: 30	Cin:0		Sum: 33	Cout:0
+#                 7887		A:  4	B: 30	Cin:0		Sum: 34	Cout:0
+#                 7979		A:  4	B:  x	Cin:x		Sum: 34	Cout:0
+#                 7980		A:  4	B: 31	Cin:0		Sum: 34	Cout:0
+#                 7988		A:  4	B: 31	Cin:0		Sum: 35	Cout:0
+#                 8080		A:  5	B:  x	Cin:x		Sum: 35	Cout:0
+#                 8081		A:  5	B: 16	Cin:0		Sum: 35	Cout:0
+#                 8089		A:  5	B: 16	Cin:0		Sum: 37	Cout:0
+#                 8095		A:  5	B: 16	Cin:0		Sum: 53	Cout:0
+#                 8101		A:  5	B: 16	Cin:0		Sum: 21	Cout:0
+#                 8181		A:  5	B:  x	Cin:x		Sum: 21	Cout:0
+#                 8182		A:  5	B: 17	Cin:0		Sum: 21	Cout:0
+#                 8190		A:  5	B: 17	Cin:0		Sum: 20	Cout:0
+#                 8192		A:  5	B: 17	Cin:0		Sum: 22	Cout:0
+#                 8282		A:  5	B:  x	Cin:x		Sum: 22	Cout:0
+#                 8283		A:  5	B: 18	Cin:0		Sum: 22	Cout:0
+#                 8291		A:  5	B: 18	Cin:0		Sum: 23	Cout:0
+#                 8383		A:  5	B:  x	Cin:x		Sum: 23	Cout:0
+#                 8384		A:  5	B: 19	Cin:0		Sum: 23	Cout:0
+#                 8392		A:  5	B: 19	Cin:0		Sum: 22	Cout:0
+#                 8394		A:  5	B: 19	Cin:0		Sum: 20	Cout:0
+#                 8400		A:  5	B: 19	Cin:0		Sum: 16	Cout:0
+#                 8406		A:  5	B: 19	Cin:0		Sum: 24	Cout:0
+#                 8484		A:  5	B:  x	Cin:x		Sum: 24	Cout:0
+#                 8485		A:  5	B: 20	Cin:0		Sum: 24	Cout:0
+#                 8493		A:  5	B: 20	Cin:0		Sum: 29	Cout:0
+#                 8499		A:  5	B: 20	Cin:0		Sum: 25	Cout:0
+#                 8585		A:  5	B:  x	Cin:x		Sum: 25	Cout:0
+#                 8586		A:  5	B: 21	Cin:0		Sum: 25	Cout:0
+#                 8594		A:  5	B: 21	Cin:0		Sum: 24	Cout:0
+#                 8596		A:  5	B: 21	Cin:0		Sum: 26	Cout:0
+#                 8686		A:  5	B:  x	Cin:x		Sum: 26	Cout:0
+#                 8687		A:  5	B: 22	Cin:0		Sum: 26	Cout:0
+#                 8695		A:  5	B: 22	Cin:0		Sum: 27	Cout:0
+#                 8787		A:  5	B:  x	Cin:x		Sum: 27	Cout:0
+#                 8788		A:  5	B: 23	Cin:0		Sum: 27	Cout:0
+#                 8796		A:  5	B: 23	Cin:0		Sum: 26	Cout:0
+#                 8798		A:  5	B: 23	Cin:0		Sum: 24	Cout:0
+#                 8804		A:  5	B: 23	Cin:0		Sum: 28	Cout:0
+#                 8888		A:  5	B:  x	Cin:x		Sum: 28	Cout:0
+#                 8889		A:  5	B: 24	Cin:0		Sum: 28	Cout:0
+#                 8897		A:  5	B: 24	Cin:0		Sum: 25	Cout:0
+#                 8903		A:  5	B: 24	Cin:0		Sum: 21	Cout:0
+#                 8909		A:  5	B: 24	Cin:0		Sum: 13	Cout:0
+#                 8915		A:  5	B: 24	Cin:0		Sum: 61	Cout:0
+#                 8921		A:  5	B: 24	Cin:0		Sum: 29	Cout:0
+#                 8989		A:  5	B:  x	Cin:x		Sum: 29	Cout:0
+#                 8990		A:  5	B: 25	Cin:0		Sum: 29	Cout:0
+#                 8998		A:  5	B: 25	Cin:0		Sum: 28	Cout:0
+#                 9000		A:  5	B: 25	Cin:0		Sum: 30	Cout:0
+#                 9090		A:  5	B:  x	Cin:x		Sum: 30	Cout:0
+#                 9091		A:  5	B: 26	Cin:0		Sum: 30	Cout:0
+#                 9099		A:  5	B: 26	Cin:0		Sum: 31	Cout:0
+#                 9191		A:  5	B:  x	Cin:x		Sum: 31	Cout:0
+#                 9192		A:  5	B: 27	Cin:0		Sum: 31	Cout:0
+#                 9200		A:  5	B: 27	Cin:0		Sum: 30	Cout:0
+#                 9202		A:  5	B: 27	Cin:0		Sum: 28	Cout:0
+#                 9208		A:  5	B: 27	Cin:0		Sum: 24	Cout:0
+#                 9214		A:  5	B: 27	Cin:0		Sum: 16	Cout:0
+#                 9220		A:  5	B: 27	Cin:0		Sum:  0	Cout:0
+#                 9226		A:  5	B: 27	Cin:0		Sum: 32	Cout:0
+#                 9292		A:  5	B:  x	Cin:x		Sum: 32	Cout:0
+#                 9293		A:  5	B: 28	Cin:0		Sum: 32	Cout:0
+#                 9301		A:  5	B: 28	Cin:0		Sum: 37	Cout:0
+#                 9307		A:  5	B: 28	Cin:0		Sum: 33	Cout:0
+#                 9393		A:  5	B:  x	Cin:x		Sum: 33	Cout:0
+#                 9394		A:  5	B: 29	Cin:0		Sum: 33	Cout:0
+#                 9402		A:  5	B: 29	Cin:0		Sum: 32	Cout:0
+#                 9404		A:  5	B: 29	Cin:0		Sum: 34	Cout:0
+#                 9494		A:  5	B:  x	Cin:x		Sum: 34	Cout:0
+#                 9495		A:  5	B: 30	Cin:0		Sum: 34	Cout:0
+#                 9503		A:  5	B: 30	Cin:0		Sum: 35	Cout:0
+#                 9595		A:  5	B:  x	Cin:x		Sum: 35	Cout:0
+#                 9596		A:  5	B: 31	Cin:0		Sum: 35	Cout:0
+#                 9604		A:  5	B: 31	Cin:0		Sum: 34	Cout:0
+#                 9606		A:  5	B: 31	Cin:0		Sum: 32	Cout:0
+#                 9612		A:  5	B: 31	Cin:0		Sum: 36	Cout:0
+#                 9696		A:  6	B:  x	Cin:x		Sum: 36	Cout:0
+#                 9697		A:  6	B: 16	Cin:0		Sum: 36	Cout:0
+#                 9705		A:  6	B: 16	Cin:0		Sum: 32	Cout:0
+#                 9706		A:  6	B: 16	Cin:0		Sum: 34	Cout:0
+#                 9711		A:  6	B: 16	Cin:0		Sum: 58	Cout:0
+#                 9712		A:  6	B: 16	Cin:0		Sum: 62	Cout:0
+#                 9717		A:  6	B: 16	Cin:0		Sum: 30	Cout:0
+#                 9718		A:  6	B: 16	Cin:0		Sum: 22	Cout:0
+#                 9797		A:  6	B:  x	Cin:x		Sum: 22	Cout:0
+#                 9798		A:  6	B: 17	Cin:0		Sum: 22	Cout:0
+#                 9806		A:  6	B: 17	Cin:0		Sum: 23	Cout:0
+#                 9898		A:  6	B:  x	Cin:x		Sum: 23	Cout:0
+#                 9899		A:  6	B: 18	Cin:0		Sum: 23	Cout:0
+#                 9907		A:  6	B: 18	Cin:0		Sum: 20	Cout:0
+#                 9909		A:  6	B: 18	Cin:0		Sum: 16	Cout:0
+#                 9915		A:  6	B: 18	Cin:0		Sum: 24	Cout:0
+#                 9999		A:  6	B:  x	Cin:x		Sum: 24	Cout:0
+#                10000		A:  6	B: 19	Cin:0		Sum: 24	Cout:0
+#                10008		A:  6	B: 19	Cin:0		Sum: 25	Cout:0
+#                10100		A:  6	B:  x	Cin:x		Sum: 25	Cout:0
+#                10101		A:  6	B: 20	Cin:0		Sum: 25	Cout:0
+#                10109		A:  6	B: 20	Cin:0		Sum: 26	Cout:0
+#                10201		A:  6	B:  x	Cin:x		Sum: 26	Cout:0
+#                10202		A:  6	B: 21	Cin:0		Sum: 26	Cout:0
+#                10210		A:  6	B: 21	Cin:0		Sum: 27	Cout:0
+#                10302		A:  6	B:  x	Cin:x		Sum: 27	Cout:0
+#                10303		A:  6	B: 22	Cin:0		Sum: 27	Cout:0
+#                10311		A:  6	B: 22	Cin:0		Sum: 24	Cout:0
+#                10313		A:  6	B: 22	Cin:0		Sum: 28	Cout:0
+#                10403		A:  6	B:  x	Cin:x		Sum: 28	Cout:0
+#                10404		A:  6	B: 23	Cin:0		Sum: 28	Cout:0
+#                10412		A:  6	B: 23	Cin:0		Sum: 29	Cout:0
+#                10504		A:  6	B:  x	Cin:x		Sum: 29	Cout:0
+#                10505		A:  6	B: 24	Cin:0		Sum: 29	Cout:0
+#                10513		A:  6	B: 24	Cin:0		Sum: 30	Cout:0
+#                10605		A:  6	B:  x	Cin:x		Sum: 30	Cout:0
+#                10606		A:  6	B: 25	Cin:0		Sum: 30	Cout:0
+#                10614		A:  6	B: 25	Cin:0		Sum: 31	Cout:0
+#                10706		A:  6	B:  x	Cin:x		Sum: 31	Cout:0
+#                10707		A:  6	B: 26	Cin:0		Sum: 31	Cout:0
+#                10715		A:  6	B: 26	Cin:0		Sum: 28	Cout:0
+#                10717		A:  6	B: 26	Cin:0		Sum: 24	Cout:0
+#                10723		A:  6	B: 26	Cin:0		Sum: 16	Cout:0
+#                10729		A:  6	B: 26	Cin:0		Sum:  0	Cout:0
+#                10735		A:  6	B: 26	Cin:0		Sum: 32	Cout:0
+#                10807		A:  6	B:  x	Cin:x		Sum: 32	Cout:0
+#                10808		A:  6	B: 27	Cin:0		Sum: 32	Cout:0
+#                10816		A:  6	B: 27	Cin:0		Sum: 33	Cout:0
+#                10908		A:  6	B:  x	Cin:x		Sum: 33	Cout:0
+#                10909		A:  6	B: 28	Cin:0		Sum: 33	Cout:0
+#                10917		A:  6	B: 28	Cin:0		Sum: 34	Cout:0
+#                11009		A:  6	B:  x	Cin:x		Sum: 34	Cout:0
+#                11010		A:  6	B: 29	Cin:0		Sum: 34	Cout:0
+#                11018		A:  6	B: 29	Cin:0		Sum: 35	Cout:0
+#                11110		A:  6	B:  x	Cin:x		Sum: 35	Cout:0
+#                11111		A:  6	B: 30	Cin:0		Sum: 35	Cout:0
+#                11119		A:  6	B: 30	Cin:0		Sum: 32	Cout:0
+#                11121		A:  6	B: 30	Cin:0		Sum: 36	Cout:0
+#                11211		A:  6	B:  x	Cin:x		Sum: 36	Cout:0
+#                11212		A:  6	B: 31	Cin:0		Sum: 36	Cout:0
+#                11220		A:  6	B: 31	Cin:0		Sum: 37	Cout:0
+#                11312		A:  7	B:  x	Cin:x		Sum: 37	Cout:0
+#                11313		A:  7	B: 16	Cin:0		Sum: 37	Cout:0
+#                11321		A:  7	B: 16	Cin:0		Sum: 39	Cout:0
+#                11327		A:  7	B: 16	Cin:0		Sum: 55	Cout:0
+#                11333		A:  7	B: 16	Cin:0		Sum: 23	Cout:0
+#                11413		A:  7	B:  x	Cin:x		Sum: 23	Cout:0
+#                11414		A:  7	B: 17	Cin:0		Sum: 23	Cout:0
+#                11422		A:  7	B: 17	Cin:0		Sum: 22	Cout:0
+#                11424		A:  7	B: 17	Cin:0		Sum: 20	Cout:0
+#                11430		A:  7	B: 17	Cin:0		Sum: 16	Cout:0
+#                11436		A:  7	B: 17	Cin:0		Sum: 24	Cout:0
+#                11514		A:  7	B:  x	Cin:x		Sum: 24	Cout:0
+#                11515		A:  7	B: 18	Cin:0		Sum: 24	Cout:0
+#                11523		A:  7	B: 18	Cin:0		Sum: 25	Cout:0
+#                11615		A:  7	B:  x	Cin:x		Sum: 25	Cout:0
+#                11616		A:  7	B: 19	Cin:0		Sum: 25	Cout:0
+#                11624		A:  7	B: 19	Cin:0		Sum: 24	Cout:0
+#                11626		A:  7	B: 19	Cin:0		Sum: 26	Cout:0
+#                11716		A:  7	B:  x	Cin:x		Sum: 26	Cout:0
+#                11717		A:  7	B: 20	Cin:0		Sum: 26	Cout:0
+#                11725		A:  7	B: 20	Cin:0		Sum: 27	Cout:0
+#                11817		A:  7	B:  x	Cin:x		Sum: 27	Cout:0
+#                11818		A:  7	B: 21	Cin:0		Sum: 27	Cout:0
+#                11826		A:  7	B: 21	Cin:0		Sum: 26	Cout:0
+#                11828		A:  7	B: 21	Cin:0		Sum: 24	Cout:0
+#                11834		A:  7	B: 21	Cin:0		Sum: 28	Cout:0
+#                11918		A:  7	B:  x	Cin:x		Sum: 28	Cout:0
+#                11919		A:  7	B: 22	Cin:0		Sum: 28	Cout:0
+#                11927		A:  7	B: 22	Cin:0		Sum: 29	Cout:0
+#                12019		A:  7	B:  x	Cin:x		Sum: 29	Cout:0
+#                12020		A:  7	B: 23	Cin:0		Sum: 29	Cout:0
+#                12028		A:  7	B: 23	Cin:0		Sum: 28	Cout:0
+#                12030		A:  7	B: 23	Cin:0		Sum: 30	Cout:0
+#                12120		A:  7	B:  x	Cin:x		Sum: 30	Cout:0
+#                12121		A:  7	B: 24	Cin:0		Sum: 30	Cout:0
+#                12129		A:  7	B: 24	Cin:0		Sum: 31	Cout:0
+#                12221		A:  7	B:  x	Cin:x		Sum: 31	Cout:0
+#                12222		A:  7	B: 25	Cin:0		Sum: 31	Cout:0
+#                12230		A:  7	B: 25	Cin:0		Sum: 30	Cout:0
+#                12232		A:  7	B: 25	Cin:0		Sum: 28	Cout:0
+#                12238		A:  7	B: 25	Cin:0		Sum: 24	Cout:0
+#                12244		A:  7	B: 25	Cin:0		Sum: 16	Cout:0
+#                12250		A:  7	B: 25	Cin:0		Sum:  0	Cout:0
+#                12256		A:  7	B: 25	Cin:0		Sum: 32	Cout:0
+#                12322		A:  7	B:  x	Cin:x		Sum: 32	Cout:0
+#                12323		A:  7	B: 26	Cin:0		Sum: 32	Cout:0
+#                12331		A:  7	B: 26	Cin:0		Sum: 33	Cout:0
+#                12423		A:  7	B:  x	Cin:x		Sum: 33	Cout:0
+#                12424		A:  7	B: 27	Cin:0		Sum: 33	Cout:0
+#                12432		A:  7	B: 27	Cin:0		Sum: 32	Cout:0
+#                12434		A:  7	B: 27	Cin:0		Sum: 34	Cout:0
+#                12524		A:  7	B:  x	Cin:x		Sum: 34	Cout:0
+#                12525		A:  7	B: 28	Cin:0		Sum: 34	Cout:0
+#                12533		A:  7	B: 28	Cin:0		Sum: 35	Cout:0
+#                12625		A:  7	B:  x	Cin:x		Sum: 35	Cout:0
+#                12626		A:  7	B: 29	Cin:0		Sum: 35	Cout:0
+#                12634		A:  7	B: 29	Cin:0		Sum: 34	Cout:0
+#                12636		A:  7	B: 29	Cin:0		Sum: 32	Cout:0
+#                12642		A:  7	B: 29	Cin:0		Sum: 36	Cout:0
+#                12726		A:  7	B:  x	Cin:x		Sum: 36	Cout:0
+#                12727		A:  7	B: 30	Cin:0		Sum: 36	Cout:0
+#                12735		A:  7	B: 30	Cin:0		Sum: 37	Cout:0
+#                12827		A:  7	B:  x	Cin:x		Sum: 37	Cout:0
+#                12828		A:  7	B: 31	Cin:0		Sum: 37	Cout:0
+#                12836		A:  7	B: 31	Cin:0		Sum: 36	Cout:0
+#                12838		A:  7	B: 31	Cin:0		Sum: 38	Cout:0
+#                12928		A:  8	B:  x	Cin:x		Sum: 38	Cout:0
+#                12929		A:  8	B: 16	Cin:0		Sum: 38	Cout:0
+#                12938		A:  8	B: 16	Cin:0		Sum: 40	Cout:0
+#                12944		A:  8	B: 16	Cin:0		Sum: 56	Cout:0
+#                12950		A:  8	B: 16	Cin:0		Sum: 24	Cout:0
+#                13029		A:  8	B:  x	Cin:x		Sum: 24	Cout:0
+#                13030		A:  8	B: 17	Cin:0		Sum: 24	Cout:0
+#                13038		A:  8	B: 17	Cin:0		Sum: 25	Cout:0
+#                13130		A:  8	B:  x	Cin:x		Sum: 25	Cout:0
+#                13131		A:  8	B: 18	Cin:0		Sum: 25	Cout:0
+#                13139		A:  8	B: 18	Cin:0		Sum: 26	Cout:0
+#                13231		A:  8	B:  x	Cin:x		Sum: 26	Cout:0
+#                13232		A:  8	B: 19	Cin:0		Sum: 26	Cout:0
+#                13240		A:  8	B: 19	Cin:0		Sum: 27	Cout:0
+#                13332		A:  8	B:  x	Cin:x		Sum: 27	Cout:0
+#                13333		A:  8	B: 20	Cin:0		Sum: 27	Cout:0
+#                13341		A:  8	B: 20	Cin:0		Sum: 28	Cout:0
+#                13433		A:  8	B:  x	Cin:x		Sum: 28	Cout:0
+#                13434		A:  8	B: 21	Cin:0		Sum: 28	Cout:0
+#                13442		A:  8	B: 21	Cin:0		Sum: 29	Cout:0
+#                13534		A:  8	B:  x	Cin:x		Sum: 29	Cout:0
+#                13535		A:  8	B: 22	Cin:0		Sum: 29	Cout:0
+#                13543		A:  8	B: 22	Cin:0		Sum: 30	Cout:0
+#                13635		A:  8	B:  x	Cin:x		Sum: 30	Cout:0
+#                13636		A:  8	B: 23	Cin:0		Sum: 30	Cout:0
+#                13644		A:  8	B: 23	Cin:0		Sum: 31	Cout:0
+#                13736		A:  8	B:  x	Cin:x		Sum: 31	Cout:0
+#                13737		A:  8	B: 24	Cin:0		Sum: 31	Cout:0
+#                13745		A:  8	B: 24	Cin:0		Sum: 16	Cout:0
+#                13747		A:  8	B: 24	Cin:0		Sum:  0	Cout:0
+#                13753		A:  8	B: 24	Cin:0		Sum: 32	Cout:0
+#                13837		A:  8	B:  x	Cin:x		Sum: 32	Cout:0
+#                13838		A:  8	B: 25	Cin:0		Sum: 32	Cout:0
+#                13846		A:  8	B: 25	Cin:0		Sum: 33	Cout:0
+#                13938		A:  8	B:  x	Cin:x		Sum: 33	Cout:0
+#                13939		A:  8	B: 26	Cin:0		Sum: 33	Cout:0
+#                13947		A:  8	B: 26	Cin:0		Sum: 34	Cout:0
+#                14039		A:  8	B:  x	Cin:x		Sum: 34	Cout:0
+#                14040		A:  8	B: 27	Cin:0		Sum: 34	Cout:0
+#                14048		A:  8	B: 27	Cin:0		Sum: 35	Cout:0
+#                14140		A:  8	B:  x	Cin:x		Sum: 35	Cout:0
+#                14141		A:  8	B: 28	Cin:0		Sum: 35	Cout:0
+#                14149		A:  8	B: 28	Cin:0		Sum: 36	Cout:0
+#                14241		A:  8	B:  x	Cin:x		Sum: 36	Cout:0
+#                14242		A:  8	B: 29	Cin:0		Sum: 36	Cout:0
+#                14250		A:  8	B: 29	Cin:0		Sum: 37	Cout:0
+#                14342		A:  8	B:  x	Cin:x		Sum: 37	Cout:0
+#                14343		A:  8	B: 30	Cin:0		Sum: 37	Cout:0
+#                14351		A:  8	B: 30	Cin:0		Sum: 38	Cout:0
+#                14443		A:  8	B:  x	Cin:x		Sum: 38	Cout:0
+#                14444		A:  8	B: 31	Cin:0		Sum: 38	Cout:0
+#                14452		A:  8	B: 31	Cin:0		Sum: 39	Cout:0
+#                14544		A:  9	B:  x	Cin:x		Sum: 39	Cout:0
+#                14545		A:  9	B: 16	Cin:0		Sum: 39	Cout:0
+#                14553		A:  9	B: 16	Cin:0		Sum: 41	Cout:0
+#                14555		A:  9	B: 16	Cin:0		Sum: 57	Cout:0
+#                14561		A:  9	B: 16	Cin:0		Sum: 25	Cout:0
+#                14645		A:  9	B:  x	Cin:x		Sum: 25	Cout:0
+#                14646		A:  9	B: 17	Cin:0		Sum: 25	Cout:0
+#                14654		A:  9	B: 17	Cin:0		Sum: 24	Cout:0
+#                14656		A:  9	B: 17	Cin:0		Sum: 26	Cout:0
+#                14746		A:  9	B:  x	Cin:x		Sum: 26	Cout:0
+#                14747		A:  9	B: 18	Cin:0		Sum: 26	Cout:0
+#                14755		A:  9	B: 18	Cin:0		Sum: 27	Cout:0
+#                14847		A:  9	B:  x	Cin:x		Sum: 27	Cout:0
+#                14848		A:  9	B: 19	Cin:0		Sum: 27	Cout:0
+#                14856		A:  9	B: 19	Cin:0		Sum: 26	Cout:0
+#                14858		A:  9	B: 19	Cin:0		Sum: 24	Cout:0
+#                14864		A:  9	B: 19	Cin:0		Sum: 28	Cout:0
+#                14948		A:  9	B:  x	Cin:x		Sum: 28	Cout:0
+#                14949		A:  9	B: 20	Cin:0		Sum: 28	Cout:0
+#                14957		A:  9	B: 20	Cin:0		Sum: 25	Cout:0
+#                14963		A:  9	B: 20	Cin:0		Sum: 21	Cout:0
+#                14969		A:  9	B: 20	Cin:0		Sum: 13	Cout:0
+#                14975		A:  9	B: 20	Cin:0		Sum: 61	Cout:0
+#                14981		A:  9	B: 20	Cin:0		Sum: 29	Cout:0
+#                15049		A:  9	B:  x	Cin:x		Sum: 29	Cout:0
+#                15050		A:  9	B: 21	Cin:0		Sum: 29	Cout:0
+#                15058		A:  9	B: 21	Cin:0		Sum: 28	Cout:0
+#                15060		A:  9	B: 21	Cin:0		Sum: 30	Cout:0
+#                15150		A:  9	B:  x	Cin:x		Sum: 30	Cout:0
+#                15151		A:  9	B: 22	Cin:0		Sum: 30	Cout:0
+#                15159		A:  9	B: 22	Cin:0		Sum: 31	Cout:0
+#                15251		A:  9	B:  x	Cin:x		Sum: 31	Cout:0
+#                15252		A:  9	B: 23	Cin:0		Sum: 31	Cout:0
+#                15260		A:  9	B: 23	Cin:0		Sum: 30	Cout:0
+#                15262		A:  9	B: 23	Cin:0		Sum: 28	Cout:0
+#                15268		A:  9	B: 23	Cin:0		Sum: 24	Cout:0
+#                15274		A:  9	B: 23	Cin:0		Sum: 16	Cout:0
+#                15280		A:  9	B: 23	Cin:0		Sum:  0	Cout:0
+#                15286		A:  9	B: 23	Cin:0		Sum: 32	Cout:0
+#                15352		A:  9	B:  x	Cin:x		Sum: 32	Cout:0
+#                15353		A:  9	B: 24	Cin:0		Sum: 32	Cout:0
+#                15361		A:  9	B: 24	Cin:0		Sum: 45	Cout:0
+#                15367		A:  9	B: 24	Cin:0		Sum: 33	Cout:0
+#                15453		A:  9	B:  x	Cin:x		Sum: 33	Cout:0
+#                15454		A:  9	B: 25	Cin:0		Sum: 33	Cout:0
+#                15462		A:  9	B: 25	Cin:0		Sum: 32	Cout:0
+#                15464		A:  9	B: 25	Cin:0		Sum: 34	Cout:0
+#                15554		A:  9	B:  x	Cin:x		Sum: 34	Cout:0
+#                15555		A:  9	B: 26	Cin:0		Sum: 34	Cout:0
+#                15563		A:  9	B: 26	Cin:0		Sum: 35	Cout:0
+#                15655		A:  9	B:  x	Cin:x		Sum: 35	Cout:0
+#                15656		A:  9	B: 27	Cin:0		Sum: 35	Cout:0
+#                15664		A:  9	B: 27	Cin:0		Sum: 34	Cout:0
+#                15666		A:  9	B: 27	Cin:0		Sum: 32	Cout:0
+#                15672		A:  9	B: 27	Cin:0		Sum: 36	Cout:0
+#                15756		A:  9	B:  x	Cin:x		Sum: 36	Cout:0
+#                15757		A:  9	B: 28	Cin:0		Sum: 36	Cout:0
+#                15765		A:  9	B: 28	Cin:0		Sum: 33	Cout:0
+#                15771		A:  9	B: 28	Cin:0		Sum: 45	Cout:0
+#                15777		A:  9	B: 28	Cin:0		Sum: 37	Cout:0
+#                15857		A:  9	B:  x	Cin:x		Sum: 37	Cout:0
+#                15858		A:  9	B: 29	Cin:0		Sum: 37	Cout:0
+#                15866		A:  9	B: 29	Cin:0		Sum: 36	Cout:0
+#                15868		A:  9	B: 29	Cin:0		Sum: 38	Cout:0
+#                15958		A:  9	B:  x	Cin:x		Sum: 38	Cout:0
+#                15959		A:  9	B: 30	Cin:0		Sum: 38	Cout:0
+#                15967		A:  9	B: 30	Cin:0		Sum: 39	Cout:0
+#                16059		A:  9	B:  x	Cin:x		Sum: 39	Cout:0
+#                16060		A:  9	B: 31	Cin:0		Sum: 39	Cout:0
+#                16068		A:  9	B: 31	Cin:0		Sum: 38	Cout:0
+#                16070		A:  9	B: 31	Cin:0		Sum: 36	Cout:0
+#                16076		A:  9	B: 31	Cin:0		Sum: 32	Cout:0
+#                16082		A:  9	B: 31	Cin:0		Sum: 40	Cout:0
+#                16160		A: 10	B:  x	Cin:x		Sum: 40	Cout:0
+#                16161		A: 10	B: 16	Cin:0		Sum: 40	Cout:0
+#                16169		A: 10	B: 16	Cin:0		Sum: 36	Cout:0
+#                16170		A: 10	B: 16	Cin:0		Sum: 38	Cout:0
+#                16171		A: 10	B: 16	Cin:0		Sum: 54	Cout:0
+#                16175		A: 10	B: 16	Cin:0		Sum: 46	Cout:0
+#                16176		A: 10	B: 16	Cin:0		Sum: 42	Cout:0
+#                16177		A: 10	B: 16	Cin:0		Sum: 10	Cout:0
+#                16181		A: 10	B: 16	Cin:0		Sum: 58	Cout:0
+#                16187		A: 10	B: 16	Cin:0		Sum: 26	Cout:0
+#                16261		A: 10	B:  x	Cin:x		Sum: 26	Cout:0
+#                16262		A: 10	B: 17	Cin:0		Sum: 26	Cout:0
+#                16270		A: 10	B: 17	Cin:0		Sum: 27	Cout:0
+#                16362		A: 10	B:  x	Cin:x		Sum: 27	Cout:0
+#                16363		A: 10	B: 18	Cin:0		Sum: 27	Cout:0
+#                16371		A: 10	B: 18	Cin:0		Sum: 24	Cout:0
+#                16373		A: 10	B: 18	Cin:0		Sum: 28	Cout:0
+#                16463		A: 10	B:  x	Cin:x		Sum: 28	Cout:0
+#                16464		A: 10	B: 19	Cin:0		Sum: 28	Cout:0
+#                16472		A: 10	B: 19	Cin:0		Sum: 29	Cout:0
+#                16564		A: 10	B:  x	Cin:x		Sum: 29	Cout:0
+#                16565		A: 10	B: 20	Cin:0		Sum: 29	Cout:0
+#                16573		A: 10	B: 20	Cin:0		Sum: 30	Cout:0
+#                16665		A: 10	B:  x	Cin:x		Sum: 30	Cout:0
+#                16666		A: 10	B: 21	Cin:0		Sum: 30	Cout:0
+#                16674		A: 10	B: 21	Cin:0		Sum: 31	Cout:0
+#                16766		A: 10	B:  x	Cin:x		Sum: 31	Cout:0
+#                16767		A: 10	B: 22	Cin:0		Sum: 31	Cout:0
+#                16775		A: 10	B: 22	Cin:0		Sum: 28	Cout:0
+#                16777		A: 10	B: 22	Cin:0		Sum: 24	Cout:0
+#                16783		A: 10	B: 22	Cin:0		Sum: 16	Cout:0
+#                16789		A: 10	B: 22	Cin:0		Sum:  0	Cout:0
+#                16795		A: 10	B: 22	Cin:0		Sum: 32	Cout:0
+#                16867		A: 10	B:  x	Cin:x		Sum: 32	Cout:0
+#                16868		A: 10	B: 23	Cin:0		Sum: 32	Cout:0
+#                16876		A: 10	B: 23	Cin:0		Sum: 33	Cout:0
+#                16968		A: 10	B:  x	Cin:x		Sum: 33	Cout:0
+#                16969		A: 10	B: 24	Cin:0		Sum: 33	Cout:0
+#                16977		A: 10	B: 24	Cin:0		Sum: 42	Cout:0
+#                16983		A: 10	B: 24	Cin:0		Sum: 34	Cout:0
+#                17069		A: 10	B:  x	Cin:x		Sum: 34	Cout:0
+#                17070		A: 10	B: 25	Cin:0		Sum: 34	Cout:0
+#                17078		A: 10	B: 25	Cin:0		Sum: 35	Cout:0
+#                17170		A: 10	B:  x	Cin:x		Sum: 35	Cout:0
+#                17171		A: 10	B: 26	Cin:0		Sum: 35	Cout:0
+#                17179		A: 10	B: 26	Cin:0		Sum: 32	Cout:0
+#                17181		A: 10	B: 26	Cin:0		Sum: 36	Cout:0
+#                17271		A: 10	B:  x	Cin:x		Sum: 36	Cout:0
+#                17272		A: 10	B: 27	Cin:0		Sum: 36	Cout:0
+#                17280		A: 10	B: 27	Cin:0		Sum: 37	Cout:0
+#                17372		A: 10	B:  x	Cin:x		Sum: 37	Cout:0
+#                17373		A: 10	B: 28	Cin:0		Sum: 37	Cout:0
+#                17381		A: 10	B: 28	Cin:0		Sum: 38	Cout:0
+#                17473		A: 10	B:  x	Cin:x		Sum: 38	Cout:0
+#                17474		A: 10	B: 29	Cin:0		Sum: 38	Cout:0
+#                17482		A: 10	B: 29	Cin:0		Sum: 39	Cout:0
+#                17574		A: 10	B:  x	Cin:x		Sum: 39	Cout:0
+#                17575		A: 10	B: 30	Cin:0		Sum: 39	Cout:0
+#                17583		A: 10	B: 30	Cin:0		Sum: 36	Cout:0
+#                17585		A: 10	B: 30	Cin:0		Sum: 32	Cout:0
+#                17591		A: 10	B: 30	Cin:0		Sum: 40	Cout:0
+#                17675		A: 10	B:  x	Cin:x		Sum: 40	Cout:0
+#                17676		A: 10	B: 31	Cin:0		Sum: 40	Cout:0
+#                17684		A: 10	B: 31	Cin:0		Sum: 41	Cout:0
+#                17776		A: 11	B:  x	Cin:x		Sum: 41	Cout:0
+#                17777		A: 11	B: 16	Cin:0		Sum: 41	Cout:0
+#                17785		A: 11	B: 16	Cin:0		Sum: 35	Cout:0
+#                17787		A: 11	B: 16	Cin:0		Sum: 51	Cout:0
+#                17791		A: 11	B: 16	Cin:0		Sum: 43	Cout:0
+#                17793		A: 11	B: 16	Cin:0		Sum: 11	Cout:0
+#                17797		A: 11	B: 16	Cin:0		Sum: 59	Cout:0
+#                17803		A: 11	B: 16	Cin:0		Sum: 27	Cout:0
+#                17877		A: 11	B:  x	Cin:x		Sum: 27	Cout:0
+#                17878		A: 11	B: 17	Cin:0		Sum: 27	Cout:0
+#                17886		A: 11	B: 17	Cin:0		Sum: 26	Cout:0
+#                17888		A: 11	B: 17	Cin:0		Sum: 24	Cout:0
+#                17894		A: 11	B: 17	Cin:0		Sum: 28	Cout:0
+#                17978		A: 11	B:  x	Cin:x		Sum: 28	Cout:0
+#                17979		A: 11	B: 18	Cin:0		Sum: 28	Cout:0
+#                17987		A: 11	B: 18	Cin:0		Sum: 29	Cout:0
+#                18079		A: 11	B:  x	Cin:x		Sum: 29	Cout:0
+#                18080		A: 11	B: 19	Cin:0		Sum: 29	Cout:0
+#                18088		A: 11	B: 19	Cin:0		Sum: 28	Cout:0
+#                18090		A: 11	B: 19	Cin:0		Sum: 30	Cout:0
+#                18180		A: 11	B:  x	Cin:x		Sum: 30	Cout:0
+#                18181		A: 11	B: 20	Cin:0		Sum: 30	Cout:0
+#                18189		A: 11	B: 20	Cin:0		Sum: 31	Cout:0
+#                18281		A: 11	B:  x	Cin:x		Sum: 31	Cout:0
+#                18282		A: 11	B: 21	Cin:0		Sum: 31	Cout:0
+#                18290		A: 11	B: 21	Cin:0		Sum: 30	Cout:0
+#                18292		A: 11	B: 21	Cin:0		Sum: 28	Cout:0
+#                18298		A: 11	B: 21	Cin:0		Sum: 24	Cout:0
+#                18304		A: 11	B: 21	Cin:0		Sum: 16	Cout:0
+#                18310		A: 11	B: 21	Cin:0		Sum:  0	Cout:0
+#                18316		A: 11	B: 21	Cin:0		Sum: 32	Cout:0
+#                18382		A: 11	B:  x	Cin:x		Sum: 32	Cout:0
+#                18383		A: 11	B: 22	Cin:0		Sum: 32	Cout:0
+#                18391		A: 11	B: 22	Cin:0		Sum: 33	Cout:0
+#                18483		A: 11	B:  x	Cin:x		Sum: 33	Cout:0
+#                18484		A: 11	B: 23	Cin:0		Sum: 33	Cout:0
+#                18492		A: 11	B: 23	Cin:0		Sum: 32	Cout:0
+#                18494		A: 11	B: 23	Cin:0		Sum: 34	Cout:0
+#                18584		A: 11	B:  x	Cin:x		Sum: 34	Cout:0
+#                18585		A: 11	B: 24	Cin:0		Sum: 34	Cout:0
+#                18593		A: 11	B: 24	Cin:0		Sum: 43	Cout:0
+#                18599		A: 11	B: 24	Cin:0		Sum: 35	Cout:0
+#                18685		A: 11	B:  x	Cin:x		Sum: 35	Cout:0
+#                18686		A: 11	B: 25	Cin:0		Sum: 35	Cout:0
+#                18694		A: 11	B: 25	Cin:0		Sum: 34	Cout:0
+#                18696		A: 11	B: 25	Cin:0		Sum: 32	Cout:0
+#                18702		A: 11	B: 25	Cin:0		Sum: 36	Cout:0
+#                18786		A: 11	B:  x	Cin:x		Sum: 36	Cout:0
+#                18787		A: 11	B: 26	Cin:0		Sum: 36	Cout:0
+#                18795		A: 11	B: 26	Cin:0		Sum: 37	Cout:0
+#                18887		A: 11	B:  x	Cin:x		Sum: 37	Cout:0
+#                18888		A: 11	B: 27	Cin:0		Sum: 37	Cout:0
+#                18896		A: 11	B: 27	Cin:0		Sum: 36	Cout:0
+#                18898		A: 11	B: 27	Cin:0		Sum: 38	Cout:0
+#                18988		A: 11	B:  x	Cin:x		Sum: 38	Cout:0
+#                18989		A: 11	B: 28	Cin:0		Sum: 38	Cout:0
+#                18997		A: 11	B: 28	Cin:0		Sum: 39	Cout:0
+#                19089		A: 11	B:  x	Cin:x		Sum: 39	Cout:0
+#                19090		A: 11	B: 29	Cin:0		Sum: 39	Cout:0
+#                19098		A: 11	B: 29	Cin:0		Sum: 38	Cout:0
+#                19100		A: 11	B: 29	Cin:0		Sum: 36	Cout:0
+#                19106		A: 11	B: 29	Cin:0		Sum: 32	Cout:0
+#                19112		A: 11	B: 29	Cin:0		Sum: 40	Cout:0
+#                19190		A: 11	B:  x	Cin:x		Sum: 40	Cout:0
+#                19191		A: 11	B: 30	Cin:0		Sum: 40	Cout:0
+#                19199		A: 11	B: 30	Cin:0		Sum: 41	Cout:0
+#                19291		A: 11	B:  x	Cin:x		Sum: 41	Cout:0
+#                19292		A: 11	B: 31	Cin:0		Sum: 41	Cout:0
+#                19300		A: 11	B: 31	Cin:0		Sum: 40	Cout:0
+#                19302		A: 11	B: 31	Cin:0		Sum: 42	Cout:0
+#                19392		A: 12	B:  x	Cin:x		Sum: 42	Cout:0
+#                19393		A: 12	B: 16	Cin:0		Sum: 42	Cout:0
+#                19401		A: 12	B: 16	Cin:0		Sum: 34	Cout:0
+#                19402		A: 12	B: 16	Cin:0		Sum: 36	Cout:0
+#                19403		A: 12	B: 16	Cin:0		Sum: 52	Cout:0
+#                19407		A: 12	B: 16	Cin:0		Sum: 36	Cout:0
+#                19408		A: 12	B: 16	Cin:0		Sum: 44	Cout:0
+#                19409		A: 12	B: 16	Cin:0		Sum: 12	Cout:0
+#                19413		A: 12	B: 16	Cin:0		Sum: 44	Cout:0
+#                19414		A: 12	B: 16	Cin:0		Sum: 60	Cout:0
+#                19420		A: 12	B: 16	Cin:0		Sum: 28	Cout:0
+#                19493		A: 12	B:  x	Cin:x		Sum: 28	Cout:0
+#                19494		A: 12	B: 17	Cin:0		Sum: 28	Cout:0
+#                19502		A: 12	B: 17	Cin:0		Sum: 29	Cout:0
+#                19594		A: 12	B:  x	Cin:x		Sum: 29	Cout:0
+#                19595		A: 12	B: 18	Cin:0		Sum: 29	Cout:0
+#                19603		A: 12	B: 18	Cin:0		Sum: 30	Cout:0
+#                19695		A: 12	B:  x	Cin:x		Sum: 30	Cout:0
+#                19696		A: 12	B: 19	Cin:0		Sum: 30	Cout:0
+#                19704		A: 12	B: 19	Cin:0		Sum: 31	Cout:0
+#                19796		A: 12	B:  x	Cin:x		Sum: 31	Cout:0
+#                19797		A: 12	B: 20	Cin:0		Sum: 31	Cout:0
+#                19805		A: 12	B: 20	Cin:0		Sum: 24	Cout:0
+#                19807		A: 12	B: 20	Cin:0		Sum: 16	Cout:0
+#                19813		A: 12	B: 20	Cin:0		Sum:  0	Cout:0
+#                19819		A: 12	B: 20	Cin:0		Sum: 32	Cout:0
+#                19897		A: 12	B:  x	Cin:x		Sum: 32	Cout:0
+#                19898		A: 12	B: 21	Cin:0		Sum: 32	Cout:0
+#                19906		A: 12	B: 21	Cin:0		Sum: 33	Cout:0
+#                19998		A: 12	B:  x	Cin:x		Sum: 33	Cout:0
+#                19999		A: 12	B: 22	Cin:0		Sum: 33	Cout:0
+#                20007		A: 12	B: 22	Cin:0		Sum: 34	Cout:0
+#                20099		A: 12	B:  x	Cin:x		Sum: 34	Cout:0
+#                20100		A: 12	B: 23	Cin:0		Sum: 34	Cout:0
+#                20108		A: 12	B: 23	Cin:0		Sum: 35	Cout:0
+#                20200		A: 12	B:  x	Cin:x		Sum: 35	Cout:0
+#                20201		A: 12	B: 24	Cin:0		Sum: 35	Cout:0
+#                20209		A: 12	B: 24	Cin:0		Sum: 36	Cout:0
+#                20301		A: 12	B:  x	Cin:x		Sum: 36	Cout:0
+#                20302		A: 12	B: 25	Cin:0		Sum: 36	Cout:0
+#                20310		A: 12	B: 25	Cin:0		Sum: 37	Cout:0
+#                20402		A: 12	B:  x	Cin:x		Sum: 37	Cout:0
+#                20403		A: 12	B: 26	Cin:0		Sum: 37	Cout:0
+#                20411		A: 12	B: 26	Cin:0		Sum: 38	Cout:0
+#                20503		A: 12	B:  x	Cin:x		Sum: 38	Cout:0
+#                20504		A: 12	B: 27	Cin:0		Sum: 38	Cout:0
+#                20512		A: 12	B: 27	Cin:0		Sum: 39	Cout:0
+#                20604		A: 12	B:  x	Cin:x		Sum: 39	Cout:0
+#                20605		A: 12	B: 28	Cin:0		Sum: 39	Cout:0
+#                20613		A: 12	B: 28	Cin:0		Sum: 32	Cout:0
+#                20615		A: 12	B: 28	Cin:0		Sum: 40	Cout:0
+#                20705		A: 12	B:  x	Cin:x		Sum: 40	Cout:0
+#                20706		A: 12	B: 29	Cin:0		Sum: 40	Cout:0
+#                20714		A: 12	B: 29	Cin:0		Sum: 41	Cout:0
+#                20806		A: 12	B:  x	Cin:x		Sum: 41	Cout:0
+#                20807		A: 12	B: 30	Cin:0		Sum: 41	Cout:0
+#                20815		A: 12	B: 30	Cin:0		Sum: 42	Cout:0
+#                20907		A: 12	B:  x	Cin:x		Sum: 42	Cout:0
+#                20908		A: 12	B: 31	Cin:0		Sum: 42	Cout:0
+#                20916		A: 12	B: 31	Cin:0		Sum: 43	Cout:0
+#                21008		A: 13	B:  x	Cin:x		Sum: 43	Cout:0
+#                21009		A: 13	B: 16	Cin:0		Sum: 43	Cout:0
+#                21017		A: 13	B: 16	Cin:0		Sum: 45	Cout:0
+#                21019		A: 13	B: 16	Cin:0		Sum: 61	Cout:0
+#                21025		A: 13	B: 16	Cin:0		Sum: 29	Cout:0
+#                21109		A: 13	B:  x	Cin:x		Sum: 29	Cout:0
+#                21110		A: 13	B: 17	Cin:0		Sum: 29	Cout:0
+#                21118		A: 13	B: 17	Cin:0		Sum: 28	Cout:0
+#                21120		A: 13	B: 17	Cin:0		Sum: 30	Cout:0
+#                21210		A: 13	B:  x	Cin:x		Sum: 30	Cout:0
+#                21211		A: 13	B: 18	Cin:0		Sum: 30	Cout:0
+#                21219		A: 13	B: 18	Cin:0		Sum: 31	Cout:0
+#                21311		A: 13	B:  x	Cin:x		Sum: 31	Cout:0
+#                21312		A: 13	B: 19	Cin:0		Sum: 31	Cout:0
+#                21320		A: 13	B: 19	Cin:0		Sum: 30	Cout:0
+#                21322		A: 13	B: 19	Cin:0		Sum: 28	Cout:0
+#                21328		A: 13	B: 19	Cin:0		Sum: 24	Cout:0
+#                21334		A: 13	B: 19	Cin:0		Sum: 16	Cout:0
+#                21340		A: 13	B: 19	Cin:0		Sum:  0	Cout:0
+#                21346		A: 13	B: 19	Cin:0		Sum: 32	Cout:0
+#                21412		A: 13	B:  x	Cin:x		Sum: 32	Cout:0
+#                21413		A: 13	B: 20	Cin:0		Sum: 32	Cout:0
+#                21421		A: 13	B: 20	Cin:0		Sum: 37	Cout:0
+#                21427		A: 13	B: 20	Cin:0		Sum: 33	Cout:0
+#                21513		A: 13	B:  x	Cin:x		Sum: 33	Cout:0
+#                21514		A: 13	B: 21	Cin:0		Sum: 33	Cout:0
+#                21522		A: 13	B: 21	Cin:0		Sum: 32	Cout:0
+#                21524		A: 13	B: 21	Cin:0		Sum: 34	Cout:0
+#                21614		A: 13	B:  x	Cin:x		Sum: 34	Cout:0
+#                21615		A: 13	B: 22	Cin:0		Sum: 34	Cout:0
+#                21623		A: 13	B: 22	Cin:0		Sum: 35	Cout:0
+#                21715		A: 13	B:  x	Cin:x		Sum: 35	Cout:0
+#                21716		A: 13	B: 23	Cin:0		Sum: 35	Cout:0
+#                21724		A: 13	B: 23	Cin:0		Sum: 34	Cout:0
+#                21726		A: 13	B: 23	Cin:0		Sum: 32	Cout:0
+#                21732		A: 13	B: 23	Cin:0		Sum: 36	Cout:0
+#                21816		A: 13	B:  x	Cin:x		Sum: 36	Cout:0
+#                21817		A: 13	B: 24	Cin:0		Sum: 36	Cout:0
+#                21825		A: 13	B: 24	Cin:0		Sum: 33	Cout:0
+#                21831		A: 13	B: 24	Cin:0		Sum: 45	Cout:0
+#                21837		A: 13	B: 24	Cin:0		Sum: 37	Cout:0
+#                21917		A: 13	B:  x	Cin:x		Sum: 37	Cout:0
+#                21918		A: 13	B: 25	Cin:0		Sum: 37	Cout:0
+#                21926		A: 13	B: 25	Cin:0		Sum: 36	Cout:0
+#                21928		A: 13	B: 25	Cin:0		Sum: 38	Cout:0
+#                22018		A: 13	B:  x	Cin:x		Sum: 38	Cout:0
+#                22019		A: 13	B: 26	Cin:0		Sum: 38	Cout:0
+#                22027		A: 13	B: 26	Cin:0		Sum: 39	Cout:0
+#                22119		A: 13	B:  x	Cin:x		Sum: 39	Cout:0
+#                22120		A: 13	B: 27	Cin:0		Sum: 39	Cout:0
+#                22128		A: 13	B: 27	Cin:0		Sum: 38	Cout:0
+#                22130		A: 13	B: 27	Cin:0		Sum: 36	Cout:0
+#                22136		A: 13	B: 27	Cin:0		Sum: 32	Cout:0
+#                22142		A: 13	B: 27	Cin:0		Sum: 40	Cout:0
+#                22220		A: 13	B:  x	Cin:x		Sum: 40	Cout:0
+#                22221		A: 13	B: 28	Cin:0		Sum: 40	Cout:0
+#                22229		A: 13	B: 28	Cin:0		Sum: 45	Cout:0
+#                22235		A: 13	B: 28	Cin:0		Sum: 41	Cout:0
+#                22321		A: 13	B:  x	Cin:x		Sum: 41	Cout:0
+#                22322		A: 13	B: 29	Cin:0		Sum: 41	Cout:0
+#                22330		A: 13	B: 29	Cin:0		Sum: 40	Cout:0
+#                22332		A: 13	B: 29	Cin:0		Sum: 42	Cout:0
+#                22422		A: 13	B:  x	Cin:x		Sum: 42	Cout:0
+#                22423		A: 13	B: 30	Cin:0		Sum: 42	Cout:0
+#                22431		A: 13	B: 30	Cin:0		Sum: 43	Cout:0
+#                22523		A: 13	B:  x	Cin:x		Sum: 43	Cout:0
+#                22524		A: 13	B: 31	Cin:0		Sum: 43	Cout:0
+#                22532		A: 13	B: 31	Cin:0		Sum: 42	Cout:0
+#                22534		A: 13	B: 31	Cin:0		Sum: 40	Cout:0
+#                22540		A: 13	B: 31	Cin:0		Sum: 44	Cout:0
+#                22624		A: 14	B:  x	Cin:x		Sum: 44	Cout:0
+#                22625		A: 14	B: 16	Cin:0		Sum: 44	Cout:0
+#                22633		A: 14	B: 16	Cin:0		Sum: 40	Cout:0
+#                22634		A: 14	B: 16	Cin:0		Sum: 42	Cout:0
+#                22635		A: 14	B: 16	Cin:0		Sum: 58	Cout:0
+#                22639		A: 14	B: 16	Cin:0		Sum: 50	Cout:0
+#                22640		A: 14	B: 16	Cin:0		Sum: 54	Cout:0
+#                22641		A: 14	B: 16	Cin:0		Sum: 22	Cout:0
+#                22645		A: 14	B: 16	Cin:0		Sum:  6	Cout:0
+#                22646		A: 14	B: 16	Cin:0		Sum: 14	Cout:0
+#                22651		A: 14	B: 16	Cin:0		Sum: 46	Cout:0
+#                22652		A: 14	B: 16	Cin:0		Sum: 62	Cout:0
+#                22658		A: 14	B: 16	Cin:0		Sum: 30	Cout:0
+#                22725		A: 14	B:  x	Cin:x		Sum: 30	Cout:0
+#                22726		A: 14	B: 17	Cin:0		Sum: 30	Cout:0
+#                22734		A: 14	B: 17	Cin:0		Sum: 31	Cout:0
+#                22826		A: 14	B:  x	Cin:x		Sum: 31	Cout:0
+#                22827		A: 14	B: 18	Cin:0		Sum: 31	Cout:0
+#                22835		A: 14	B: 18	Cin:0		Sum: 28	Cout:0
+#                22837		A: 14	B: 18	Cin:0		Sum: 24	Cout:0
+#                22843		A: 14	B: 18	Cin:0		Sum: 16	Cout:0
+#                22849		A: 14	B: 18	Cin:0		Sum:  0	Cout:0
+#                22855		A: 14	B: 18	Cin:0		Sum: 32	Cout:0
+#                22927		A: 14	B:  x	Cin:x		Sum: 32	Cout:0
+#                22928		A: 14	B: 19	Cin:0		Sum: 32	Cout:0
+#                22936		A: 14	B: 19	Cin:0		Sum: 33	Cout:0
+#                23028		A: 14	B:  x	Cin:x		Sum: 33	Cout:0
+#                23029		A: 14	B: 20	Cin:0		Sum: 33	Cout:0
+#                23037		A: 14	B: 20	Cin:0		Sum: 34	Cout:0
+#                23129		A: 14	B:  x	Cin:x		Sum: 34	Cout:0
+#                23130		A: 14	B: 21	Cin:0		Sum: 34	Cout:0
+#                23138		A: 14	B: 21	Cin:0		Sum: 35	Cout:0
+#                23230		A: 14	B:  x	Cin:x		Sum: 35	Cout:0
+#                23231		A: 14	B: 22	Cin:0		Sum: 35	Cout:0
+#                23239		A: 14	B: 22	Cin:0		Sum: 32	Cout:0
+#                23241		A: 14	B: 22	Cin:0		Sum: 36	Cout:0
+#                23331		A: 14	B:  x	Cin:x		Sum: 36	Cout:0
+#                23332		A: 14	B: 23	Cin:0		Sum: 36	Cout:0
+#                23340		A: 14	B: 23	Cin:0		Sum: 37	Cout:0
+#                23432		A: 14	B:  x	Cin:x		Sum: 37	Cout:0
+#                23433		A: 14	B: 24	Cin:0		Sum: 37	Cout:0
+#                23441		A: 14	B: 24	Cin:0		Sum: 38	Cout:0
+#                23533		A: 14	B:  x	Cin:x		Sum: 38	Cout:0
+#                23534		A: 14	B: 25	Cin:0		Sum: 38	Cout:0
+#                23542		A: 14	B: 25	Cin:0		Sum: 39	Cout:0
+#                23634		A: 14	B:  x	Cin:x		Sum: 39	Cout:0
+#                23635		A: 14	B: 26	Cin:0		Sum: 39	Cout:0
+#                23643		A: 14	B: 26	Cin:0		Sum: 36	Cout:0
+#                23645		A: 14	B: 26	Cin:0		Sum: 32	Cout:0
+#                23651		A: 14	B: 26	Cin:0		Sum: 40	Cout:0
+#                23735		A: 14	B:  x	Cin:x		Sum: 40	Cout:0
+#                23736		A: 14	B: 27	Cin:0		Sum: 40	Cout:0
+#                23744		A: 14	B: 27	Cin:0		Sum: 41	Cout:0
+#                23836		A: 14	B:  x	Cin:x		Sum: 41	Cout:0
+#                23837		A: 14	B: 28	Cin:0		Sum: 41	Cout:0
+#                23845		A: 14	B: 28	Cin:0		Sum: 42	Cout:0
+#                23937		A: 14	B:  x	Cin:x		Sum: 42	Cout:0
+#                23938		A: 14	B: 29	Cin:0		Sum: 42	Cout:0
+#                23946		A: 14	B: 29	Cin:0		Sum: 43	Cout:0
+#                24038		A: 14	B:  x	Cin:x		Sum: 43	Cout:0
+#                24039		A: 14	B: 30	Cin:0		Sum: 43	Cout:0
+#                24047		A: 14	B: 30	Cin:0		Sum: 40	Cout:0
+#                24049		A: 14	B: 30	Cin:0		Sum: 44	Cout:0
+#                24139		A: 14	B:  x	Cin:x		Sum: 44	Cout:0
+#                24140		A: 14	B: 31	Cin:0		Sum: 44	Cout:0
+#                24148		A: 14	B: 31	Cin:0		Sum: 45	Cout:0
+#                24240		A: 15	B:  x	Cin:x		Sum: 45	Cout:0
+#                24241		A: 15	B: 16	Cin:0		Sum: 45	Cout:0
+#                24249		A: 15	B: 16	Cin:0		Sum: 47	Cout:0
+#                24251		A: 15	B: 16	Cin:0		Sum: 63	Cout:0
+#                24257		A: 15	B: 16	Cin:0		Sum: 31	Cout:0
+#                24341		A: 15	B:  x	Cin:x		Sum: 31	Cout:0
+#                24342		A: 15	B: 17	Cin:0		Sum: 31	Cout:0
+#                24350		A: 15	B: 17	Cin:0		Sum: 30	Cout:0
+#                24352		A: 15	B: 17	Cin:0		Sum: 28	Cout:0
+#                24358		A: 15	B: 17	Cin:0		Sum: 24	Cout:0
+#                24364		A: 15	B: 17	Cin:0		Sum: 16	Cout:0
+#                24370		A: 15	B: 17	Cin:0		Sum:  0	Cout:0
+#                24376		A: 15	B: 17	Cin:0		Sum: 32	Cout:0
+#                24442		A: 15	B:  x	Cin:x		Sum: 32	Cout:0
+#                24443		A: 15	B: 18	Cin:0		Sum: 32	Cout:0
+#                24451		A: 15	B: 18	Cin:0		Sum: 33	Cout:0
+#                24543		A: 15	B:  x	Cin:x		Sum: 33	Cout:0
+#                24544		A: 15	B: 19	Cin:0		Sum: 33	Cout:0
+#                24552		A: 15	B: 19	Cin:0		Sum: 32	Cout:0
+#                24554		A: 15	B: 19	Cin:0		Sum: 34	Cout:0
+#                24644		A: 15	B:  x	Cin:x		Sum: 34	Cout:0
+#                24645		A: 15	B: 20	Cin:0		Sum: 34	Cout:0
+#                24653		A: 15	B: 20	Cin:0		Sum: 35	Cout:0
+#                24745		A: 15	B:  x	Cin:x		Sum: 35	Cout:0
+#                24746		A: 15	B: 21	Cin:0		Sum: 35	Cout:0
+#                24754		A: 15	B: 21	Cin:0		Sum: 34	Cout:0
+#                24756		A: 15	B: 21	Cin:0		Sum: 32	Cout:0
+#                24762		A: 15	B: 21	Cin:0		Sum: 36	Cout:0
+#                24846		A: 15	B:  x	Cin:x		Sum: 36	Cout:0
+#                24847		A: 15	B: 22	Cin:0		Sum: 36	Cout:0
+#                24855		A: 15	B: 22	Cin:0		Sum: 37	Cout:0
+#                24947		A: 15	B:  x	Cin:x		Sum: 37	Cout:0
+#                24948		A: 15	B: 23	Cin:0		Sum: 37	Cout:0
+#                24956		A: 15	B: 23	Cin:0		Sum: 36	Cout:0
+#                24958		A: 15	B: 23	Cin:0		Sum: 38	Cout:0
+#                25048		A: 15	B:  x	Cin:x		Sum: 38	Cout:0
+#                25049		A: 15	B: 24	Cin:0		Sum: 38	Cout:0
+#                25057		A: 15	B: 24	Cin:0		Sum: 39	Cout:0
+#                25149		A: 15	B:  x	Cin:x		Sum: 39	Cout:0
+#                25150		A: 15	B: 25	Cin:0		Sum: 39	Cout:0
+#                25158		A: 15	B: 25	Cin:0		Sum: 38	Cout:0
+#                25160		A: 15	B: 25	Cin:0		Sum: 36	Cout:0
+#                25166		A: 15	B: 25	Cin:0		Sum: 32	Cout:0
+#                25172		A: 15	B: 25	Cin:0		Sum: 40	Cout:0
+#                25250		A: 15	B:  x	Cin:x		Sum: 40	Cout:0
+#                25251		A: 15	B: 26	Cin:0		Sum: 40	Cout:0
+#                25259		A: 15	B: 26	Cin:0		Sum: 41	Cout:0
+#                25351		A: 15	B:  x	Cin:x		Sum: 41	Cout:0
+#                25352		A: 15	B: 27	Cin:0		Sum: 41	Cout:0
+#                25360		A: 15	B: 27	Cin:0		Sum: 40	Cout:0
+#                25362		A: 15	B: 27	Cin:0		Sum: 42	Cout:0
+#                25452		A: 15	B:  x	Cin:x		Sum: 42	Cout:0
+#                25453		A: 15	B: 28	Cin:0		Sum: 42	Cout:0
+#                25461		A: 15	B: 28	Cin:0		Sum: 43	Cout:0
+#                25553		A: 15	B:  x	Cin:x		Sum: 43	Cout:0
+#                25554		A: 15	B: 29	Cin:0		Sum: 43	Cout:0
+#                25562		A: 15	B: 29	Cin:0		Sum: 42	Cout:0
+#                25564		A: 15	B: 29	Cin:0		Sum: 40	Cout:0
+#                25570		A: 15	B: 29	Cin:0		Sum: 44	Cout:0
+#                25654		A: 15	B:  x	Cin:x		Sum: 44	Cout:0
+#                25655		A: 15	B: 30	Cin:0		Sum: 44	Cout:0
+#                25663		A: 15	B: 30	Cin:0		Sum: 45	Cout:0
+#                25755		A: 15	B:  x	Cin:x		Sum: 45	Cout:0
+#                25756		A: 15	B: 31	Cin:0		Sum: 45	Cout:0
+#                25764		A: 15	B: 31	Cin:0		Sum: 44	Cout:0
+#                25766		A: 15	B: 31	Cin:0		Sum: 46	Cout:0
+# Test some cases with carry in = 1
+#                25856		A: 80	B:  x	Cin:x		Sum: 46	Cout:0
+#                25857		A: 80	B:160	Cin:1		Sum: 46	Cout:0
+#                25861		A: 80	B:160	Cin:1		Sum: 47	Cout:0
+#                25865		A: 80	B:160	Cin:1		Sum:207	Cout:0
+#                25866		A: 80	B:160	Cin:1		Sum:209	Cout:0
+#                25871		A: 80	B:160	Cin:1		Sum:145	Cout:0
+#                25872		A: 80	B:160	Cin:1		Sum:177	Cout:0
+#                25877		A: 80	B:160	Cin:1		Sum: 49	Cout:0
+#                25878		A: 80	B:160	Cin:1		Sum:113	Cout:0
+#                25879		A: 80	B:160	Cin:1		Sum:113	Cout:1
+#                25884		A: 80	B:160	Cin:1		Sum:241	Cout:1
+#                25886		A: 80	B:160	Cin:1		Sum:241	Cout:0
+#                25957		A: 80	B:  x	Cin:x		Sum:241	Cout:0
+#                25958		A: 80	B:161	Cin:1		Sum:241	Cout:0
+#                25966		A: 80	B:161	Cin:1		Sum:240	Cout:0
+#                25972		A: 80	B:161	Cin:1		Sum:242	Cout:0
+#                26058		A: 80	B:  x	Cin:x		Sum:242	Cout:0
+#                26059		A: 80	B:162	Cin:1		Sum:242	Cout:0
+#                26067		A: 80	B:162	Cin:1		Sum:241	Cout:0
+#                26073		A: 80	B:162	Cin:1		Sum:247	Cout:0
+#                26079		A: 80	B:162	Cin:1		Sum:243	Cout:0
+#                26159		A: 80	B:  x	Cin:x		Sum:243	Cout:0
+#                26160		A: 80	B:163	Cin:1		Sum:243	Cout:0
+#                26168		A: 80	B:163	Cin:1		Sum:242	Cout:0
+#                26174		A: 80	B:163	Cin:1		Sum:240	Cout:0
+#                26180		A: 80	B:163	Cin:1		Sum:244	Cout:0
+#                26260		A: 80	B:  x	Cin:x		Sum:244	Cout:0
+#                26261		A: 80	B:164	Cin:1		Sum:244	Cout:0
+#                26269		A: 80	B:164	Cin:1		Sum:243	Cout:0
+#                26275		A: 80	B:164	Cin:1		Sum:253	Cout:0
+#                26281		A: 80	B:164	Cin:1		Sum:245	Cout:0
+#                26361		A: 80	B:  x	Cin:x		Sum:245	Cout:0
+#                26362		A: 80	B:165	Cin:1		Sum:245	Cout:0
+#                26370		A: 80	B:165	Cin:1		Sum:244	Cout:0
+#                26376		A: 80	B:165	Cin:1		Sum:246	Cout:0
+#                26462		A: 80	B:  x	Cin:x		Sum:246	Cout:0
+#                26463		A: 80	B:166	Cin:1		Sum:246	Cout:0
+#                26471		A: 80	B:166	Cin:1		Sum:245	Cout:0
+#                26477		A: 80	B:166	Cin:1		Sum:243	Cout:0
+#                26483		A: 80	B:166	Cin:1		Sum:255	Cout:0
+#                26489		A: 80	B:166	Cin:1		Sum:247	Cout:0
+#                26563		A: 80	B:  x	Cin:x		Sum:247	Cout:0
+#                26564		A: 80	B:167	Cin:1		Sum:247	Cout:0
+#                26572		A: 80	B:167	Cin:1		Sum:246	Cout:0
+#                26578		A: 80	B:167	Cin:1		Sum:244	Cout:0
+#                26584		A: 80	B:167	Cin:1		Sum:240	Cout:0
+#                26590		A: 80	B:167	Cin:1		Sum:248	Cout:0
+#                26664		A: 80	B:  x	Cin:x		Sum:248	Cout:0
+#                26665		A: 80	B:168	Cin:1		Sum:248	Cout:0
+#                26673		A: 80	B:168	Cin:1		Sum:247	Cout:0
+#                26679		A: 80	B:168	Cin:1		Sum:233	Cout:0
+#                26685		A: 80	B:168	Cin:1		Sum:217	Cout:0
+#                26691		A: 80	B:168	Cin:1		Sum:185	Cout:0
+#                26697		A: 80	B:168	Cin:1		Sum:121	Cout:0
+#                26699		A: 80	B:168	Cin:1		Sum:121	Cout:1
+#                26703		A: 80	B:168	Cin:1		Sum:249	Cout:1
+#                26705		A: 80	B:168	Cin:1		Sum:249	Cout:0
+#                26765		A: 80	B:  x	Cin:x		Sum:249	Cout:0
+#                26766		A: 80	B:169	Cin:1		Sum:249	Cout:0
+#                26774		A: 80	B:169	Cin:1		Sum:248	Cout:0
+#                26780		A: 80	B:169	Cin:1		Sum:250	Cout:0
+#                26866		A: 80	B:  x	Cin:x		Sum:250	Cout:0
+#                26867		A: 80	B:170	Cin:1		Sum:250	Cout:0
+#                26875		A: 80	B:170	Cin:1		Sum:249	Cout:0
+#                26881		A: 80	B:170	Cin:1		Sum:255	Cout:0
+#                26887		A: 80	B:170	Cin:1		Sum:251	Cout:0
+#                26967		A: 80	B:  x	Cin:x		Sum:251	Cout:0
+#                26968		A: 80	B:171	Cin:1		Sum:251	Cout:0
+#                26976		A: 80	B:171	Cin:1		Sum:250	Cout:0
+#                26982		A: 80	B:171	Cin:1		Sum:248	Cout:0
+#                26988		A: 80	B:171	Cin:1		Sum:252	Cout:0
+#                27068		A: 80	B:  x	Cin:x		Sum:252	Cout:0
+#                27069		A: 80	B:172	Cin:1		Sum:252	Cout:0
+#                27077		A: 80	B:172	Cin:1		Sum:251	Cout:0
+#                27083		A: 80	B:172	Cin:1		Sum:245	Cout:0
+#                27089		A: 80	B:172	Cin:1		Sum:237	Cout:0
+#                27095		A: 80	B:172	Cin:1		Sum:221	Cout:0
+#                27101		A: 80	B:172	Cin:1		Sum:189	Cout:0
+#                27107		A: 80	B:172	Cin:1		Sum:125	Cout:0
+#                27109		A: 80	B:172	Cin:1		Sum:125	Cout:1
+#                27113		A: 80	B:172	Cin:1		Sum:253	Cout:1
+#                27115		A: 80	B:172	Cin:1		Sum:253	Cout:0
+#                27169		A: 80	B:  x	Cin:x		Sum:253	Cout:0
+#                27170		A: 80	B:173	Cin:1		Sum:253	Cout:0
+#                27178		A: 80	B:173	Cin:1		Sum:252	Cout:0
+#                27184		A: 80	B:173	Cin:1		Sum:254	Cout:0
+#                27270		A: 80	B:  x	Cin:x		Sum:254	Cout:0
+#                27271		A: 80	B:174	Cin:1		Sum:254	Cout:0
+#                27279		A: 80	B:174	Cin:1		Sum:253	Cout:0
+#                27285		A: 80	B:174	Cin:1		Sum:251	Cout:0
+#                27291		A: 80	B:174	Cin:1		Sum:247	Cout:0
+#                27297		A: 80	B:174	Cin:1		Sum:239	Cout:0
+#                27303		A: 80	B:174	Cin:1		Sum:223	Cout:0
+#                27309		A: 80	B:174	Cin:1		Sum:191	Cout:0
+#                27315		A: 80	B:174	Cin:1		Sum:127	Cout:0
+#                27317		A: 80	B:174	Cin:1		Sum:127	Cout:1
+#                27321		A: 80	B:174	Cin:1		Sum:255	Cout:1
+#                27323		A: 80	B:174	Cin:1		Sum:255	Cout:0
+#                27371		A: 80	B:  x	Cin:x		Sum:255	Cout:0
+#                27372		A: 80	B:175	Cin:1		Sum:255	Cout:0
+#                27380		A: 80	B:175	Cin:1		Sum:254	Cout:0
+#                27386		A: 80	B:175	Cin:1		Sum:252	Cout:0
+#                27392		A: 80	B:175	Cin:1		Sum:248	Cout:0
+#                27398		A: 80	B:175	Cin:1		Sum:240	Cout:0
+#                27404		A: 80	B:175	Cin:1		Sum:224	Cout:0
+#                27410		A: 80	B:175	Cin:1		Sum:192	Cout:0
+#                27416		A: 80	B:175	Cin:1		Sum:128	Cout:0
+#                27422		A: 80	B:175	Cin:1		Sum:  0	Cout:0
+#                27424		A: 80	B:175	Cin:1		Sum:  0	Cout:1
+#                27472		A: 81	B:  x	Cin:x		Sum:  0	Cout:1
+#                27473		A: 81	B:160	Cin:1		Sum:  0	Cout:1
+#                27481		A: 81	B:160	Cin:1		Sum: 14	Cout:1
+#                27487		A: 81	B:160	Cin:1		Sum: 18	Cout:1
+#                27493		A: 81	B:160	Cin:1		Sum: 50	Cout:1
+#                27499		A: 81	B:160	Cin:1		Sum:114	Cout:1
+#                27505		A: 81	B:160	Cin:1		Sum:242	Cout:1
+#                27507		A: 81	B:160	Cin:1		Sum:242	Cout:0
+#                27573		A: 81	B:  x	Cin:x		Sum:242	Cout:0
+#                27574		A: 81	B:161	Cin:1		Sum:242	Cout:0
+#                27582		A: 81	B:161	Cin:1		Sum:243	Cout:0
+#                27674		A: 81	B:  x	Cin:x		Sum:243	Cout:0
+#                27675		A: 81	B:162	Cin:1		Sum:243	Cout:0
+#                27683		A: 81	B:162	Cin:1		Sum:242	Cout:0
+#                27689		A: 81	B:162	Cin:1		Sum:240	Cout:0
+#                27695		A: 81	B:162	Cin:1		Sum:244	Cout:0
+#                27775		A: 81	B:  x	Cin:x		Sum:244	Cout:0
+#                27776		A: 81	B:163	Cin:1		Sum:244	Cout:0
+#                27784		A: 81	B:163	Cin:1		Sum:245	Cout:0
+#                27876		A: 81	B:  x	Cin:x		Sum:245	Cout:0
+#                27877		A: 81	B:164	Cin:1		Sum:245	Cout:0
+#                27885		A: 81	B:164	Cin:1		Sum:240	Cout:0
+#                27891		A: 81	B:164	Cin:1		Sum:254	Cout:0
+#                27897		A: 81	B:164	Cin:1		Sum:246	Cout:0
+#                27977		A: 81	B:  x	Cin:x		Sum:246	Cout:0
+#                27978		A: 81	B:165	Cin:1		Sum:246	Cout:0
+#                27986		A: 81	B:165	Cin:1		Sum:247	Cout:0
+#                28078		A: 81	B:  x	Cin:x		Sum:247	Cout:0
+#                28079		A: 81	B:166	Cin:1		Sum:247	Cout:0
+#                28087		A: 81	B:166	Cin:1		Sum:246	Cout:0
+#                28093		A: 81	B:166	Cin:1		Sum:244	Cout:0
+#                28099		A: 81	B:166	Cin:1		Sum:240	Cout:0
+#                28105		A: 81	B:166	Cin:1		Sum:248	Cout:0
+#                28179		A: 81	B:  x	Cin:x		Sum:248	Cout:0
+#                28180		A: 81	B:167	Cin:1		Sum:248	Cout:0
+#                28188		A: 81	B:167	Cin:1		Sum:249	Cout:0
+#                28280		A: 81	B:  x	Cin:x		Sum:249	Cout:0
+#                28281		A: 81	B:168	Cin:1		Sum:249	Cout:0
+#                28289		A: 81	B:168	Cin:1		Sum:244	Cout:0
+#                28295		A: 81	B:168	Cin:1		Sum:234	Cout:0
+#                28301		A: 81	B:168	Cin:1		Sum:218	Cout:0
+#                28307		A: 81	B:168	Cin:1		Sum:186	Cout:0
+#                28313		A: 81	B:168	Cin:1		Sum:122	Cout:0
+#                28315		A: 81	B:168	Cin:1		Sum:122	Cout:1
+#                28319		A: 81	B:168	Cin:1		Sum:250	Cout:1
+#                28321		A: 81	B:168	Cin:1		Sum:250	Cout:0
+#                28381		A: 81	B:  x	Cin:x		Sum:250	Cout:0
+#                28382		A: 81	B:169	Cin:1		Sum:250	Cout:0
+#                28390		A: 81	B:169	Cin:1		Sum:251	Cout:0
+#                28482		A: 81	B:  x	Cin:x		Sum:251	Cout:0
+#                28483		A: 81	B:170	Cin:1		Sum:251	Cout:0
+#                28491		A: 81	B:170	Cin:1		Sum:250	Cout:0
+#                28497		A: 81	B:170	Cin:1		Sum:248	Cout:0
+#                28503		A: 81	B:170	Cin:1		Sum:252	Cout:0
+#                28583		A: 81	B:  x	Cin:x		Sum:252	Cout:0
+#                28584		A: 81	B:171	Cin:1		Sum:252	Cout:0
+#                28592		A: 81	B:171	Cin:1		Sum:253	Cout:0
+#                28684		A: 81	B:  x	Cin:x		Sum:253	Cout:0
+#                28685		A: 81	B:172	Cin:1		Sum:253	Cout:0
+#                28693		A: 81	B:172	Cin:1		Sum:248	Cout:0
+#                28699		A: 81	B:172	Cin:1		Sum:246	Cout:0
+#                28705		A: 81	B:172	Cin:1		Sum:238	Cout:0
+#                28711		A: 81	B:172	Cin:1		Sum:222	Cout:0
+#                28717		A: 81	B:172	Cin:1		Sum:190	Cout:0
+#                28723		A: 81	B:172	Cin:1		Sum:126	Cout:0
+#                28725		A: 81	B:172	Cin:1		Sum:126	Cout:1
+#                28729		A: 81	B:172	Cin:1		Sum:254	Cout:1
+#                28731		A: 81	B:172	Cin:1		Sum:254	Cout:0
+#                28785		A: 81	B:  x	Cin:x		Sum:254	Cout:0
+#                28786		A: 81	B:173	Cin:1		Sum:254	Cout:0
+#                28794		A: 81	B:173	Cin:1		Sum:255	Cout:0
+#                28886		A: 81	B:  x	Cin:x		Sum:255	Cout:0
+#                28887		A: 81	B:174	Cin:1		Sum:255	Cout:0
+#                28895		A: 81	B:174	Cin:1		Sum:254	Cout:0
+#                28901		A: 81	B:174	Cin:1		Sum:252	Cout:0
+#                28907		A: 81	B:174	Cin:1		Sum:248	Cout:0
+#                28913		A: 81	B:174	Cin:1		Sum:240	Cout:0
+#                28919		A: 81	B:174	Cin:1		Sum:224	Cout:0
+#                28925		A: 81	B:174	Cin:1		Sum:192	Cout:0
+#                28931		A: 81	B:174	Cin:1		Sum:128	Cout:0
+#                28937		A: 81	B:174	Cin:1		Sum:  0	Cout:0
+#                28939		A: 81	B:174	Cin:1		Sum:  0	Cout:1
+#                28987		A: 81	B:  x	Cin:x		Sum:  0	Cout:1
+#                28988		A: 81	B:175	Cin:1		Sum:  0	Cout:1
+#                28996		A: 81	B:175	Cin:1		Sum:  1	Cout:1
+#                29088		A: 82	B:  x	Cin:x		Sum:  1	Cout:1
+#                29089		A: 82	B:160	Cin:1		Sum:  1	Cout:1
+#                29097		A: 82	B:160	Cin:1		Sum: 13	Cout:1
+#                29098		A: 82	B:160	Cin:1		Sum: 15	Cout:1
+#                29103		A: 82	B:160	Cin:1		Sum: 23	Cout:1
+#                29104		A: 82	B:160	Cin:1		Sum: 19	Cout:1
+#                29109		A: 82	B:160	Cin:1		Sum: 51	Cout:1
+#                29115		A: 82	B:160	Cin:1		Sum:115	Cout:1
+#                29121		A: 82	B:160	Cin:1		Sum:243	Cout:1
+#                29123		A: 82	B:160	Cin:1		Sum:243	Cout:0
+#                29189		A: 82	B:  x	Cin:x		Sum:243	Cout:0
+#                29190		A: 82	B:161	Cin:1		Sum:243	Cout:0
+#                29198		A: 82	B:161	Cin:1		Sum:242	Cout:0
+#                29204		A: 82	B:161	Cin:1		Sum:240	Cout:0
+#                29210		A: 82	B:161	Cin:1		Sum:244	Cout:0
+#                29290		A: 82	B:  x	Cin:x		Sum:244	Cout:0
+#                29291		A: 82	B:162	Cin:1		Sum:244	Cout:0
+#                29299		A: 82	B:162	Cin:1		Sum:247	Cout:0
+#                29305		A: 82	B:162	Cin:1		Sum:245	Cout:0
+#                29391		A: 82	B:  x	Cin:x		Sum:245	Cout:0
+#                29392		A: 82	B:163	Cin:1		Sum:245	Cout:0
+#                29400		A: 82	B:163	Cin:1		Sum:244	Cout:0
+#                29406		A: 82	B:163	Cin:1		Sum:246	Cout:0
+#                29492		A: 82	B:  x	Cin:x		Sum:246	Cout:0
+#                29493		A: 82	B:164	Cin:1		Sum:246	Cout:0
+#                29501		A: 82	B:164	Cin:1		Sum:245	Cout:0
+#                29507		A: 82	B:164	Cin:1		Sum:243	Cout:0
+#                29513		A: 82	B:164	Cin:1		Sum:255	Cout:0
+#                29519		A: 82	B:164	Cin:1		Sum:247	Cout:0
+#                29593		A: 82	B:  x	Cin:x		Sum:247	Cout:0
+#                29594		A: 82	B:165	Cin:1		Sum:247	Cout:0
+#                29602		A: 82	B:165	Cin:1		Sum:246	Cout:0
+#                29608		A: 82	B:165	Cin:1		Sum:244	Cout:0
+#                29614		A: 82	B:165	Cin:1		Sum:240	Cout:0
+#                29620		A: 82	B:165	Cin:1		Sum:248	Cout:0
+#                29694		A: 82	B:  x	Cin:x		Sum:248	Cout:0
+#                29695		A: 82	B:166	Cin:1		Sum:248	Cout:0
+#                29703		A: 82	B:166	Cin:1		Sum:251	Cout:0
+#                29709		A: 82	B:166	Cin:1		Sum:249	Cout:0
+#                29795		A: 82	B:  x	Cin:x		Sum:249	Cout:0
+#                29796		A: 82	B:167	Cin:1		Sum:249	Cout:0
+#                29804		A: 82	B:167	Cin:1		Sum:248	Cout:0
+#                29810		A: 82	B:167	Cin:1		Sum:250	Cout:0
+#                29896		A: 82	B:  x	Cin:x		Sum:250	Cout:0
+#                29897		A: 82	B:168	Cin:1		Sum:250	Cout:0
+#                29905		A: 82	B:168	Cin:1		Sum:241	Cout:0
+#                29911		A: 82	B:168	Cin:1		Sum:239	Cout:0
+#                29917		A: 82	B:168	Cin:1		Sum:219	Cout:0
+#                29923		A: 82	B:168	Cin:1		Sum:187	Cout:0
+#                29929		A: 82	B:168	Cin:1		Sum:123	Cout:0
+#                29931		A: 82	B:168	Cin:1		Sum:123	Cout:1
+#                29935		A: 82	B:168	Cin:1		Sum:251	Cout:1
+#                29937		A: 82	B:168	Cin:1		Sum:251	Cout:0
+#                29997		A: 82	B:  x	Cin:x		Sum:251	Cout:0
+#                29998		A: 82	B:169	Cin:1		Sum:251	Cout:0
+#                30006		A: 82	B:169	Cin:1		Sum:250	Cout:0
+#                30012		A: 82	B:169	Cin:1		Sum:248	Cout:0
+#                30018		A: 82	B:169	Cin:1		Sum:252	Cout:0
+#                30098		A: 82	B:  x	Cin:x		Sum:252	Cout:0
+#                30099		A: 82	B:170	Cin:1		Sum:252	Cout:0
+#                30107		A: 82	B:170	Cin:1		Sum:255	Cout:0
+#                30113		A: 82	B:170	Cin:1		Sum:253	Cout:0
+#                30199		A: 82	B:  x	Cin:x		Sum:253	Cout:0
+#                30200		A: 82	B:171	Cin:1		Sum:253	Cout:0
+#                30208		A: 82	B:171	Cin:1		Sum:252	Cout:0
+#                30214		A: 82	B:171	Cin:1		Sum:254	Cout:0
+#                30300		A: 82	B:  x	Cin:x		Sum:254	Cout:0
+#                30301		A: 82	B:172	Cin:1		Sum:254	Cout:0
+#                30309		A: 82	B:172	Cin:1		Sum:253	Cout:0
+#                30315		A: 82	B:172	Cin:1		Sum:251	Cout:0
+#                30321		A: 82	B:172	Cin:1		Sum:247	Cout:0
+#                30327		A: 82	B:172	Cin:1		Sum:239	Cout:0
+#                30333		A: 82	B:172	Cin:1		Sum:223	Cout:0
+#                30339		A: 82	B:172	Cin:1		Sum:191	Cout:0
+#                30345		A: 82	B:172	Cin:1		Sum:127	Cout:0
+#                30347		A: 82	B:172	Cin:1		Sum:127	Cout:1
+#                30351		A: 82	B:172	Cin:1		Sum:255	Cout:1
+#                30353		A: 82	B:172	Cin:1		Sum:255	Cout:0
+#                30401		A: 82	B:  x	Cin:x		Sum:255	Cout:0
+#                30402		A: 82	B:173	Cin:1		Sum:255	Cout:0
+#                30410		A: 82	B:173	Cin:1		Sum:254	Cout:0
+#                30416		A: 82	B:173	Cin:1		Sum:252	Cout:0
+#                30422		A: 82	B:173	Cin:1		Sum:248	Cout:0
+#                30428		A: 82	B:173	Cin:1		Sum:240	Cout:0
+#                30434		A: 82	B:173	Cin:1		Sum:224	Cout:0
+#                30440		A: 82	B:173	Cin:1		Sum:192	Cout:0
+#                30446		A: 82	B:173	Cin:1		Sum:128	Cout:0
+#                30452		A: 82	B:173	Cin:1		Sum:  0	Cout:0
+#                30454		A: 82	B:173	Cin:1		Sum:  0	Cout:1
+#                30502		A: 82	B:  x	Cin:x		Sum:  0	Cout:1
+#                30503		A: 82	B:174	Cin:1		Sum:  0	Cout:1
+#                30511		A: 82	B:174	Cin:1		Sum:  3	Cout:1
+#                30517		A: 82	B:174	Cin:1		Sum:  1	Cout:1
+#                30603		A: 82	B:  x	Cin:x		Sum:  1	Cout:1
+#                30604		A: 82	B:175	Cin:1		Sum:  1	Cout:1
+#                30612		A: 82	B:175	Cin:1		Sum:  0	Cout:1
+#                30618		A: 82	B:175	Cin:1		Sum:  2	Cout:1
+#                30704		A: 83	B:  x	Cin:x		Sum:  2	Cout:1
+#                30705		A: 83	B:160	Cin:1		Sum:  2	Cout:1
+#                30713		A: 83	B:160	Cin:1		Sum:  8	Cout:1
+#                30719		A: 83	B:160	Cin:1		Sum: 20	Cout:1
+#                30725		A: 83	B:160	Cin:1		Sum: 52	Cout:1
+#                30731		A: 83	B:160	Cin:1		Sum:116	Cout:1
+#                30737		A: 83	B:160	Cin:1		Sum:244	Cout:1
+#                30739		A: 83	B:160	Cin:1		Sum:244	Cout:0
+#                30805		A: 83	B:  x	Cin:x		Sum:244	Cout:0
+#                30806		A: 83	B:161	Cin:1		Sum:244	Cout:0
+#                30814		A: 83	B:161	Cin:1		Sum:245	Cout:0
+#                30906		A: 83	B:  x	Cin:x		Sum:245	Cout:0
+#                30907		A: 83	B:162	Cin:1		Sum:245	Cout:0
+#                30915		A: 83	B:162	Cin:1		Sum:244	Cout:0
+#                30921		A: 83	B:162	Cin:1		Sum:246	Cout:0
+#                31007		A: 83	B:  x	Cin:x		Sum:246	Cout:0
+#                31008		A: 83	B:163	Cin:1		Sum:246	Cout:0
+#                31016		A: 83	B:163	Cin:1		Sum:247	Cout:0
+#                31108		A: 83	B:  x	Cin:x		Sum:247	Cout:0
+#                31109		A: 83	B:164	Cin:1		Sum:247	Cout:0
+#                31117		A: 83	B:164	Cin:1		Sum:246	Cout:0
+#                31123		A: 83	B:164	Cin:1		Sum:244	Cout:0
+#                31129		A: 83	B:164	Cin:1		Sum:240	Cout:0
+#                31135		A: 83	B:164	Cin:1		Sum:248	Cout:0
+#                31209		A: 83	B:  x	Cin:x		Sum:248	Cout:0
+#                31210		A: 83	B:165	Cin:1		Sum:248	Cout:0
+#                31218		A: 83	B:165	Cin:1		Sum:249	Cout:0
+#                31310		A: 83	B:  x	Cin:x		Sum:249	Cout:0
+#                31311		A: 83	B:166	Cin:1		Sum:249	Cout:0
+#                31319		A: 83	B:166	Cin:1		Sum:248	Cout:0
+#                31325		A: 83	B:166	Cin:1		Sum:250	Cout:0
+#                31411		A: 83	B:  x	Cin:x		Sum:250	Cout:0
+#                31412		A: 83	B:167	Cin:1		Sum:250	Cout:0
+#                31420		A: 83	B:167	Cin:1		Sum:251	Cout:0
+#                31512		A: 83	B:  x	Cin:x		Sum:251	Cout:0
+#                31513		A: 83	B:168	Cin:1		Sum:251	Cout:0
+#                31521		A: 83	B:168	Cin:1		Sum:242	Cout:0
+#                31527		A: 83	B:168	Cin:1		Sum:232	Cout:0
+#                31533		A: 83	B:168	Cin:1		Sum:220	Cout:0
+#                31539		A: 83	B:168	Cin:1		Sum:188	Cout:0
+#                31545		A: 83	B:168	Cin:1		Sum:124	Cout:0
+#                31547		A: 83	B:168	Cin:1		Sum:124	Cout:1
+#                31551		A: 83	B:168	Cin:1		Sum:252	Cout:1
+#                31553		A: 83	B:168	Cin:1		Sum:252	Cout:0
+#                31613		A: 83	B:  x	Cin:x		Sum:252	Cout:0
+#                31614		A: 83	B:169	Cin:1		Sum:252	Cout:0
+#                31622		A: 83	B:169	Cin:1		Sum:253	Cout:0
+#                31714		A: 83	B:  x	Cin:x		Sum:253	Cout:0
+#                31715		A: 83	B:170	Cin:1		Sum:253	Cout:0
+#                31723		A: 83	B:170	Cin:1		Sum:252	Cout:0
+#                31729		A: 83	B:170	Cin:1		Sum:254	Cout:0
+#                31815		A: 83	B:  x	Cin:x		Sum:254	Cout:0
+#                31816		A: 83	B:171	Cin:1		Sum:254	Cout:0
+#                31824		A: 83	B:171	Cin:1		Sum:255	Cout:0
+#                31916		A: 83	B:  x	Cin:x		Sum:255	Cout:0
+#                31917		A: 83	B:172	Cin:1		Sum:255	Cout:0
+#                31925		A: 83	B:172	Cin:1		Sum:254	Cout:0
+#                31931		A: 83	B:172	Cin:1		Sum:252	Cout:0
+#                31937		A: 83	B:172	Cin:1		Sum:248	Cout:0
+#                31943		A: 83	B:172	Cin:1		Sum:240	Cout:0
+#                31949		A: 83	B:172	Cin:1		Sum:224	Cout:0
+#                31955		A: 83	B:172	Cin:1		Sum:192	Cout:0
+#                31961		A: 83	B:172	Cin:1		Sum:128	Cout:0
+#                31967		A: 83	B:172	Cin:1		Sum:  0	Cout:0
+#                31969		A: 83	B:172	Cin:1		Sum:  0	Cout:1
+#                32017		A: 83	B:  x	Cin:x		Sum:  0	Cout:1
+#                32018		A: 83	B:173	Cin:1		Sum:  0	Cout:1
+#                32026		A: 83	B:173	Cin:1		Sum:  1	Cout:1
+#                32118		A: 83	B:  x	Cin:x		Sum:  1	Cout:1
+#                32119		A: 83	B:174	Cin:1		Sum:  1	Cout:1
+#                32127		A: 83	B:174	Cin:1		Sum:  0	Cout:1
+#                32133		A: 83	B:174	Cin:1		Sum:  2	Cout:1
+#                32219		A: 83	B:  x	Cin:x		Sum:  2	Cout:1
+#                32220		A: 83	B:175	Cin:1		Sum:  2	Cout:1
+#                32228		A: 83	B:175	Cin:1		Sum:  3	Cout:1
+#                32320		A: 84	B:  x	Cin:x		Sum:  3	Cout:1
+#                32321		A: 84	B:160	Cin:1		Sum:  3	Cout:1
+#                32329		A: 84	B:160	Cin:1		Sum: 11	Cout:1
+#                32330		A: 84	B:160	Cin:1		Sum: 13	Cout:1
+#                32335		A: 84	B:160	Cin:1		Sum: 29	Cout:1
+#                32336		A: 84	B:160	Cin:1		Sum: 21	Cout:1
+#                32341		A: 84	B:160	Cin:1		Sum: 53	Cout:1
+#                32347		A: 84	B:160	Cin:1		Sum:117	Cout:1
+#                32353		A: 84	B:160	Cin:1		Sum:245	Cout:1
+#                32355		A: 84	B:160	Cin:1		Sum:245	Cout:0
+#                32421		A: 84	B:  x	Cin:x		Sum:245	Cout:0
+#                32422		A: 84	B:161	Cin:1		Sum:245	Cout:0
+#                32430		A: 84	B:161	Cin:1		Sum:244	Cout:0
+#                32436		A: 84	B:161	Cin:1		Sum:246	Cout:0
+#                32522		A: 84	B:  x	Cin:x		Sum:246	Cout:0
+#                32523		A: 84	B:162	Cin:1		Sum:246	Cout:0
+#                32531		A: 84	B:162	Cin:1		Sum:245	Cout:0
+#                32537		A: 84	B:162	Cin:1		Sum:243	Cout:0
+#                32543		A: 84	B:162	Cin:1		Sum:255	Cout:0
+#                32549		A: 84	B:162	Cin:1		Sum:247	Cout:0
+#                32623		A: 84	B:  x	Cin:x		Sum:247	Cout:0
+#                32624		A: 84	B:163	Cin:1		Sum:247	Cout:0
+#                32632		A: 84	B:163	Cin:1		Sum:246	Cout:0
+#                32638		A: 84	B:163	Cin:1		Sum:244	Cout:0
+#                32644		A: 84	B:163	Cin:1		Sum:240	Cout:0
+#                32650		A: 84	B:163	Cin:1		Sum:248	Cout:0
+#                32724		A: 84	B:  x	Cin:x		Sum:248	Cout:0
+#                32725		A: 84	B:164	Cin:1		Sum:248	Cout:0
+#                32733		A: 84	B:164	Cin:1		Sum:255	Cout:0
+#                32739		A: 84	B:164	Cin:1		Sum:249	Cout:0
+#                32825		A: 84	B:  x	Cin:x		Sum:249	Cout:0
+#                32826		A: 84	B:165	Cin:1		Sum:249	Cout:0
+#                32834		A: 84	B:165	Cin:1		Sum:248	Cout:0
+#                32840		A: 84	B:165	Cin:1		Sum:250	Cout:0
+#                32926		A: 84	B:  x	Cin:x		Sum:250	Cout:0
+#                32927		A: 84	B:166	Cin:1		Sum:250	Cout:0
+#                32935		A: 84	B:166	Cin:1		Sum:249	Cout:0
+#                32941		A: 84	B:166	Cin:1		Sum:255	Cout:0
+#                32947		A: 84	B:166	Cin:1		Sum:251	Cout:0
+#                33027		A: 84	B:  x	Cin:x		Sum:251	Cout:0
+#                33028		A: 84	B:167	Cin:1		Sum:251	Cout:0
+#                33036		A: 84	B:167	Cin:1		Sum:250	Cout:0
+#                33042		A: 84	B:167	Cin:1		Sum:248	Cout:0
+#                33048		A: 84	B:167	Cin:1		Sum:252	Cout:0
+#                33128		A: 84	B:  x	Cin:x		Sum:252	Cout:0
+#                33129		A: 84	B:168	Cin:1		Sum:252	Cout:0
+#                33137		A: 84	B:168	Cin:1		Sum:251	Cout:0
+#                33143		A: 84	B:168	Cin:1		Sum:245	Cout:0
+#                33149		A: 84	B:168	Cin:1		Sum:237	Cout:0
+#                33155		A: 84	B:168	Cin:1		Sum:221	Cout:0
+#                33161		A: 84	B:168	Cin:1		Sum:189	Cout:0
+#                33167		A: 84	B:168	Cin:1		Sum:125	Cout:0
+#                33169		A: 84	B:168	Cin:1		Sum:125	Cout:1
+#                33173		A: 84	B:168	Cin:1		Sum:253	Cout:1
+#                33175		A: 84	B:168	Cin:1		Sum:253	Cout:0
+#                33229		A: 84	B:  x	Cin:x		Sum:253	Cout:0
+#                33230		A: 84	B:169	Cin:1		Sum:253	Cout:0
+#                33238		A: 84	B:169	Cin:1		Sum:252	Cout:0
+#                33244		A: 84	B:169	Cin:1		Sum:254	Cout:0
+#                33330		A: 84	B:  x	Cin:x		Sum:254	Cout:0
+#                33331		A: 84	B:170	Cin:1		Sum:254	Cout:0
+#                33339		A: 84	B:170	Cin:1		Sum:253	Cout:0
+#                33345		A: 84	B:170	Cin:1		Sum:251	Cout:0
+#                33351		A: 84	B:170	Cin:1		Sum:247	Cout:0
+#                33357		A: 84	B:170	Cin:1		Sum:239	Cout:0
+#                33363		A: 84	B:170	Cin:1		Sum:223	Cout:0
+#                33369		A: 84	B:170	Cin:1		Sum:191	Cout:0
+#                33375		A: 84	B:170	Cin:1		Sum:127	Cout:0
+#                33377		A: 84	B:170	Cin:1		Sum:127	Cout:1
+#                33381		A: 84	B:170	Cin:1		Sum:255	Cout:1
+#                33383		A: 84	B:170	Cin:1		Sum:255	Cout:0
+#                33431		A: 84	B:  x	Cin:x		Sum:255	Cout:0
+#                33432		A: 84	B:171	Cin:1		Sum:255	Cout:0
+#                33440		A: 84	B:171	Cin:1		Sum:254	Cout:0
+#                33446		A: 84	B:171	Cin:1		Sum:252	Cout:0
+#                33452		A: 84	B:171	Cin:1		Sum:248	Cout:0
+#                33458		A: 84	B:171	Cin:1		Sum:240	Cout:0
+#                33464		A: 84	B:171	Cin:1		Sum:224	Cout:0
+#                33470		A: 84	B:171	Cin:1		Sum:192	Cout:0
+#                33476		A: 84	B:171	Cin:1		Sum:128	Cout:0
+#                33482		A: 84	B:171	Cin:1		Sum:  0	Cout:0
+#                33484		A: 84	B:171	Cin:1		Sum:  0	Cout:1
+#                33532		A: 84	B:  x	Cin:x		Sum:  0	Cout:1
+#                33533		A: 84	B:172	Cin:1		Sum:  0	Cout:1
+#                33541		A: 84	B:172	Cin:1		Sum:  7	Cout:1
+#                33547		A: 84	B:172	Cin:1		Sum:  1	Cout:1
+#                33633		A: 84	B:  x	Cin:x		Sum:  1	Cout:1
+#                33634		A: 84	B:173	Cin:1		Sum:  1	Cout:1
+#                33642		A: 84	B:173	Cin:1		Sum:  0	Cout:1
+#                33648		A: 84	B:173	Cin:1		Sum:  2	Cout:1
+#                33734		A: 84	B:  x	Cin:x		Sum:  2	Cout:1
+#                33735		A: 84	B:174	Cin:1		Sum:  2	Cout:1
+#                33743		A: 84	B:174	Cin:1		Sum:  1	Cout:1
+#                33749		A: 84	B:174	Cin:1		Sum:  7	Cout:1
+#                33755		A: 84	B:174	Cin:1		Sum:  3	Cout:1
+#                33835		A: 84	B:  x	Cin:x		Sum:  3	Cout:1
+#                33836		A: 84	B:175	Cin:1		Sum:  3	Cout:1
+#                33844		A: 84	B:175	Cin:1		Sum:  2	Cout:1
+#                33850		A: 84	B:175	Cin:1		Sum:  0	Cout:1
+#                33856		A: 84	B:175	Cin:1		Sum:  4	Cout:1
+#                33936		A: 85	B:  x	Cin:x		Sum:  4	Cout:1
+#                33937		A: 85	B:160	Cin:1		Sum:  4	Cout:1
+#                33945		A: 85	B:160	Cin:1		Sum:  2	Cout:1
+#                33951		A: 85	B:160	Cin:1		Sum: 30	Cout:1
+#                33957		A: 85	B:160	Cin:1		Sum: 54	Cout:1
+#                33963		A: 85	B:160	Cin:1		Sum:118	Cout:1
+#                33969		A: 85	B:160	Cin:1		Sum:246	Cout:1
+#                33971		A: 85	B:160	Cin:1		Sum:246	Cout:0
+#                34037		A: 85	B:  x	Cin:x		Sum:246	Cout:0
+#                34038		A: 85	B:161	Cin:1		Sum:246	Cout:0
+#                34046		A: 85	B:161	Cin:1		Sum:247	Cout:0
+#                34138		A: 85	B:  x	Cin:x		Sum:247	Cout:0
+#                34139		A: 85	B:162	Cin:1		Sum:247	Cout:0
+#                34147		A: 85	B:162	Cin:1		Sum:246	Cout:0
+#                34153		A: 85	B:162	Cin:1		Sum:244	Cout:0
+#                34159		A: 85	B:162	Cin:1		Sum:240	Cout:0
+#                34165		A: 85	B:162	Cin:1		Sum:248	Cout:0
+#                34239		A: 85	B:  x	Cin:x		Sum:248	Cout:0
+#                34240		A: 85	B:163	Cin:1		Sum:248	Cout:0
+#                34248		A: 85	B:163	Cin:1		Sum:249	Cout:0
+#                34340		A: 85	B:  x	Cin:x		Sum:249	Cout:0
+#                34341		A: 85	B:164	Cin:1		Sum:249	Cout:0
+#                34349		A: 85	B:164	Cin:1		Sum:252	Cout:0
+#                34355		A: 85	B:164	Cin:1		Sum:250	Cout:0
+#                34441		A: 85	B:  x	Cin:x		Sum:250	Cout:0
+#                34442		A: 85	B:165	Cin:1		Sum:250	Cout:0
+#                34450		A: 85	B:165	Cin:1		Sum:251	Cout:0
+#                34542		A: 85	B:  x	Cin:x		Sum:251	Cout:0
+#                34543		A: 85	B:166	Cin:1		Sum:251	Cout:0
+#                34551		A: 85	B:166	Cin:1		Sum:250	Cout:0
+#                34557		A: 85	B:166	Cin:1		Sum:248	Cout:0
+#                34563		A: 85	B:166	Cin:1		Sum:252	Cout:0
+#                34643		A: 85	B:  x	Cin:x		Sum:252	Cout:0
+#                34644		A: 85	B:167	Cin:1		Sum:252	Cout:0
+#                34652		A: 85	B:167	Cin:1		Sum:253	Cout:0
+#                34744		A: 85	B:  x	Cin:x		Sum:253	Cout:0
+#                34745		A: 85	B:168	Cin:1		Sum:253	Cout:0
+#                34753		A: 85	B:168	Cin:1		Sum:248	Cout:0
+#                34759		A: 85	B:168	Cin:1		Sum:246	Cout:0
+#                34765		A: 85	B:168	Cin:1		Sum:238	Cout:0
+#                34771		A: 85	B:168	Cin:1		Sum:222	Cout:0
+#                34777		A: 85	B:168	Cin:1		Sum:190	Cout:0
+#                34783		A: 85	B:168	Cin:1		Sum:126	Cout:0
+#                34785		A: 85	B:168	Cin:1		Sum:126	Cout:1
+#                34789		A: 85	B:168	Cin:1		Sum:254	Cout:1
+#                34791		A: 85	B:168	Cin:1		Sum:254	Cout:0
+#                34845		A: 85	B:  x	Cin:x		Sum:254	Cout:0
+#                34846		A: 85	B:169	Cin:1		Sum:254	Cout:0
+#                34854		A: 85	B:169	Cin:1		Sum:255	Cout:0
+#                34946		A: 85	B:  x	Cin:x		Sum:255	Cout:0
+#                34947		A: 85	B:170	Cin:1		Sum:255	Cout:0
+#                34955		A: 85	B:170	Cin:1		Sum:254	Cout:0
+#                34961		A: 85	B:170	Cin:1		Sum:252	Cout:0
+#                34967		A: 85	B:170	Cin:1		Sum:248	Cout:0
+#                34973		A: 85	B:170	Cin:1		Sum:240	Cout:0
+#                34979		A: 85	B:170	Cin:1		Sum:224	Cout:0
+#                34985		A: 85	B:170	Cin:1		Sum:192	Cout:0
+#                34991		A: 85	B:170	Cin:1		Sum:128	Cout:0
+#                34997		A: 85	B:170	Cin:1		Sum:  0	Cout:0
+#                34999		A: 85	B:170	Cin:1		Sum:  0	Cout:1
+#                35047		A: 85	B:  x	Cin:x		Sum:  0	Cout:1
+#                35048		A: 85	B:171	Cin:1		Sum:  0	Cout:1
+#                35056		A: 85	B:171	Cin:1		Sum:  1	Cout:1
+#                35148		A: 85	B:  x	Cin:x		Sum:  1	Cout:1
+#                35149		A: 85	B:172	Cin:1		Sum:  1	Cout:1
+#                35157		A: 85	B:172	Cin:1		Sum:  4	Cout:1
+#                35163		A: 85	B:172	Cin:1		Sum:  2	Cout:1
+#                35249		A: 85	B:  x	Cin:x		Sum:  2	Cout:1
+#                35250		A: 85	B:173	Cin:1		Sum:  2	Cout:1
+#                35258		A: 85	B:173	Cin:1		Sum:  3	Cout:1
+#                35350		A: 85	B:  x	Cin:x		Sum:  3	Cout:1
+#                35351		A: 85	B:174	Cin:1		Sum:  3	Cout:1
+#                35359		A: 85	B:174	Cin:1		Sum:  2	Cout:1
+#                35365		A: 85	B:174	Cin:1		Sum:  0	Cout:1
+#                35371		A: 85	B:174	Cin:1		Sum:  4	Cout:1
+#                35451		A: 85	B:  x	Cin:x		Sum:  4	Cout:1
+#                35452		A: 85	B:175	Cin:1		Sum:  4	Cout:1
+#                35460		A: 85	B:175	Cin:1		Sum:  5	Cout:1
+#                35552		A: 86	B:  x	Cin:x		Sum:  5	Cout:1
+#                35553		A: 86	B:160	Cin:1		Sum:  5	Cout:1
+#                35561		A: 86	B:160	Cin:1		Sum:  1	Cout:1
+#                35562		A: 86	B:160	Cin:1		Sum:  3	Cout:1
+#                35567		A: 86	B:160	Cin:1		Sum: 27	Cout:1
+#                35568		A: 86	B:160	Cin:1		Sum: 31	Cout:1
+#                35573		A: 86	B:160	Cin:1		Sum: 63	Cout:1
+#                35574		A: 86	B:160	Cin:1		Sum: 55	Cout:1
+#                35579		A: 86	B:160	Cin:1		Sum:119	Cout:1
+#                35585		A: 86	B:160	Cin:1		Sum:247	Cout:1
+#                35587		A: 86	B:160	Cin:1		Sum:247	Cout:0
+#                35653		A: 86	B:  x	Cin:x		Sum:247	Cout:0
+#                35654		A: 86	B:161	Cin:1		Sum:247	Cout:0
+#                35662		A: 86	B:161	Cin:1		Sum:246	Cout:0
+#                35668		A: 86	B:161	Cin:1		Sum:244	Cout:0
+#                35674		A: 86	B:161	Cin:1		Sum:240	Cout:0
+#                35680		A: 86	B:161	Cin:1		Sum:248	Cout:0
+#                35754		A: 86	B:  x	Cin:x		Sum:248	Cout:0
+#                35755		A: 86	B:162	Cin:1		Sum:248	Cout:0
+#                35763		A: 86	B:162	Cin:1		Sum:251	Cout:0
+#                35769		A: 86	B:162	Cin:1		Sum:249	Cout:0
+#                35855		A: 86	B:  x	Cin:x		Sum:249	Cout:0
+#                35856		A: 86	B:163	Cin:1		Sum:249	Cout:0
+#                35864		A: 86	B:163	Cin:1		Sum:248	Cout:0
+#                35870		A: 86	B:163	Cin:1		Sum:250	Cout:0
+#                35956		A: 86	B:  x	Cin:x		Sum:250	Cout:0
+#                35957		A: 86	B:164	Cin:1		Sum:250	Cout:0
+#                35965		A: 86	B:164	Cin:1		Sum:249	Cout:0
+#                35971		A: 86	B:164	Cin:1		Sum:255	Cout:0
+#                35977		A: 86	B:164	Cin:1		Sum:251	Cout:0
+#                36057		A: 86	B:  x	Cin:x		Sum:251	Cout:0
+#                36058		A: 86	B:165	Cin:1		Sum:251	Cout:0
+#                36066		A: 86	B:165	Cin:1		Sum:250	Cout:0
+#                36072		A: 86	B:165	Cin:1		Sum:248	Cout:0
+#                36078		A: 86	B:165	Cin:1		Sum:252	Cout:0
+#                36158		A: 86	B:  x	Cin:x		Sum:252	Cout:0
+#                36159		A: 86	B:166	Cin:1		Sum:252	Cout:0
+#                36167		A: 86	B:166	Cin:1		Sum:255	Cout:0
+#                36173		A: 86	B:166	Cin:1		Sum:253	Cout:0
+#                36259		A: 86	B:  x	Cin:x		Sum:253	Cout:0
+#                36260		A: 86	B:167	Cin:1		Sum:253	Cout:0
+#                36268		A: 86	B:167	Cin:1		Sum:252	Cout:0
+#                36274		A: 86	B:167	Cin:1		Sum:254	Cout:0
+#                36360		A: 86	B:  x	Cin:x		Sum:254	Cout:0
+#                36361		A: 86	B:168	Cin:1		Sum:254	Cout:0
+#                36369		A: 86	B:168	Cin:1		Sum:253	Cout:0
+#                36375		A: 86	B:168	Cin:1		Sum:251	Cout:0
+#                36381		A: 86	B:168	Cin:1		Sum:247	Cout:0
+#                36387		A: 86	B:168	Cin:1		Sum:239	Cout:0
+#                36393		A: 86	B:168	Cin:1		Sum:223	Cout:0
+#                36399		A: 86	B:168	Cin:1		Sum:191	Cout:0
+#                36405		A: 86	B:168	Cin:1		Sum:127	Cout:0
+#                36407		A: 86	B:168	Cin:1		Sum:127	Cout:1
+#                36411		A: 86	B:168	Cin:1		Sum:255	Cout:1
+#                36413		A: 86	B:168	Cin:1		Sum:255	Cout:0
+#                36461		A: 86	B:  x	Cin:x		Sum:255	Cout:0
+#                36462		A: 86	B:169	Cin:1		Sum:255	Cout:0
+#                36470		A: 86	B:169	Cin:1		Sum:254	Cout:0
+#                36476		A: 86	B:169	Cin:1		Sum:252	Cout:0
+#                36482		A: 86	B:169	Cin:1		Sum:248	Cout:0
+#                36488		A: 86	B:169	Cin:1		Sum:240	Cout:0
+#                36494		A: 86	B:169	Cin:1		Sum:224	Cout:0
+#                36500		A: 86	B:169	Cin:1		Sum:192	Cout:0
+#                36506		A: 86	B:169	Cin:1		Sum:128	Cout:0
+#                36512		A: 86	B:169	Cin:1		Sum:  0	Cout:0
+#                36514		A: 86	B:169	Cin:1		Sum:  0	Cout:1
+#                36562		A: 86	B:  x	Cin:x		Sum:  0	Cout:1
+#                36563		A: 86	B:170	Cin:1		Sum:  0	Cout:1
+#                36571		A: 86	B:170	Cin:1		Sum:  3	Cout:1
+#                36577		A: 86	B:170	Cin:1		Sum:  1	Cout:1
+#                36663		A: 86	B:  x	Cin:x		Sum:  1	Cout:1
+#                36664		A: 86	B:171	Cin:1		Sum:  1	Cout:1
+#                36672		A: 86	B:171	Cin:1		Sum:  0	Cout:1
+#                36678		A: 86	B:171	Cin:1		Sum:  2	Cout:1
+#                36764		A: 86	B:  x	Cin:x		Sum:  2	Cout:1
+#                36765		A: 86	B:172	Cin:1		Sum:  2	Cout:1
+#                36773		A: 86	B:172	Cin:1		Sum:  1	Cout:1
+#                36779		A: 86	B:172	Cin:1		Sum:  7	Cout:1
+#                36785		A: 86	B:172	Cin:1		Sum:  3	Cout:1
+#                36865		A: 86	B:  x	Cin:x		Sum:  3	Cout:1
+#                36866		A: 86	B:173	Cin:1		Sum:  3	Cout:1
+#                36874		A: 86	B:173	Cin:1		Sum:  2	Cout:1
+#                36880		A: 86	B:173	Cin:1		Sum:  0	Cout:1
+#                36886		A: 86	B:173	Cin:1		Sum:  4	Cout:1
+#                36966		A: 86	B:  x	Cin:x		Sum:  4	Cout:1
+#                36967		A: 86	B:174	Cin:1		Sum:  4	Cout:1
+#                36975		A: 86	B:174	Cin:1		Sum:  7	Cout:1
+#                36981		A: 86	B:174	Cin:1		Sum:  5	Cout:1
+#                37067		A: 86	B:  x	Cin:x		Sum:  5	Cout:1
+#                37068		A: 86	B:175	Cin:1		Sum:  5	Cout:1
+#                37076		A: 86	B:175	Cin:1		Sum:  4	Cout:1
+#                37082		A: 86	B:175	Cin:1		Sum:  6	Cout:1
+#                37168		A: 87	B:  x	Cin:x		Sum:  6	Cout:1
+#                37169		A: 87	B:160	Cin:1		Sum:  6	Cout:1
+#                37177		A: 87	B:160	Cin:1		Sum:  4	Cout:1
+#                37183		A: 87	B:160	Cin:1		Sum: 16	Cout:1
+#                37189		A: 87	B:160	Cin:1		Sum: 56	Cout:1
+#                37195		A: 87	B:160	Cin:1		Sum:120	Cout:1
+#                37201		A: 87	B:160	Cin:1		Sum:248	Cout:1
+#                37203		A: 87	B:160	Cin:1		Sum:248	Cout:0
+#                37269		A: 87	B:  x	Cin:x		Sum:248	Cout:0
+#                37270		A: 87	B:161	Cin:1		Sum:248	Cout:0
+#                37278		A: 87	B:161	Cin:1		Sum:249	Cout:0
+#                37370		A: 87	B:  x	Cin:x		Sum:249	Cout:0
+#                37371		A: 87	B:162	Cin:1		Sum:249	Cout:0
+#                37379		A: 87	B:162	Cin:1		Sum:248	Cout:0
+#                37385		A: 87	B:162	Cin:1		Sum:250	Cout:0
+#                37471		A: 87	B:  x	Cin:x		Sum:250	Cout:0
+#                37472		A: 87	B:163	Cin:1		Sum:250	Cout:0
+#                37480		A: 87	B:163	Cin:1		Sum:251	Cout:0
+#                37572		A: 87	B:  x	Cin:x		Sum:251	Cout:0
+#                37573		A: 87	B:164	Cin:1		Sum:251	Cout:0
+#                37581		A: 87	B:164	Cin:1		Sum:250	Cout:0
+#                37587		A: 87	B:164	Cin:1		Sum:248	Cout:0
+#                37593		A: 87	B:164	Cin:1		Sum:252	Cout:0
+#                37673		A: 87	B:  x	Cin:x		Sum:252	Cout:0
+#                37674		A: 87	B:165	Cin:1		Sum:252	Cout:0
+#                37682		A: 87	B:165	Cin:1		Sum:253	Cout:0
+#                37774		A: 87	B:  x	Cin:x		Sum:253	Cout:0
+#                37775		A: 87	B:166	Cin:1		Sum:253	Cout:0
+#                37783		A: 87	B:166	Cin:1		Sum:252	Cout:0
+#                37789		A: 87	B:166	Cin:1		Sum:254	Cout:0
+#                37875		A: 87	B:  x	Cin:x		Sum:254	Cout:0
+#                37876		A: 87	B:167	Cin:1		Sum:254	Cout:0
+#                37884		A: 87	B:167	Cin:1		Sum:255	Cout:0
+#                37976		A: 87	B:  x	Cin:x		Sum:255	Cout:0
+#                37977		A: 87	B:168	Cin:1		Sum:255	Cout:0
+#                37985		A: 87	B:168	Cin:1		Sum:254	Cout:0
+#                37991		A: 87	B:168	Cin:1		Sum:252	Cout:0
+#                37997		A: 87	B:168	Cin:1		Sum:248	Cout:0
+#                38003		A: 87	B:168	Cin:1		Sum:240	Cout:0
+#                38009		A: 87	B:168	Cin:1		Sum:224	Cout:0
+#                38015		A: 87	B:168	Cin:1		Sum:192	Cout:0
+#                38021		A: 87	B:168	Cin:1		Sum:128	Cout:0
+#                38027		A: 87	B:168	Cin:1		Sum:  0	Cout:0
+#                38029		A: 87	B:168	Cin:1		Sum:  0	Cout:1
+#                38077		A: 87	B:  x	Cin:x		Sum:  0	Cout:1
+#                38078		A: 87	B:169	Cin:1		Sum:  0	Cout:1
+#                38086		A: 87	B:169	Cin:1		Sum:  1	Cout:1
+#                38178		A: 87	B:  x	Cin:x		Sum:  1	Cout:1
+#                38179		A: 87	B:170	Cin:1		Sum:  1	Cout:1
+#                38187		A: 87	B:170	Cin:1		Sum:  0	Cout:1
+#                38193		A: 87	B:170	Cin:1		Sum:  2	Cout:1
+#                38279		A: 87	B:  x	Cin:x		Sum:  2	Cout:1
+#                38280		A: 87	B:171	Cin:1		Sum:  2	Cout:1
+#                38288		A: 87	B:171	Cin:1		Sum:  3	Cout:1
+#                38380		A: 87	B:  x	Cin:x		Sum:  3	Cout:1
+#                38381		A: 87	B:172	Cin:1		Sum:  3	Cout:1
+#                38389		A: 87	B:172	Cin:1		Sum:  2	Cout:1
+#                38395		A: 87	B:172	Cin:1		Sum:  0	Cout:1
+#                38401		A: 87	B:172	Cin:1		Sum:  4	Cout:1
+#                38481		A: 87	B:  x	Cin:x		Sum:  4	Cout:1
+#                38482		A: 87	B:173	Cin:1		Sum:  4	Cout:1
+#                38490		A: 87	B:173	Cin:1		Sum:  5	Cout:1
+#                38582		A: 87	B:  x	Cin:x		Sum:  5	Cout:1
+#                38583		A: 87	B:174	Cin:1		Sum:  5	Cout:1
+#                38591		A: 87	B:174	Cin:1		Sum:  4	Cout:1
+#                38597		A: 87	B:174	Cin:1		Sum:  6	Cout:1
+#                38683		A: 87	B:  x	Cin:x		Sum:  6	Cout:1
+#                38684		A: 87	B:175	Cin:1		Sum:  6	Cout:1
+#                38692		A: 87	B:175	Cin:1		Sum:  7	Cout:1
+#                38784		A: 88	B:  x	Cin:x		Sum:  7	Cout:1
+#                38785		A: 88	B:160	Cin:1		Sum:  7	Cout:1
+#                38794		A: 88	B:160	Cin:1		Sum:  9	Cout:1
+#                38800		A: 88	B:160	Cin:1		Sum: 25	Cout:1
+#                38806		A: 88	B:160	Cin:1		Sum: 57	Cout:1
+#                38812		A: 88	B:160	Cin:1		Sum:121	Cout:1
+#                38818		A: 88	B:160	Cin:1		Sum:249	Cout:1
+#                38820		A: 88	B:160	Cin:1		Sum:249	Cout:0
+#                38885		A: 88	B:  x	Cin:x		Sum:249	Cout:0
+#                38886		A: 88	B:161	Cin:1		Sum:249	Cout:0
+#                38894		A: 88	B:161	Cin:1		Sum:248	Cout:0
+#                38900		A: 88	B:161	Cin:1		Sum:250	Cout:0
+#                38986		A: 88	B:  x	Cin:x		Sum:250	Cout:0
+#                38987		A: 88	B:162	Cin:1		Sum:250	Cout:0
+#                38995		A: 88	B:162	Cin:1		Sum:249	Cout:0
+#                39001		A: 88	B:162	Cin:1		Sum:255	Cout:0
+#                39007		A: 88	B:162	Cin:1		Sum:251	Cout:0
+#                39087		A: 88	B:  x	Cin:x		Sum:251	Cout:0
+#                39088		A: 88	B:163	Cin:1		Sum:251	Cout:0
+#                39096		A: 88	B:163	Cin:1		Sum:250	Cout:0
+#                39102		A: 88	B:163	Cin:1		Sum:248	Cout:0
+#                39108		A: 88	B:163	Cin:1		Sum:252	Cout:0
+#                39188		A: 88	B:  x	Cin:x		Sum:252	Cout:0
+#                39189		A: 88	B:164	Cin:1		Sum:252	Cout:0
+#                39197		A: 88	B:164	Cin:1		Sum:251	Cout:0
+#                39203		A: 88	B:164	Cin:1		Sum:245	Cout:0
+#                39209		A: 88	B:164	Cin:1		Sum:237	Cout:0
+#                39215		A: 88	B:164	Cin:1		Sum:221	Cout:0
+#                39221		A: 88	B:164	Cin:1		Sum:189	Cout:0
+#                39227		A: 88	B:164	Cin:1		Sum:125	Cout:0
+#                39229		A: 88	B:164	Cin:1		Sum:125	Cout:1
+#                39233		A: 88	B:164	Cin:1		Sum:253	Cout:1
+#                39235		A: 88	B:164	Cin:1		Sum:253	Cout:0
+#                39289		A: 88	B:  x	Cin:x		Sum:253	Cout:0
+#                39290		A: 88	B:165	Cin:1		Sum:253	Cout:0
+#                39298		A: 88	B:165	Cin:1		Sum:252	Cout:0
+#                39304		A: 88	B:165	Cin:1		Sum:254	Cout:0
+#                39390		A: 88	B:  x	Cin:x		Sum:254	Cout:0
+#                39391		A: 88	B:166	Cin:1		Sum:254	Cout:0
+#                39399		A: 88	B:166	Cin:1		Sum:253	Cout:0
+#                39405		A: 88	B:166	Cin:1		Sum:251	Cout:0
+#                39411		A: 88	B:166	Cin:1		Sum:247	Cout:0
+#                39417		A: 88	B:166	Cin:1		Sum:239	Cout:0
+#                39423		A: 88	B:166	Cin:1		Sum:223	Cout:0
+#                39429		A: 88	B:166	Cin:1		Sum:191	Cout:0
+#                39435		A: 88	B:166	Cin:1		Sum:127	Cout:0
+#                39437		A: 88	B:166	Cin:1		Sum:127	Cout:1
+#                39441		A: 88	B:166	Cin:1		Sum:255	Cout:1
+#                39443		A: 88	B:166	Cin:1		Sum:255	Cout:0
+#                39491		A: 88	B:  x	Cin:x		Sum:255	Cout:0
+#                39492		A: 88	B:167	Cin:1		Sum:255	Cout:0
+#                39500		A: 88	B:167	Cin:1		Sum:254	Cout:0
+#                39506		A: 88	B:167	Cin:1		Sum:252	Cout:0
+#                39512		A: 88	B:167	Cin:1		Sum:248	Cout:0
+#                39518		A: 88	B:167	Cin:1		Sum:240	Cout:0
+#                39524		A: 88	B:167	Cin:1		Sum:224	Cout:0
+#                39530		A: 88	B:167	Cin:1		Sum:192	Cout:0
+#                39536		A: 88	B:167	Cin:1		Sum:128	Cout:0
+#                39542		A: 88	B:167	Cin:1		Sum:  0	Cout:0
+#                39544		A: 88	B:167	Cin:1		Sum:  0	Cout:1
+#                39592		A: 88	B:  x	Cin:x		Sum:  0	Cout:1
+#                39593		A: 88	B:168	Cin:1		Sum:  0	Cout:1
+#                39601		A: 88	B:168	Cin:1		Sum: 15	Cout:1
+#                39607		A: 88	B:168	Cin:1		Sum:  1	Cout:1
+#                39693		A: 88	B:  x	Cin:x		Sum:  1	Cout:1
+#                39694		A: 88	B:169	Cin:1		Sum:  1	Cout:1
+#                39702		A: 88	B:169	Cin:1		Sum:  0	Cout:1
+#                39708		A: 88	B:169	Cin:1		Sum:  2	Cout:1
+#                39794		A: 88	B:  x	Cin:x		Sum:  2	Cout:1
+#                39795		A: 88	B:170	Cin:1		Sum:  2	Cout:1
+#                39803		A: 88	B:170	Cin:1		Sum:  1	Cout:1
+#                39809		A: 88	B:170	Cin:1		Sum:  7	Cout:1
+#                39815		A: 88	B:170	Cin:1		Sum:  3	Cout:1
+#                39895		A: 88	B:  x	Cin:x		Sum:  3	Cout:1
+#                39896		A: 88	B:171	Cin:1		Sum:  3	Cout:1
+#                39904		A: 88	B:171	Cin:1		Sum:  2	Cout:1
+#                39910		A: 88	B:171	Cin:1		Sum:  0	Cout:1
+#                39916		A: 88	B:171	Cin:1		Sum:  4	Cout:1
+#                39996		A: 88	B:  x	Cin:x		Sum:  4	Cout:1
+#                39997		A: 88	B:172	Cin:1		Sum:  4	Cout:1
+#                40005		A: 88	B:172	Cin:1		Sum:  3	Cout:1
+#                40011		A: 88	B:172	Cin:1		Sum: 13	Cout:1
+#                40017		A: 88	B:172	Cin:1		Sum:  5	Cout:1
+#                40097		A: 88	B:  x	Cin:x		Sum:  5	Cout:1
+#                40098		A: 88	B:173	Cin:1		Sum:  5	Cout:1
+#                40106		A: 88	B:173	Cin:1		Sum:  4	Cout:1
+#                40112		A: 88	B:173	Cin:1		Sum:  6	Cout:1
+#                40198		A: 88	B:  x	Cin:x		Sum:  6	Cout:1
+#                40199		A: 88	B:174	Cin:1		Sum:  6	Cout:1
+#                40207		A: 88	B:174	Cin:1		Sum:  5	Cout:1
+#                40213		A: 88	B:174	Cin:1		Sum:  3	Cout:1
+#                40219		A: 88	B:174	Cin:1		Sum: 15	Cout:1
+#                40225		A: 88	B:174	Cin:1		Sum:  7	Cout:1
+#                40299		A: 88	B:  x	Cin:x		Sum:  7	Cout:1
+#                40300		A: 88	B:175	Cin:1		Sum:  7	Cout:1
+#                40308		A: 88	B:175	Cin:1		Sum:  6	Cout:1
+#                40314		A: 88	B:175	Cin:1		Sum:  4	Cout:1
+#                40320		A: 88	B:175	Cin:1		Sum:  0	Cout:1
+#                40326		A: 88	B:175	Cin:1		Sum:  8	Cout:1
+#                40400		A: 89	B:  x	Cin:x		Sum:  8	Cout:1
+#                40401		A: 89	B:160	Cin:1		Sum:  8	Cout:1
+#                40409		A: 89	B:160	Cin:1		Sum:  6	Cout:1
+#                40411		A: 89	B:160	Cin:1		Sum: 22	Cout:1
+#                40415		A: 89	B:160	Cin:1		Sum: 10	Cout:1
+#                40417		A: 89	B:160	Cin:1		Sum: 42	Cout:1
+#                40421		A: 89	B:160	Cin:1		Sum: 26	Cout:1
+#                40423		A: 89	B:160	Cin:1		Sum: 90	Cout:1
+#                40427		A: 89	B:160	Cin:1		Sum: 58	Cout:1
+#                40429		A: 89	B:160	Cin:1		Sum:186	Cout:1
+#                40431		A: 89	B:160	Cin:1		Sum:186	Cout:0
+#                40433		A: 89	B:160	Cin:1		Sum:122	Cout:0
+#                40435		A: 89	B:160	Cin:1		Sum:122	Cout:1
+#                40439		A: 89	B:160	Cin:1		Sum:250	Cout:1
+#                40441		A: 89	B:160	Cin:1		Sum:250	Cout:0
+#                40501		A: 89	B:  x	Cin:x		Sum:250	Cout:0
+#                40502		A: 89	B:161	Cin:1		Sum:250	Cout:0
+#                40510		A: 89	B:161	Cin:1		Sum:251	Cout:0
+#                40602		A: 89	B:  x	Cin:x		Sum:251	Cout:0
+#                40603		A: 89	B:162	Cin:1		Sum:251	Cout:0
+#                40611		A: 89	B:162	Cin:1		Sum:250	Cout:0
+#                40617		A: 89	B:162	Cin:1		Sum:248	Cout:0
+#                40623		A: 89	B:162	Cin:1		Sum:252	Cout:0
+#                40703		A: 89	B:  x	Cin:x		Sum:252	Cout:0
+#                40704		A: 89	B:163	Cin:1		Sum:252	Cout:0
+#                40712		A: 89	B:163	Cin:1		Sum:253	Cout:0
+#                40804		A: 89	B:  x	Cin:x		Sum:253	Cout:0
+#                40805		A: 89	B:164	Cin:1		Sum:253	Cout:0
+#                40813		A: 89	B:164	Cin:1		Sum:248	Cout:0
+#                40819		A: 89	B:164	Cin:1		Sum:246	Cout:0
+#                40825		A: 89	B:164	Cin:1		Sum:238	Cout:0
+#                40831		A: 89	B:164	Cin:1		Sum:222	Cout:0
+#                40837		A: 89	B:164	Cin:1		Sum:190	Cout:0
+#                40843		A: 89	B:164	Cin:1		Sum:126	Cout:0
+#                40845		A: 89	B:164	Cin:1		Sum:126	Cout:1
+#                40849		A: 89	B:164	Cin:1		Sum:254	Cout:1
+#                40851		A: 89	B:164	Cin:1		Sum:254	Cout:0
+#                40905		A: 89	B:  x	Cin:x		Sum:254	Cout:0
+#                40906		A: 89	B:165	Cin:1		Sum:254	Cout:0
+#                40914		A: 89	B:165	Cin:1		Sum:255	Cout:0
+#                41006		A: 89	B:  x	Cin:x		Sum:255	Cout:0
+#                41007		A: 89	B:166	Cin:1		Sum:255	Cout:0
+#                41015		A: 89	B:166	Cin:1		Sum:254	Cout:0
+#                41021		A: 89	B:166	Cin:1		Sum:252	Cout:0
+#                41027		A: 89	B:166	Cin:1		Sum:248	Cout:0
+#                41033		A: 89	B:166	Cin:1		Sum:240	Cout:0
+#                41039		A: 89	B:166	Cin:1		Sum:224	Cout:0
+#                41045		A: 89	B:166	Cin:1		Sum:192	Cout:0
+#                41051		A: 89	B:166	Cin:1		Sum:128	Cout:0
+#                41057		A: 89	B:166	Cin:1		Sum:  0	Cout:0
+#                41059		A: 89	B:166	Cin:1		Sum:  0	Cout:1
+#                41107		A: 89	B:  x	Cin:x		Sum:  0	Cout:1
+#                41108		A: 89	B:167	Cin:1		Sum:  0	Cout:1
+#                41116		A: 89	B:167	Cin:1		Sum:  1	Cout:1
+#                41208		A: 89	B:  x	Cin:x		Sum:  1	Cout:1
+#                41209		A: 89	B:168	Cin:1		Sum:  1	Cout:1
+#                41217		A: 89	B:168	Cin:1		Sum: 12	Cout:1
+#                41223		A: 89	B:168	Cin:1		Sum:  2	Cout:1
+#                41309		A: 89	B:  x	Cin:x		Sum:  2	Cout:1
+#                41310		A: 89	B:169	Cin:1		Sum:  2	Cout:1
+#                41318		A: 89	B:169	Cin:1		Sum:  3	Cout:1
+#                41410		A: 89	B:  x	Cin:x		Sum:  3	Cout:1
+#                41411		A: 89	B:170	Cin:1		Sum:  3	Cout:1
+#                41419		A: 89	B:170	Cin:1		Sum:  2	Cout:1
+#                41425		A: 89	B:170	Cin:1		Sum:  0	Cout:1
+#                41431		A: 89	B:170	Cin:1		Sum:  4	Cout:1
+#                41511		A: 89	B:  x	Cin:x		Sum:  4	Cout:1
+#                41512		A: 89	B:171	Cin:1		Sum:  4	Cout:1
+#                41520		A: 89	B:171	Cin:1		Sum:  5	Cout:1
+#                41612		A: 89	B:  x	Cin:x		Sum:  5	Cout:1
+#                41613		A: 89	B:172	Cin:1		Sum:  5	Cout:1
+#                41621		A: 89	B:172	Cin:1		Sum:  0	Cout:1
+#                41627		A: 89	B:172	Cin:1		Sum: 14	Cout:1
+#                41633		A: 89	B:172	Cin:1		Sum:  6	Cout:1
+#                41713		A: 89	B:  x	Cin:x		Sum:  6	Cout:1
+#                41714		A: 89	B:173	Cin:1		Sum:  6	Cout:1
+#                41722		A: 89	B:173	Cin:1		Sum:  7	Cout:1
+#                41814		A: 89	B:  x	Cin:x		Sum:  7	Cout:1
+#                41815		A: 89	B:174	Cin:1		Sum:  7	Cout:1
+#                41823		A: 89	B:174	Cin:1		Sum:  6	Cout:1
+#                41829		A: 89	B:174	Cin:1		Sum:  4	Cout:1
+#                41835		A: 89	B:174	Cin:1		Sum:  0	Cout:1
+#                41841		A: 89	B:174	Cin:1		Sum:  8	Cout:1
+#                41915		A: 89	B:  x	Cin:x		Sum:  8	Cout:1
+#                41916		A: 89	B:175	Cin:1		Sum:  8	Cout:1
+#                41924		A: 89	B:175	Cin:1		Sum:  9	Cout:1
+#                42016		A: 90	B:  x	Cin:x		Sum:  9	Cout:1
+#                42017		A: 90	B:160	Cin:1		Sum:  9	Cout:1
+#                42025		A: 90	B:160	Cin:1		Sum:  5	Cout:1
+#                42026		A: 90	B:160	Cin:1		Sum:  7	Cout:1
+#                42027		A: 90	B:160	Cin:1		Sum: 23	Cout:1
+#                42031		A: 90	B:160	Cin:1		Sum: 15	Cout:1
+#                42032		A: 90	B:160	Cin:1		Sum: 11	Cout:1
+#                42033		A: 90	B:160	Cin:1		Sum: 43	Cout:1
+#                42037		A: 90	B:160	Cin:1		Sum: 27	Cout:1
+#                42039		A: 90	B:160	Cin:1		Sum: 91	Cout:1
+#                42043		A: 90	B:160	Cin:1		Sum: 59	Cout:1
+#                42045		A: 90	B:160	Cin:1		Sum:187	Cout:1
+#                42047		A: 90	B:160	Cin:1		Sum:187	Cout:0
+#                42049		A: 90	B:160	Cin:1		Sum:123	Cout:0
+#                42051		A: 90	B:160	Cin:1		Sum:123	Cout:1
+#                42055		A: 90	B:160	Cin:1		Sum:251	Cout:1
+#                42057		A: 90	B:160	Cin:1		Sum:251	Cout:0
+#                42117		A: 90	B:  x	Cin:x		Sum:251	Cout:0
+#                42118		A: 90	B:161	Cin:1		Sum:251	Cout:0
+#                42126		A: 90	B:161	Cin:1		Sum:250	Cout:0
+#                42132		A: 90	B:161	Cin:1		Sum:248	Cout:0
+#                42138		A: 90	B:161	Cin:1		Sum:252	Cout:0
+#                42218		A: 90	B:  x	Cin:x		Sum:252	Cout:0
+#                42219		A: 90	B:162	Cin:1		Sum:252	Cout:0
+#                42227		A: 90	B:162	Cin:1		Sum:255	Cout:0
+#                42233		A: 90	B:162	Cin:1		Sum:253	Cout:0
+#                42319		A: 90	B:  x	Cin:x		Sum:253	Cout:0
+#                42320		A: 90	B:163	Cin:1		Sum:253	Cout:0
+#                42328		A: 90	B:163	Cin:1		Sum:252	Cout:0
+#                42334		A: 90	B:163	Cin:1		Sum:254	Cout:0
+#                42420		A: 90	B:  x	Cin:x		Sum:254	Cout:0
+#                42421		A: 90	B:164	Cin:1		Sum:254	Cout:0
+#                42429		A: 90	B:164	Cin:1		Sum:253	Cout:0
+#                42435		A: 90	B:164	Cin:1		Sum:251	Cout:0
+#                42441		A: 90	B:164	Cin:1		Sum:247	Cout:0
+#                42447		A: 90	B:164	Cin:1		Sum:239	Cout:0
+#                42453		A: 90	B:164	Cin:1		Sum:223	Cout:0
+#                42459		A: 90	B:164	Cin:1		Sum:191	Cout:0
+#                42465		A: 90	B:164	Cin:1		Sum:127	Cout:0
+#                42467		A: 90	B:164	Cin:1		Sum:127	Cout:1
+#                42471		A: 90	B:164	Cin:1		Sum:255	Cout:1
+#                42473		A: 90	B:164	Cin:1		Sum:255	Cout:0
+#                42521		A: 90	B:  x	Cin:x		Sum:255	Cout:0
+#                42522		A: 90	B:165	Cin:1		Sum:255	Cout:0
+#                42530		A: 90	B:165	Cin:1		Sum:254	Cout:0
+#                42536		A: 90	B:165	Cin:1		Sum:252	Cout:0
+#                42542		A: 90	B:165	Cin:1		Sum:248	Cout:0
+#                42548		A: 90	B:165	Cin:1		Sum:240	Cout:0
+#                42554		A: 90	B:165	Cin:1		Sum:224	Cout:0
+#                42560		A: 90	B:165	Cin:1		Sum:192	Cout:0
+#                42566		A: 90	B:165	Cin:1		Sum:128	Cout:0
+#                42572		A: 90	B:165	Cin:1		Sum:  0	Cout:0
+#                42574		A: 90	B:165	Cin:1		Sum:  0	Cout:1
+#                42622		A: 90	B:  x	Cin:x		Sum:  0	Cout:1
+#                42623		A: 90	B:166	Cin:1		Sum:  0	Cout:1
+#                42631		A: 90	B:166	Cin:1		Sum:  3	Cout:1
+#                42637		A: 90	B:166	Cin:1		Sum:  1	Cout:1
+#                42723		A: 90	B:  x	Cin:x		Sum:  1	Cout:1
+#                42724		A: 90	B:167	Cin:1		Sum:  1	Cout:1
+#                42732		A: 90	B:167	Cin:1		Sum:  0	Cout:1
+#                42738		A: 90	B:167	Cin:1		Sum:  2	Cout:1
+#                42824		A: 90	B:  x	Cin:x		Sum:  2	Cout:1
+#                42825		A: 90	B:168	Cin:1		Sum:  2	Cout:1
+#                42833		A: 90	B:168	Cin:1		Sum:  9	Cout:1
+#                42839		A: 90	B:168	Cin:1		Sum:  7	Cout:1
+#                42845		A: 90	B:168	Cin:1		Sum:  3	Cout:1
+#                42925		A: 90	B:  x	Cin:x		Sum:  3	Cout:1
+#                42926		A: 90	B:169	Cin:1		Sum:  3	Cout:1
+#                42934		A: 90	B:169	Cin:1		Sum:  2	Cout:1
+#                42940		A: 90	B:169	Cin:1		Sum:  0	Cout:1
+#                42946		A: 90	B:169	Cin:1		Sum:  4	Cout:1
+#                43026		A: 90	B:  x	Cin:x		Sum:  4	Cout:1
+#                43027		A: 90	B:170	Cin:1		Sum:  4	Cout:1
+#                43035		A: 90	B:170	Cin:1		Sum:  7	Cout:1
+#                43041		A: 90	B:170	Cin:1		Sum:  5	Cout:1
+#                43127		A: 90	B:  x	Cin:x		Sum:  5	Cout:1
+#                43128		A: 90	B:171	Cin:1		Sum:  5	Cout:1
+#                43136		A: 90	B:171	Cin:1		Sum:  4	Cout:1
+#                43142		A: 90	B:171	Cin:1		Sum:  6	Cout:1
+#                43228		A: 90	B:  x	Cin:x		Sum:  6	Cout:1
+#                43229		A: 90	B:172	Cin:1		Sum:  6	Cout:1
+#                43237		A: 90	B:172	Cin:1		Sum:  5	Cout:1
+#                43243		A: 90	B:172	Cin:1		Sum:  3	Cout:1
+#                43249		A: 90	B:172	Cin:1		Sum: 15	Cout:1
+#                43255		A: 90	B:172	Cin:1		Sum:  7	Cout:1
+#                43329		A: 90	B:  x	Cin:x		Sum:  7	Cout:1
+#                43330		A: 90	B:173	Cin:1		Sum:  7	Cout:1
+#                43338		A: 90	B:173	Cin:1		Sum:  6	Cout:1
+#                43344		A: 90	B:173	Cin:1		Sum:  4	Cout:1
+#                43350		A: 90	B:173	Cin:1		Sum:  0	Cout:1
+#                43356		A: 90	B:173	Cin:1		Sum:  8	Cout:1
+#                43430		A: 90	B:  x	Cin:x		Sum:  8	Cout:1
+#                43431		A: 90	B:174	Cin:1		Sum:  8	Cout:1
+#                43439		A: 90	B:174	Cin:1		Sum: 11	Cout:1
+#                43445		A: 90	B:174	Cin:1		Sum:  9	Cout:1
+#                43531		A: 90	B:  x	Cin:x		Sum:  9	Cout:1
+#                43532		A: 90	B:175	Cin:1		Sum:  9	Cout:1
+#                43540		A: 90	B:175	Cin:1		Sum:  8	Cout:1
+#                43546		A: 90	B:175	Cin:1		Sum: 10	Cout:1
+#                43632		A: 91	B:  x	Cin:x		Sum: 10	Cout:1
+#                43633		A: 91	B:160	Cin:1		Sum: 10	Cout:1
+#                43641		A: 91	B:160	Cin:1		Sum:  0	Cout:1
+#                43643		A: 91	B:160	Cin:1		Sum: 16	Cout:1
+#                43647		A: 91	B:160	Cin:1		Sum: 12	Cout:1
+#                43649		A: 91	B:160	Cin:1		Sum: 44	Cout:1
+#                43653		A: 91	B:160	Cin:1		Sum: 28	Cout:1
+#                43655		A: 91	B:160	Cin:1		Sum: 92	Cout:1
+#                43659		A: 91	B:160	Cin:1		Sum: 60	Cout:1
+#                43661		A: 91	B:160	Cin:1		Sum:188	Cout:1
+#                43663		A: 91	B:160	Cin:1		Sum:188	Cout:0
+#                43665		A: 91	B:160	Cin:1		Sum:124	Cout:0
+#                43667		A: 91	B:160	Cin:1		Sum:124	Cout:1
+#                43671		A: 91	B:160	Cin:1		Sum:252	Cout:1
+#                43673		A: 91	B:160	Cin:1		Sum:252	Cout:0
+#                43733		A: 91	B:  x	Cin:x		Sum:252	Cout:0
+#                43734		A: 91	B:161	Cin:1		Sum:252	Cout:0
+#                43742		A: 91	B:161	Cin:1		Sum:253	Cout:0
+#                43834		A: 91	B:  x	Cin:x		Sum:253	Cout:0
+#                43835		A: 91	B:162	Cin:1		Sum:253	Cout:0
+#                43843		A: 91	B:162	Cin:1		Sum:252	Cout:0
+#                43849		A: 91	B:162	Cin:1		Sum:254	Cout:0
+#                43935		A: 91	B:  x	Cin:x		Sum:254	Cout:0
+#                43936		A: 91	B:163	Cin:1		Sum:254	Cout:0
+#                43944		A: 91	B:163	Cin:1		Sum:255	Cout:0
+#                44036		A: 91	B:  x	Cin:x		Sum:255	Cout:0
+#                44037		A: 91	B:164	Cin:1		Sum:255	Cout:0
+#                44045		A: 91	B:164	Cin:1		Sum:254	Cout:0
+#                44051		A: 91	B:164	Cin:1		Sum:252	Cout:0
+#                44057		A: 91	B:164	Cin:1		Sum:248	Cout:0
+#                44063		A: 91	B:164	Cin:1		Sum:240	Cout:0
+#                44069		A: 91	B:164	Cin:1		Sum:224	Cout:0
+#                44075		A: 91	B:164	Cin:1		Sum:192	Cout:0
+#                44081		A: 91	B:164	Cin:1		Sum:128	Cout:0
+#                44087		A: 91	B:164	Cin:1		Sum:  0	Cout:0
+#                44089		A: 91	B:164	Cin:1		Sum:  0	Cout:1
+#                44137		A: 91	B:  x	Cin:x		Sum:  0	Cout:1
+#                44138		A: 91	B:165	Cin:1		Sum:  0	Cout:1
+#                44146		A: 91	B:165	Cin:1		Sum:  1	Cout:1
+#                44238		A: 91	B:  x	Cin:x		Sum:  1	Cout:1
+#                44239		A: 91	B:166	Cin:1		Sum:  1	Cout:1
+#                44247		A: 91	B:166	Cin:1		Sum:  0	Cout:1
+#                44253		A: 91	B:166	Cin:1		Sum:  2	Cout:1
+#                44339		A: 91	B:  x	Cin:x		Sum:  2	Cout:1
+#                44340		A: 91	B:167	Cin:1		Sum:  2	Cout:1
+#                44348		A: 91	B:167	Cin:1		Sum:  3	Cout:1
+#                44440		A: 91	B:  x	Cin:x		Sum:  3	Cout:1
+#                44441		A: 91	B:168	Cin:1		Sum:  3	Cout:1
+#                44449		A: 91	B:168	Cin:1		Sum: 10	Cout:1
+#                44455		A: 91	B:168	Cin:1		Sum:  0	Cout:1
+#                44461		A: 91	B:168	Cin:1		Sum:  4	Cout:1
+#                44541		A: 91	B:  x	Cin:x		Sum:  4	Cout:1
+#                44542		A: 91	B:169	Cin:1		Sum:  4	Cout:1
+#                44550		A: 91	B:169	Cin:1		Sum:  5	Cout:1
+#                44642		A: 91	B:  x	Cin:x		Sum:  5	Cout:1
+#                44643		A: 91	B:170	Cin:1		Sum:  5	Cout:1
+#                44651		A: 91	B:170	Cin:1		Sum:  4	Cout:1
+#                44657		A: 91	B:170	Cin:1		Sum:  6	Cout:1
+#                44743		A: 91	B:  x	Cin:x		Sum:  6	Cout:1
+#                44744		A: 91	B:171	Cin:1		Sum:  6	Cout:1
+#                44752		A: 91	B:171	Cin:1		Sum:  7	Cout:1
+#                44844		A: 91	B:  x	Cin:x		Sum:  7	Cout:1
+#                44845		A: 91	B:172	Cin:1		Sum:  7	Cout:1
+#                44853		A: 91	B:172	Cin:1		Sum:  6	Cout:1
+#                44859		A: 91	B:172	Cin:1		Sum:  4	Cout:1
+#                44865		A: 91	B:172	Cin:1		Sum:  0	Cout:1
+#                44871		A: 91	B:172	Cin:1		Sum:  8	Cout:1
+#                44945		A: 91	B:  x	Cin:x		Sum:  8	Cout:1
+#                44946		A: 91	B:173	Cin:1		Sum:  8	Cout:1
+#                44954		A: 91	B:173	Cin:1		Sum:  9	Cout:1
+#                45046		A: 91	B:  x	Cin:x		Sum:  9	Cout:1
+#                45047		A: 91	B:174	Cin:1		Sum:  9	Cout:1
+#                45055		A: 91	B:174	Cin:1		Sum:  8	Cout:1
+#                45061		A: 91	B:174	Cin:1		Sum: 10	Cout:1
+#                45147		A: 91	B:  x	Cin:x		Sum: 10	Cout:1
+#                45148		A: 91	B:175	Cin:1		Sum: 10	Cout:1
+#                45156		A: 91	B:175	Cin:1		Sum: 11	Cout:1
+#                45248		A: 92	B:  x	Cin:x		Sum: 11	Cout:1
+#                45249		A: 92	B:160	Cin:1		Sum: 11	Cout:1
+#                45257		A: 92	B:160	Cin:1		Sum:  3	Cout:1
+#                45258		A: 92	B:160	Cin:1		Sum:  5	Cout:1
+#                45259		A: 92	B:160	Cin:1		Sum: 21	Cout:1
+#                45263		A: 92	B:160	Cin:1		Sum:  5	Cout:1
+#                45264		A: 92	B:160	Cin:1		Sum: 13	Cout:1
+#                45265		A: 92	B:160	Cin:1		Sum: 45	Cout:1
+#                45269		A: 92	B:160	Cin:1		Sum: 13	Cout:1
+#                45270		A: 92	B:160	Cin:1		Sum: 29	Cout:1
+#                45271		A: 92	B:160	Cin:1		Sum: 93	Cout:1
+#                45275		A: 92	B:160	Cin:1		Sum: 29	Cout:1
+#                45276		A: 92	B:160	Cin:1		Sum: 61	Cout:1
+#                45277		A: 92	B:160	Cin:1		Sum:189	Cout:1
+#                45279		A: 92	B:160	Cin:1		Sum:189	Cout:0
+#                45281		A: 92	B:160	Cin:1		Sum: 61	Cout:0
+#                45282		A: 92	B:160	Cin:1		Sum:125	Cout:0
+#                45283		A: 92	B:160	Cin:1		Sum:125	Cout:1
+#                45288		A: 92	B:160	Cin:1		Sum:253	Cout:1
+#                45290		A: 92	B:160	Cin:1		Sum:253	Cout:0
+#                45349		A: 92	B:  x	Cin:x		Sum:253	Cout:0
+#                45350		A: 92	B:161	Cin:1		Sum:253	Cout:0
+#                45358		A: 92	B:161	Cin:1		Sum:252	Cout:0
+#                45364		A: 92	B:161	Cin:1		Sum:254	Cout:0
+#                45450		A: 92	B:  x	Cin:x		Sum:254	Cout:0
+#                45451		A: 92	B:162	Cin:1		Sum:254	Cout:0
+#                45459		A: 92	B:162	Cin:1		Sum:253	Cout:0
+#                45465		A: 92	B:162	Cin:1		Sum:251	Cout:0
+#                45471		A: 92	B:162	Cin:1		Sum:247	Cout:0
+#                45477		A: 92	B:162	Cin:1		Sum:239	Cout:0
+#                45483		A: 92	B:162	Cin:1		Sum:223	Cout:0
+#                45489		A: 92	B:162	Cin:1		Sum:191	Cout:0
+#                45495		A: 92	B:162	Cin:1		Sum:127	Cout:0
+#                45497		A: 92	B:162	Cin:1		Sum:127	Cout:1
+#                45501		A: 92	B:162	Cin:1		Sum:255	Cout:1
+#                45503		A: 92	B:162	Cin:1		Sum:255	Cout:0
+#                45551		A: 92	B:  x	Cin:x		Sum:255	Cout:0
+#                45552		A: 92	B:163	Cin:1		Sum:255	Cout:0
+#                45560		A: 92	B:163	Cin:1		Sum:254	Cout:0
+#                45566		A: 92	B:163	Cin:1		Sum:252	Cout:0
+#                45572		A: 92	B:163	Cin:1		Sum:248	Cout:0
+#                45578		A: 92	B:163	Cin:1		Sum:240	Cout:0
+#                45584		A: 92	B:163	Cin:1		Sum:224	Cout:0
+#                45590		A: 92	B:163	Cin:1		Sum:192	Cout:0
+#                45596		A: 92	B:163	Cin:1		Sum:128	Cout:0
+#                45602		A: 92	B:163	Cin:1		Sum:  0	Cout:0
+#                45604		A: 92	B:163	Cin:1		Sum:  0	Cout:1
+#                45652		A: 92	B:  x	Cin:x		Sum:  0	Cout:1
+#                45653		A: 92	B:164	Cin:1		Sum:  0	Cout:1
+#                45661		A: 92	B:164	Cin:1		Sum:  7	Cout:1
+#                45667		A: 92	B:164	Cin:1		Sum:  1	Cout:1
+#                45753		A: 92	B:  x	Cin:x		Sum:  1	Cout:1
+#                45754		A: 92	B:165	Cin:1		Sum:  1	Cout:1
+#                45762		A: 92	B:165	Cin:1		Sum:  0	Cout:1
+#                45768		A: 92	B:165	Cin:1		Sum:  2	Cout:1
+#                45854		A: 92	B:  x	Cin:x		Sum:  2	Cout:1
+#                45855		A: 92	B:166	Cin:1		Sum:  2	Cout:1
+#                45863		A: 92	B:166	Cin:1		Sum:  1	Cout:1
+#                45869		A: 92	B:166	Cin:1		Sum:  7	Cout:1
+#                45875		A: 92	B:166	Cin:1		Sum:  3	Cout:1
+#                45955		A: 92	B:  x	Cin:x		Sum:  3	Cout:1
+#                45956		A: 92	B:167	Cin:1		Sum:  3	Cout:1
+#                45964		A: 92	B:167	Cin:1		Sum:  2	Cout:1
+#                45970		A: 92	B:167	Cin:1		Sum:  0	Cout:1
+#                45976		A: 92	B:167	Cin:1		Sum:  4	Cout:1
+#                46056		A: 92	B:  x	Cin:x		Sum:  4	Cout:1
+#                46057		A: 92	B:168	Cin:1		Sum:  4	Cout:1
+#                46065		A: 92	B:168	Cin:1		Sum:  3	Cout:1
+#                46071		A: 92	B:168	Cin:1		Sum: 13	Cout:1
+#                46077		A: 92	B:168	Cin:1		Sum:  5	Cout:1
+#                46157		A: 92	B:  x	Cin:x		Sum:  5	Cout:1
+#                46158		A: 92	B:169	Cin:1		Sum:  5	Cout:1
+#                46166		A: 92	B:169	Cin:1		Sum:  4	Cout:1
+#                46172		A: 92	B:169	Cin:1		Sum:  6	Cout:1
+#                46258		A: 92	B:  x	Cin:x		Sum:  6	Cout:1
+#                46259		A: 92	B:170	Cin:1		Sum:  6	Cout:1
+#                46267		A: 92	B:170	Cin:1		Sum:  5	Cout:1
+#                46273		A: 92	B:170	Cin:1		Sum:  3	Cout:1
+#                46279		A: 92	B:170	Cin:1		Sum: 15	Cout:1
+#                46285		A: 92	B:170	Cin:1		Sum:  7	Cout:1
+#                46359		A: 92	B:  x	Cin:x		Sum:  7	Cout:1
+#                46360		A: 92	B:171	Cin:1		Sum:  7	Cout:1
+#                46368		A: 92	B:171	Cin:1		Sum:  6	Cout:1
+#                46374		A: 92	B:171	Cin:1		Sum:  4	Cout:1
+#                46380		A: 92	B:171	Cin:1		Sum:  0	Cout:1
+#                46386		A: 92	B:171	Cin:1		Sum:  8	Cout:1
+#                46460		A: 92	B:  x	Cin:x		Sum:  8	Cout:1
+#                46461		A: 92	B:172	Cin:1		Sum:  8	Cout:1
+#                46469		A: 92	B:172	Cin:1		Sum: 15	Cout:1
+#                46475		A: 92	B:172	Cin:1		Sum:  9	Cout:1
+#                46561		A: 92	B:  x	Cin:x		Sum:  9	Cout:1
+#                46562		A: 92	B:173	Cin:1		Sum:  9	Cout:1
+#                46570		A: 92	B:173	Cin:1		Sum:  8	Cout:1
+#                46576		A: 92	B:173	Cin:1		Sum: 10	Cout:1
+#                46662		A: 92	B:  x	Cin:x		Sum: 10	Cout:1
+#                46663		A: 92	B:174	Cin:1		Sum: 10	Cout:1
+#                46671		A: 92	B:174	Cin:1		Sum:  9	Cout:1
+#                46677		A: 92	B:174	Cin:1		Sum: 15	Cout:1
+#                46683		A: 92	B:174	Cin:1		Sum: 11	Cout:1
+#                46763		A: 92	B:  x	Cin:x		Sum: 11	Cout:1
+#                46764		A: 92	B:175	Cin:1		Sum: 11	Cout:1
+#                46772		A: 92	B:175	Cin:1		Sum: 10	Cout:1
+#                46778		A: 92	B:175	Cin:1		Sum:  8	Cout:1
+#                46784		A: 92	B:175	Cin:1		Sum: 12	Cout:1
+#                46864		A: 93	B:  x	Cin:x		Sum: 12	Cout:1
+#                46865		A: 93	B:160	Cin:1		Sum: 12	Cout:1
+#                46873		A: 93	B:160	Cin:1		Sum: 10	Cout:1
+#                46875		A: 93	B:160	Cin:1		Sum: 26	Cout:1
+#                46879		A: 93	B:160	Cin:1		Sum: 22	Cout:1
+#                46881		A: 93	B:160	Cin:1		Sum: 54	Cout:1
+#                46885		A: 93	B:160	Cin:1		Sum: 46	Cout:1
+#                46887		A: 93	B:160	Cin:1		Sum:110	Cout:1
+#                46891		A: 93	B:160	Cin:1		Sum: 94	Cout:1
+#                46893		A: 93	B:160	Cin:1		Sum:222	Cout:1
+#                46895		A: 93	B:160	Cin:1		Sum:222	Cout:0
+#                46897		A: 93	B:160	Cin:1		Sum:190	Cout:0
+#                46903		A: 93	B:160	Cin:1		Sum:126	Cout:0
+#                46905		A: 93	B:160	Cin:1		Sum:126	Cout:1
+#                46909		A: 93	B:160	Cin:1		Sum:254	Cout:1
+#                46911		A: 93	B:160	Cin:1		Sum:254	Cout:0
+#                46965		A: 93	B:  x	Cin:x		Sum:254	Cout:0
+#                46966		A: 93	B:161	Cin:1		Sum:254	Cout:0
+#                46974		A: 93	B:161	Cin:1		Sum:255	Cout:0
+#                47066		A: 93	B:  x	Cin:x		Sum:255	Cout:0
+#                47067		A: 93	B:162	Cin:1		Sum:255	Cout:0
+#                47075		A: 93	B:162	Cin:1		Sum:254	Cout:0
+#                47081		A: 93	B:162	Cin:1		Sum:252	Cout:0
+#                47087		A: 93	B:162	Cin:1		Sum:248	Cout:0
+#                47093		A: 93	B:162	Cin:1		Sum:240	Cout:0
+#                47099		A: 93	B:162	Cin:1		Sum:224	Cout:0
+#                47105		A: 93	B:162	Cin:1		Sum:192	Cout:0
+#                47111		A: 93	B:162	Cin:1		Sum:128	Cout:0
+#                47117		A: 93	B:162	Cin:1		Sum:  0	Cout:0
+#                47119		A: 93	B:162	Cin:1		Sum:  0	Cout:1
+#                47167		A: 93	B:  x	Cin:x		Sum:  0	Cout:1
+#                47168		A: 93	B:163	Cin:1		Sum:  0	Cout:1
+#                47176		A: 93	B:163	Cin:1		Sum:  1	Cout:1
+#                47268		A: 93	B:  x	Cin:x		Sum:  1	Cout:1
+#                47269		A: 93	B:164	Cin:1		Sum:  1	Cout:1
+#                47277		A: 93	B:164	Cin:1		Sum:  4	Cout:1
+#                47283		A: 93	B:164	Cin:1		Sum:  2	Cout:1
+#                47369		A: 93	B:  x	Cin:x		Sum:  2	Cout:1
+#                47370		A: 93	B:165	Cin:1		Sum:  2	Cout:1
+#                47378		A: 93	B:165	Cin:1		Sum:  3	Cout:1
+#                47470		A: 93	B:  x	Cin:x		Sum:  3	Cout:1
+#                47471		A: 93	B:166	Cin:1		Sum:  3	Cout:1
+#                47479		A: 93	B:166	Cin:1		Sum:  2	Cout:1
+#                47485		A: 93	B:166	Cin:1		Sum:  0	Cout:1
+#                47491		A: 93	B:166	Cin:1		Sum:  4	Cout:1
+#                47571		A: 93	B:  x	Cin:x		Sum:  4	Cout:1
+#                47572		A: 93	B:167	Cin:1		Sum:  4	Cout:1
+#                47580		A: 93	B:167	Cin:1		Sum:  5	Cout:1
+#                47672		A: 93	B:  x	Cin:x		Sum:  5	Cout:1
+#                47673		A: 93	B:168	Cin:1		Sum:  5	Cout:1
+#                47681		A: 93	B:168	Cin:1		Sum:  0	Cout:1
+#                47687		A: 93	B:168	Cin:1		Sum: 14	Cout:1
+#                47693		A: 93	B:168	Cin:1		Sum:  6	Cout:1
+#                47773		A: 93	B:  x	Cin:x		Sum:  6	Cout:1
+#                47774		A: 93	B:169	Cin:1		Sum:  6	Cout:1
+#                47782		A: 93	B:169	Cin:1		Sum:  7	Cout:1
+#                47874		A: 93	B:  x	Cin:x		Sum:  7	Cout:1
+#                47875		A: 93	B:170	Cin:1		Sum:  7	Cout:1
+#                47883		A: 93	B:170	Cin:1		Sum:  6	Cout:1
+#                47889		A: 93	B:170	Cin:1		Sum:  4	Cout:1
+#                47895		A: 93	B:170	Cin:1		Sum:  0	Cout:1
+#                47901		A: 93	B:170	Cin:1		Sum:  8	Cout:1
+#                47975		A: 93	B:  x	Cin:x		Sum:  8	Cout:1
+#                47976		A: 93	B:171	Cin:1		Sum:  8	Cout:1
+#                47984		A: 93	B:171	Cin:1		Sum:  9	Cout:1
+#                48076		A: 93	B:  x	Cin:x		Sum:  9	Cout:1
+#                48077		A: 93	B:172	Cin:1		Sum:  9	Cout:1
+#                48085		A: 93	B:172	Cin:1		Sum: 12	Cout:1
+#                48091		A: 93	B:172	Cin:1		Sum: 10	Cout:1
+#                48177		A: 93	B:  x	Cin:x		Sum: 10	Cout:1
+#                48178		A: 93	B:173	Cin:1		Sum: 10	Cout:1
+#                48186		A: 93	B:173	Cin:1		Sum: 11	Cout:1
+#                48278		A: 93	B:  x	Cin:x		Sum: 11	Cout:1
+#                48279		A: 93	B:174	Cin:1		Sum: 11	Cout:1
+#                48287		A: 93	B:174	Cin:1		Sum: 10	Cout:1
+#                48293		A: 93	B:174	Cin:1		Sum:  8	Cout:1
+#                48299		A: 93	B:174	Cin:1		Sum: 12	Cout:1
+#                48379		A: 93	B:  x	Cin:x		Sum: 12	Cout:1
+#                48380		A: 93	B:175	Cin:1		Sum: 12	Cout:1
+#                48388		A: 93	B:175	Cin:1		Sum: 13	Cout:1
+#                48480		A: 94	B:  x	Cin:x		Sum: 13	Cout:1
+#                48481		A: 94	B:160	Cin:1		Sum: 13	Cout:1
+#                48489		A: 94	B:160	Cin:1		Sum:  9	Cout:1
+#                48490		A: 94	B:160	Cin:1		Sum: 11	Cout:1
+#                48491		A: 94	B:160	Cin:1		Sum: 27	Cout:1
+#                48495		A: 94	B:160	Cin:1		Sum: 19	Cout:1
+#                48496		A: 94	B:160	Cin:1		Sum: 23	Cout:1
+#                48497		A: 94	B:160	Cin:1		Sum: 55	Cout:1
+#                48501		A: 94	B:160	Cin:1		Sum: 39	Cout:1
+#                48502		A: 94	B:160	Cin:1		Sum: 47	Cout:1
+#                48503		A: 94	B:160	Cin:1		Sum:111	Cout:1
+#                48507		A: 94	B:160	Cin:1		Sum: 79	Cout:1
+#                48508		A: 94	B:160	Cin:1		Sum: 95	Cout:1
+#                48509		A: 94	B:160	Cin:1		Sum:223	Cout:1
+#                48511		A: 94	B:160	Cin:1		Sum:223	Cout:0
+#                48513		A: 94	B:160	Cin:1		Sum:159	Cout:0
+#                48514		A: 94	B:160	Cin:1		Sum:191	Cout:0
+#                48519		A: 94	B:160	Cin:1		Sum: 63	Cout:0
+#                48520		A: 94	B:160	Cin:1		Sum:127	Cout:0
+#                48521		A: 94	B:160	Cin:1		Sum:127	Cout:1
+#                48526		A: 94	B:160	Cin:1		Sum:255	Cout:1
+#                48528		A: 94	B:160	Cin:1		Sum:255	Cout:0
+#                48581		A: 94	B:  x	Cin:x		Sum:255	Cout:0
+#                48582		A: 94	B:161	Cin:1		Sum:255	Cout:0
+#                48590		A: 94	B:161	Cin:1		Sum:254	Cout:0
+#                48596		A: 94	B:161	Cin:1		Sum:252	Cout:0
+#                48602		A: 94	B:161	Cin:1		Sum:248	Cout:0
+#                48608		A: 94	B:161	Cin:1		Sum:240	Cout:0
+#                48614		A: 94	B:161	Cin:1		Sum:224	Cout:0
+#                48620		A: 94	B:161	Cin:1		Sum:192	Cout:0
+#                48626		A: 94	B:161	Cin:1		Sum:128	Cout:0
+#                48632		A: 94	B:161	Cin:1		Sum:  0	Cout:0
+#                48634		A: 94	B:161	Cin:1		Sum:  0	Cout:1
+#                48682		A: 94	B:  x	Cin:x		Sum:  0	Cout:1
+#                48683		A: 94	B:162	Cin:1		Sum:  0	Cout:1
+#                48691		A: 94	B:162	Cin:1		Sum:  3	Cout:1
+#                48697		A: 94	B:162	Cin:1		Sum:  1	Cout:1
+#                48783		A: 94	B:  x	Cin:x		Sum:  1	Cout:1
+#                48784		A: 94	B:163	Cin:1		Sum:  1	Cout:1
+#                48792		A: 94	B:163	Cin:1		Sum:  0	Cout:1
+#                48798		A: 94	B:163	Cin:1		Sum:  2	Cout:1
+#                48884		A: 94	B:  x	Cin:x		Sum:  2	Cout:1
+#                48885		A: 94	B:164	Cin:1		Sum:  2	Cout:1
+#                48893		A: 94	B:164	Cin:1		Sum:  1	Cout:1
+#                48899		A: 94	B:164	Cin:1		Sum:  7	Cout:1
+#                48905		A: 94	B:164	Cin:1		Sum:  3	Cout:1
+#                48985		A: 94	B:  x	Cin:x		Sum:  3	Cout:1
+#                48986		A: 94	B:165	Cin:1		Sum:  3	Cout:1
+#                48994		A: 94	B:165	Cin:1		Sum:  2	Cout:1
+#                49000		A: 94	B:165	Cin:1		Sum:  0	Cout:1
+#                49006		A: 94	B:165	Cin:1		Sum:  4	Cout:1
+#                49086		A: 94	B:  x	Cin:x		Sum:  4	Cout:1
+#                49087		A: 94	B:166	Cin:1		Sum:  4	Cout:1
+#                49095		A: 94	B:166	Cin:1		Sum:  7	Cout:1
+#                49101		A: 94	B:166	Cin:1		Sum:  5	Cout:1
+#                49187		A: 94	B:  x	Cin:x		Sum:  5	Cout:1
+#                49188		A: 94	B:167	Cin:1		Sum:  5	Cout:1
+#                49196		A: 94	B:167	Cin:1		Sum:  4	Cout:1
+#                49202		A: 94	B:167	Cin:1		Sum:  6	Cout:1
+#                49288		A: 94	B:  x	Cin:x		Sum:  6	Cout:1
+#                49289		A: 94	B:168	Cin:1		Sum:  6	Cout:1
+#                49297		A: 94	B:168	Cin:1		Sum:  5	Cout:1
+#                49303		A: 94	B:168	Cin:1		Sum:  3	Cout:1
+#                49309		A: 94	B:168	Cin:1		Sum: 15	Cout:1
+#                49315		A: 94	B:168	Cin:1		Sum:  7	Cout:1
+#                49389		A: 94	B:  x	Cin:x		Sum:  7	Cout:1
+#                49390		A: 94	B:169	Cin:1		Sum:  7	Cout:1
+#                49398		A: 94	B:169	Cin:1		Sum:  6	Cout:1
+#                49404		A: 94	B:169	Cin:1		Sum:  4	Cout:1
+#                49410		A: 94	B:169	Cin:1		Sum:  0	Cout:1
+#                49416		A: 94	B:169	Cin:1		Sum:  8	Cout:1
+#                49490		A: 94	B:  x	Cin:x		Sum:  8	Cout:1
+#                49491		A: 94	B:170	Cin:1		Sum:  8	Cout:1
+#                49499		A: 94	B:170	Cin:1		Sum: 11	Cout:1
+#                49505		A: 94	B:170	Cin:1		Sum:  9	Cout:1
+#                49591		A: 94	B:  x	Cin:x		Sum:  9	Cout:1
+#                49592		A: 94	B:171	Cin:1		Sum:  9	Cout:1
+#                49600		A: 94	B:171	Cin:1		Sum:  8	Cout:1
+#                49606		A: 94	B:171	Cin:1		Sum: 10	Cout:1
+#                49692		A: 94	B:  x	Cin:x		Sum: 10	Cout:1
+#                49693		A: 94	B:172	Cin:1		Sum: 10	Cout:1
+#                49701		A: 94	B:172	Cin:1		Sum:  9	Cout:1
+#                49707		A: 94	B:172	Cin:1		Sum: 15	Cout:1
+#                49713		A: 94	B:172	Cin:1		Sum: 11	Cout:1
+#                49793		A: 94	B:  x	Cin:x		Sum: 11	Cout:1
+#                49794		A: 94	B:173	Cin:1		Sum: 11	Cout:1
+#                49802		A: 94	B:173	Cin:1		Sum: 10	Cout:1
+#                49808		A: 94	B:173	Cin:1		Sum:  8	Cout:1
+#                49814		A: 94	B:173	Cin:1		Sum: 12	Cout:1
+#                49894		A: 94	B:  x	Cin:x		Sum: 12	Cout:1
+#                49895		A: 94	B:174	Cin:1		Sum: 12	Cout:1
+#                49903		A: 94	B:174	Cin:1		Sum: 15	Cout:1
+#                49909		A: 94	B:174	Cin:1		Sum: 13	Cout:1
+#                49995		A: 94	B:  x	Cin:x		Sum: 13	Cout:1
+#                49996		A: 94	B:175	Cin:1		Sum: 13	Cout:1
+#                50004		A: 94	B:175	Cin:1		Sum: 12	Cout:1
+#                50010		A: 94	B:175	Cin:1		Sum: 14	Cout:1
+#                50096		A: 95	B:  x	Cin:x		Sum: 14	Cout:1
+#                50097		A: 95	B:160	Cin:1		Sum: 14	Cout:1
+#                50105		A: 95	B:160	Cin:1		Sum: 12	Cout:1
+#                50107		A: 95	B:160	Cin:1		Sum: 28	Cout:1
+#                50111		A: 95	B:160	Cin:1		Sum: 24	Cout:1
+#                50113		A: 95	B:160	Cin:1		Sum: 56	Cout:1
+#                50117		A: 95	B:160	Cin:1		Sum: 48	Cout:1
+#                50119		A: 95	B:160	Cin:1		Sum:112	Cout:1
+#                50123		A: 95	B:160	Cin:1		Sum: 96	Cout:1
+#                50125		A: 95	B:160	Cin:1		Sum:224	Cout:1
+#                50127		A: 95	B:160	Cin:1		Sum:224	Cout:0
+#                50129		A: 95	B:160	Cin:1		Sum:192	Cout:0
+#                50135		A: 95	B:160	Cin:1		Sum:128	Cout:0
+#                50141		A: 95	B:160	Cin:1		Sum:  0	Cout:0
+#                50143		A: 95	B:160	Cin:1		Sum:  0	Cout:1
+#                50197		A: 95	B:  x	Cin:x		Sum:  0	Cout:1
+#                50198		A: 95	B:161	Cin:1		Sum:  0	Cout:1
+#                50206		A: 95	B:161	Cin:1		Sum:  1	Cout:1
+#                50298		A: 95	B:  x	Cin:x		Sum:  1	Cout:1
+#                50299		A: 95	B:162	Cin:1		Sum:  1	Cout:1
+#                50307		A: 95	B:162	Cin:1		Sum:  0	Cout:1
+#                50313		A: 95	B:162	Cin:1		Sum:  2	Cout:1
+#                50399		A: 95	B:  x	Cin:x		Sum:  2	Cout:1
+#                50400		A: 95	B:163	Cin:1		Sum:  2	Cout:1
+#                50408		A: 95	B:163	Cin:1		Sum:  3	Cout:1
+#                50500		A: 95	B:  x	Cin:x		Sum:  3	Cout:1
+#                50501		A: 95	B:164	Cin:1		Sum:  3	Cout:1
+#                50509		A: 95	B:164	Cin:1		Sum:  2	Cout:1
+#                50515		A: 95	B:164	Cin:1		Sum:  0	Cout:1
+#                50521		A: 95	B:164	Cin:1		Sum:  4	Cout:1
+#                50601		A: 95	B:  x	Cin:x		Sum:  4	Cout:1
+#                50602		A: 95	B:165	Cin:1		Sum:  4	Cout:1
+#                50610		A: 95	B:165	Cin:1		Sum:  5	Cout:1
+#                50702		A: 95	B:  x	Cin:x		Sum:  5	Cout:1
+#                50703		A: 95	B:166	Cin:1		Sum:  5	Cout:1
+#                50711		A: 95	B:166	Cin:1		Sum:  4	Cout:1
+#                50717		A: 95	B:166	Cin:1		Sum:  6	Cout:1
+#                50803		A: 95	B:  x	Cin:x		Sum:  6	Cout:1
+#                50804		A: 95	B:167	Cin:1		Sum:  6	Cout:1
+#                50812		A: 95	B:167	Cin:1		Sum:  7	Cout:1
+#                50904		A: 95	B:  x	Cin:x		Sum:  7	Cout:1
+#                50905		A: 95	B:168	Cin:1		Sum:  7	Cout:1
+#                50913		A: 95	B:168	Cin:1		Sum:  6	Cout:1
+#                50919		A: 95	B:168	Cin:1		Sum:  4	Cout:1
+#                50925		A: 95	B:168	Cin:1		Sum:  0	Cout:1
+#                50931		A: 95	B:168	Cin:1		Sum:  8	Cout:1
+#                51005		A: 95	B:  x	Cin:x		Sum:  8	Cout:1
+#                51006		A: 95	B:169	Cin:1		Sum:  8	Cout:1
+#                51014		A: 95	B:169	Cin:1		Sum:  9	Cout:1
+#                51106		A: 95	B:  x	Cin:x		Sum:  9	Cout:1
+#                51107		A: 95	B:170	Cin:1		Sum:  9	Cout:1
+#                51115		A: 95	B:170	Cin:1		Sum:  8	Cout:1
+#                51121		A: 95	B:170	Cin:1		Sum: 10	Cout:1
+#                51207		A: 95	B:  x	Cin:x		Sum: 10	Cout:1
+#                51208		A: 95	B:171	Cin:1		Sum: 10	Cout:1
+#                51216		A: 95	B:171	Cin:1		Sum: 11	Cout:1
+#                51308		A: 95	B:  x	Cin:x		Sum: 11	Cout:1
+#                51309		A: 95	B:172	Cin:1		Sum: 11	Cout:1
+#                51317		A: 95	B:172	Cin:1		Sum: 10	Cout:1
+#                51323		A: 95	B:172	Cin:1		Sum:  8	Cout:1
+#                51329		A: 95	B:172	Cin:1		Sum: 12	Cout:1
+#                51409		A: 95	B:  x	Cin:x		Sum: 12	Cout:1
+#                51410		A: 95	B:173	Cin:1		Sum: 12	Cout:1
+#                51418		A: 95	B:173	Cin:1		Sum: 13	Cout:1
+#                51510		A: 95	B:  x	Cin:x		Sum: 13	Cout:1
+#                51511		A: 95	B:174	Cin:1		Sum: 13	Cout:1
+#                51519		A: 95	B:174	Cin:1		Sum: 12	Cout:1
+#                51525		A: 95	B:174	Cin:1		Sum: 14	Cout:1
+#                51611		A: 95	B:  x	Cin:x		Sum: 14	Cout:1
+#                51612		A: 95	B:175	Cin:1		Sum: 14	Cout:1
+#                51620		A: 95	B:175	Cin:1		Sum: 15	Cout:1
+# ** Note: $stop    : N:/PSUCourseProjects/ece351sp20/quiz1/hdl/tb_rca_8bits.released.sv(68)
+#    Time: 51717 ns  Iteration: 0  Instance: /tb_rca_8bits
+# Break in NamedBeginStat stimulus at N:/PSUCourseProjects/ece351sp20/quiz1/hdl/tb_rca_8bits.released.sv line 68

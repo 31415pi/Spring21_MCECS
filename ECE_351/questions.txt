@@ -1,3 +1,64 @@
+
+
+
+Multiple Choice:
+Which is not an Encoding Scheme:
+	A. One-Hot encoding
+	B. One-Hot-Binary encoding
+	C. Gray Code encoding
+	D. Johnson Count encoding
+
+What are the four procedural blocks called?
+	A. Always_comb, Always, always_ff, always_latch
+	B. Always, Always_key, Always_ff, Always_comb
+	C. Always_ff, Always_comb, Never, Always_latch
+	D. Always_latch, Always, Never_latch, Always_pick
+
+When running vsim or vlog from command line, does order of files matter? Why?
+	Yes, because dependencies are not inferred from future files when referenced. They must have already been present in the build environment to be referenced. 
+
+What is one way to prevent accidental latching in a FSM using a case?
+	Default: next = Beginning state.
+
+What are:
+	System Tasks and Functions: Tasks perform operations with no return value, functions return some value.
+	Program Blocks: Provide entry points to Test Bench excecutions. Create container which holds tasks and other functions or class objects. Program Blocks help to avoid race conditions and are excecuted during the reactive region of a sim cycle.
+	Modules:
+	Parameters:
+	
+What goes into a portlist?
+	Inputs and Outputs for the current module definition.
+
+When instantiating a module with parameters, how do we adjust their values?
+	module demomod demomod_instantiated
+	#(
+		parameter1 = setting,
+		parameter2 = resetting,
+		parameter3 = set
+	)
+
+Define the operations of each component of the Three Process FSM model:
+	• A state sequencer — a sequential logic block (flip flops) that transitions from a current state to a next state on a clock edge.
+	• A next state decoder — a combinational logic block that decodes various signals to
+	determine what the next state of the FSM should be.
+	• An output decoder — a combinational logic block that decodes the current state
+	(Moore architecture), and possible other signals (Mealy architecture), and sets the
+	values of the outputs of the state machine.
+
+What is the primary difference between a Moore and Mealy state machine?
+	Moore: depends on current state only.
+	Mealy: depends on more than simply the current state.
+
+
+
+
+
+
+
+
+
+
+
 Three block or process FSM
 • A state sequencer — a sequential logic block (flip flops) that transitions from a current state to a next state on a clock edge.
 • A next state decoder — a combinational logic block that decodes various signals to
@@ -5,8 +66,6 @@ determine what the next state of the FSM should be.
 • An output decoder — a combinational logic block that decodes the current state
 (Moore architecture), and possible other signals (Mealy architecture), and sets the
 values of the outputs of the state machine.
-
-
 
 
 
